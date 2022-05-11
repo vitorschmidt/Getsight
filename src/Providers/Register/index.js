@@ -1,5 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import Api from "../../services/Api";
+
 
 export const RegisterContext = createContext();
 
@@ -21,3 +22,5 @@ export const RegisterProvider = ({ children }) => {
     </RegisterContext.Provider>
   );
 };
+
+export const useRegister = () => useContext(RegisterContext);
