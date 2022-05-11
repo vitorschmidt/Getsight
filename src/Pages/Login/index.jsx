@@ -73,6 +73,7 @@ const Login = () => {
             </span>
           </p>
         </div>
+        <button onClick={()=> handleNavegation("/")}>Home</button>
       </main>
     </Container>
   );
