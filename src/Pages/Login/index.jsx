@@ -1,11 +1,12 @@
 import { Container } from "./style";
-
+import { Button } from "../../Components/Button";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../Components/Input";
-
+import Logo from "../../Components/img/logo.png"
+import { InputContainer } from "../../Components/Input/styles";
 const Login = () => {
   const history = useHistory();
 
@@ -40,7 +41,7 @@ const Login = () => {
     <Container>
       <header>
         <picture>
-          <img src="#" alt="Logo GetSight" />
+          <img src={Logo} alt="Logo GetSight"/>
         </picture>
       </header>
       <main>
@@ -62,17 +63,19 @@ const Login = () => {
             error={errors.password?.message}
           />
 
-          <button type="submit">Logar</button>
+          <Button type="submit">Logar</Button>
+          <div>
+            <p>
+              Não tem uma conta?{" "}
+              <span onClick={() => handleNavegation("/register")}>
+                fazer cadastro
+              </span>
+            </p>
+          </div>
         </form>
 
-        <div>
-          <p>
-            Não tem uma conta?{" "}
-            <span onClick={() => handleNavegation("/register")}>
-              fazer cadastro
-            </span>
-          </p>
-        </div>
+        
+        <Button onClick={()=> handleNavegation("/")}>Home</Button>
       </main>
     </Container>
   );

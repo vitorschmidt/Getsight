@@ -1,5 +1,7 @@
 import { Container } from "./style";
 import { useHistory } from "react-router-dom";
+import Logo from "../../Components/img/logo.png";
+import { Button } from "../../Components/Button";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,7 +9,7 @@ import Inputs from "../../Components/Input";
 
 const Register = () => {
   const history = useHistory();
-
+  const handleNavegation = (path) => history.push(path)
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -50,7 +52,7 @@ const Register = () => {
   return (
     <Container>
       <picture>
-        <img src="#" alt="Logo GetSight" />
+        <img src={Logo} alt="Logo GetSight"/>
       </picture>
 
       <form onSubmit={handleSubmit(onSubmitFunction)}>
@@ -96,8 +98,10 @@ const Register = () => {
           error={errors.confirmPassword?.message}
         />
 
-        <button type="submit">Cadastrar</button>
+        <Button type="submit">Cadastrar</Button>
       </form>
+
+      <Button onClick={()=> handleNavegation("/")}>Home</Button>
     </Container>
   );
 };
