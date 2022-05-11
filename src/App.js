@@ -1,4 +1,3 @@
-import "./App.css";
 import Routes from "./Routes";
 import GlobalStyles from "./styles/global";
 
