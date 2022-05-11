@@ -6,8 +6,8 @@ export const LoginContext = createContext();
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState([]);
 
-  const getUser = () => {
-    Api.post("/users")
+  const getUser = ({ users }) => {
+    Api.post("/login", users)
       .then((response) => {
         const { token } = response.data;
 
