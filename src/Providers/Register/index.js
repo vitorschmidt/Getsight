@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import api from "../../Services/Api";
+import Api from "../../services/Api";
+
 
 export const RegisterContext = createContext();
 
@@ -7,8 +8,7 @@ export const RegisterProvider = ({ children }) => {
   const [registerUser, setRegister] = useState([]);
 
   const postUser = () => {
-    api
-      .post("/users")
+    Api.post("/users")
       .then((response) => {
         console.log(response.data);
         setRegister(response.data);
