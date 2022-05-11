@@ -8,7 +8,17 @@ export default createGlobalStyle`
         outline: 0;
     }
     :root {
-
+      --background-primary: #C2D8DA;
+      --light-grey: #F3F3F3;
+      --back: #000000;
+      --dark-blue: #22333B;
+      --grey-1: #C4C4C4;
+      --green-1: #00F40A;
+      --blue-1: #001AFF;
+      --blue-2: #3461FF;
+      --blue-3: #9FB6F0;
+      --red-1: #FB0000;
+      --red-2: #752020;
     }
     body {
         font-size: 1rem;
