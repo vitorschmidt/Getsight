@@ -21,4 +21,4 @@ const Button = ({
     </Container>
   );
 };
-export { Button };
+export default Button;
