@@ -1,18 +1,26 @@
-import { Container } from "./style";
+import { Container, InputContainer } from "./styles";
 
-
-const Input = ({ label, error, register, name, ...rest }) => {
+//INPUT ALINHADO COM E AJUSTADO PARA USO NO REACT-HOOK-FORM
+const Inputs = ({
+  handleShowPassword,
+  label,
+  icon: Icon,
+  register,
+  name,
+  error,
+  ...rest
+}) => {
   return (
     <Container>
-      <div>{label}</div>
-
-      <input {...register(name)}
-        {...rest}/>
-        
-      
-      {!!error && <p>{error}</p>}
+      <div className="label">
+        {label}
+        {!!error && <span> - {error}</span>}
+      </div>
+      <InputContainer>
+        <input {...register(name)} {...rest} />
+        {Icon && <Icon onClick={handleShowPassword} />}
+      </InputContainer>
     </Container>
   );
 };
-
-export default Input
+export { Inputs };
