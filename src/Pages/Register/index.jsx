@@ -7,7 +7,7 @@ import Inputs from "../../Components/Input";
 
 const Register = () => {
   const history = useHistory();
-
+  const handleNavegation = (path) => history.push(path)
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -98,6 +98,8 @@ const Register = () => {
 
         <button type="submit">Cadastrar</button>
       </form>
+
+      <button onClick={()=> handleNavegation("/")}>Home</button>
     </Container>
   );
 };
