@@ -4,11 +4,9 @@ import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Redirect } from "react-router-dom";
 
 const Register = () => {
-
-  const history = useHistory()
+  const history = useHistory();
 
   const formSchema = yup.object().shape({
     name: yup
@@ -43,11 +41,10 @@ const Register = () => {
   });
 
   const onSubmitFunction = ({ name, email, city, password }) => {
-    
-    const user = {name, email, city, password}
+    const user = { name, email, city, password };
     console.log(user);
 
-    history.push("/")
+    history.push("/");
   };
 
   return (
