@@ -1,9 +1,9 @@
-import Input from "../../Components/input";
 import { Container } from "./style";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Inputs from "../../Components/Input";
 
 const Register = () => {
   const history = useHistory();
@@ -54,7 +54,7 @@ const Register = () => {
       </picture>
 
       <form onSubmit={handleSubmit(onSubmitFunction)}>
-        <Input
+        <Inputs
           name="name"
           label="Nome"
           placeholder="Digite seu nome"
@@ -62,7 +62,7 @@ const Register = () => {
           error={errors.name?.message}
         />
 
-        <Input
+        <Inputs
           name="email"
           label="email"
           placeholder="Digite seu email"
@@ -70,7 +70,7 @@ const Register = () => {
           error={errors.email?.message}
         />
 
-        <Input
+        <Inputs
           name="city"
           label="Cidade"
           placeholder="Digite sua cidade"
@@ -78,7 +78,7 @@ const Register = () => {
           error={errors.city?.message}
         />
 
-        <Input
+        <Inputs
           name="password"
           label="Senha"
           type="password"
@@ -87,7 +87,7 @@ const Register = () => {
           error={errors.password?.message}
         />
 
-        <Input
+        <Inputs
           name="confirmPassword"
           type="password"
           label="Confirmar senha"
