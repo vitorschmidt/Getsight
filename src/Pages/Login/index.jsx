@@ -1,9 +1,10 @@
 import { Container } from "./style";
-import Inputs from "../../Components/Input";
+
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Inputs from "../../Components/Input";
 
 const Login = () => {
   const history = useHistory();
