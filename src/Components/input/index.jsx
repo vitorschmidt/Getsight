@@ -23,6 +23,4 @@ const Inputs = ({
     </Container>
   );
 };
-export default Inputs;
-
-//teste
+export { Inputs };
