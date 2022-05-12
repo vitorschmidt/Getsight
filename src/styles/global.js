@@ -8,9 +8,10 @@ export default createGlobalStyle`
         outline: 0;
     }
     :root {
+      --placeholder-text: #868E96;
       --background-primary: #C2D8DA;
       --light-grey: #F3F3F3;
-      --back: #000000;
+      --back: #070707;
       --dark-blue: #22333B;
       --grey-1: #C4C4C4;
       --green-1: #00F40A;
@@ -24,6 +25,7 @@ export default createGlobalStyle`
         font-size: 1rem;
     }
     button {
+        border: none;
         cursor: pointer;
         font-size: 16px;
         font-weight: 500;
