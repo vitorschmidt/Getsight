@@ -11,7 +11,7 @@ export default createGlobalStyle`
       --placeholder-text: #868E96;
       --background-primary: #C2D8DA;
       --light-grey: #F3F3F3;
-      --back: #070707;
+      --black: #070707;
       --dark-blue: #22333B;
       --grey-1: #C4C4C4;
       --green-1: #00F40A;
