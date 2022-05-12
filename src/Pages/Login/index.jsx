@@ -9,6 +9,7 @@ import logo from "../../Components/img/logo.png";
 import banner from "../../Components/img/banner.jpg";
 
 import { Button } from "../../Components/Button";
+import { useLogin } from "../../Providers/Login";
 const Login = () => {
   const history = useHistory();
   const handleNavegation = (path) => history.push(path);
@@ -32,9 +33,14 @@ const Login = () => {
     resolver: yupResolver(formSchema),
   });
 
+  const {getUser} = useLogin()
+
+  
+
   const onSubmitFunction = ({ email, password }) => {
     const user = { email, password };
-    console.log(user);
+    
+    getUser(user)
 
     history.push("/home");
   };
@@ -67,7 +73,7 @@ const Login = () => {
                 error={errors.password?.message}
               />
 
-              <Button backGround="teal" textColor="white" backGroundHover="red">
+              <Button backGround="teal" textColor="white" backGroundHover="red" type="submit">
                 Login
               </Button>
               {/* <button type="submit">Logar</button> */}

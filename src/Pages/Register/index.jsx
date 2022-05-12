@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../Components/Input";
+import { useRegister } from "../../Providers/Register";
 
 const Register = () => {
   const history = useHistory();
@@ -20,7 +21,7 @@ const Register = () => {
         "Apenas letras e espaços"
       ),
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
-    city: yup.string().required("Cidade obrigatoria"),
+    cidade: yup.string().required("Cidade obrigatoria"),
     password: yup
       .string()
       .required("Senha obrigatoria")
@@ -42,12 +43,17 @@ const Register = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = ({ name, email, city, password }) => {
-    const user = { name, email, city, password };
-    console.log(user);
-
-    history.push("/");
+  const {postUser} = useRegister()
+  
+ 
+  const onSubmitFunction = ({ name, email, cidade, password }) => {
+    const user = {name,cidade, email, password }
+      postUser(user)
+      
+     history.push("/");
   };
+
+  
 
   return (
     <Container>
@@ -73,11 +79,11 @@ const Register = () => {
         />
 
         <Inputs
-          name="city"
-          label="Cidade"
+          name="cidade"
+          label="cidade"
           placeholder="Digite sua cidade"
           register={register}
-          error={errors.city?.message}
+          error={errors.cidade?.message}
         />
 
         <Inputs
@@ -101,7 +107,7 @@ const Register = () => {
         <Button type="submit">Cadastrar</Button>
       </form>
 
-      <Button onClick={()=> handleNavegation("/home")}>Home</Button>
+      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
     </Container>
   );
 };
