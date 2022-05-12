@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   text-align: left;
-  width: 350px;
 `;
 
 //REVISAR CORES PARA QUE FIQUE MAIS ALINHAS AO PROJETO
 
 export const InputContainer = styled.div`
-  background: #f3f3f3;
+  background: var(--background-primary);
   border-radius: 4px;
   border: 2px solid #f3f3f3;
   color: #070707;
@@ -28,9 +27,9 @@ export const InputContainer = styled.div`
     flex: 1;
     border: 0;
     padding: 1rem;
-    color: white;
+    color: var(--back);
     &::placeholder {
-      color: lightgrey;
+      color: var(--placeholder-text);
       font-size: 0.8rem;
     }
   }
