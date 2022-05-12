@@ -23,8 +23,10 @@ export default createGlobalStyle`
     }
     body {
         font-size: 1rem;
+        font-family: 'Inter', sans-serif;
     }
     button {
+        font-family: 'Inter', sans-serif;
         border: none;
         cursor: pointer;
         font-size: 16px;
