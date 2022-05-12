@@ -1,6 +1,6 @@
 import { Container } from "./style";
 import { useHistory } from "react-router-dom";
-import Logo from "../../Components/img/logo.png";
+import Logo from "../../Assets/img/logo.png";
 import { Button } from "../../Components/Button";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -10,7 +10,7 @@ import { useRegister } from "../../Providers/Register";
 
 const Register = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path)
+  const handleNavegation = (path) => history.push(path);
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -43,22 +43,19 @@ const Register = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const {postUser} = useRegister()
-  
- 
-  const onSubmitFunction = ({ name, email, cidade, password }) => {
-    const user = {name,cidade, email, password }
-      postUser(user)
-      
-     history.push("/");
-  };
+  const { postUser } = useRegister();
 
-  
+  const onSubmitFunction = ({ name, email, cidade, password }) => {
+    const user = { name, cidade, email, password };
+    postUser(user);
+
+    history.push("/");
+  };
 
   return (
     <Container>
       <picture>
-        <img src={Logo} alt="Logo GetSight"/>
+        <img src={Logo} alt="Logo GetSight" />
       </picture>
 
       <form onSubmit={handleSubmit(onSubmitFunction)}>
