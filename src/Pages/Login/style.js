@@ -77,6 +77,7 @@ export const FormContainer = styled.div`
     }
     .label {
       margin-bottom: 10px;
+      color: var(--black);
     }
     button {
       width: 100%;
@@ -85,7 +86,7 @@ export const FormContainer = styled.div`
   }
 
   .boxCadastro {
-    color: var(--back);
+    color: var(--black);
     span {
       font-weight: 1000;
       &:hover {
