@@ -34,7 +34,7 @@ const Login = () => {
     const user = { email, password };
     console.log(user);
 
-    history.push("/");
+    history.push("/home");
   };
 
   return (
@@ -75,7 +75,7 @@ const Login = () => {
         </form>
 
         
-        <Button onClick={()=> handleNavegation("/")}>Home</Button>
+        <Button onClick={()=> handleNavegation("/home")}>Home</Button>
       </main>
     </Container>
   );

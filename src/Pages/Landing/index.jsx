@@ -1,11 +1,11 @@
 import { useHistory } from "react-router-dom";
-const Home = () => {
+const Landing = () => {
   const history = useHistory();
   const handleNavegation = (path) => history.push(path)
   return (
   <>
-  <div>Home</div>
-  <button onClick={()=> handleNavegation("/")}>Login</button>
+  <div>Landing</div>
+  <button onClick={()=> handleNavegation("/home")}>Home</button>
   <button onClick={()=> handleNavegation("/login")}>Login</button>
   <button onClick={()=> handleNavegation("/register")}>Register</button>
   <button onClick={()=> handleNavegation("/candidates")}>Candidates</button>
@@ -13,4 +13,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Landing;

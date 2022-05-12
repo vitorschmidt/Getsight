@@ -101,7 +101,7 @@ const Register = () => {
         <Button type="submit">Cadastrar</Button>
       </form>
 
-      <Button onClick={()=> handleNavegation("/")}>Home</Button>
+      <Button onClick={()=> handleNavegation("/home")}>Home</Button>
     </Container>
   );
 };
