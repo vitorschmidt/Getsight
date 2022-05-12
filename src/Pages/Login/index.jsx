@@ -36,7 +36,7 @@ const Login = () => {
     const user = { email, password };
     console.log(user);
 
-    history.push("/");
+    history.push("/home");
   };
 
   return (

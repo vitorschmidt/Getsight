@@ -5,7 +5,7 @@ const Candidates = () => {
   return (
   <>
   <div>Candidates</div>
-  <button onClick={()=> handleNavegation("/")}>Home</button>
+  <button onClick={()=> handleNavegation("/home")}>Home</button>
   </>
   );
 };
