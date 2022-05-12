@@ -17,7 +17,7 @@ export const CandidatesProvider = ({ children }) => {
   };
 
   return (
-    <CandidateContext.Provider value={(candidate, getCandidates)}>
+    <CandidateContext.Provider value={{candidate, getCandidates}}>
       {children}
     </CandidateContext.Provider>
   );
