@@ -5,7 +5,7 @@ const CardCandidates = ({ candidate }) => {
   return (
     <>
       <Container>
-        <img src={candidateLogo} alt="Foto do candidato" />
+        <img src={candidate.image} alt="Foto do candidato" />
         <div className="informacoes">
           <div className="ocupacao">
             <p className="name">{candidate.name}</p>
