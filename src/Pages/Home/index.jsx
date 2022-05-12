@@ -5,7 +5,7 @@ const Home = () => {
   return (
   <>
   <div>Home</div>
-  <button onClick={()=> handleNavegation("/")}>Login</button>
+  <button onClick={()=> handleNavegation("/")}>Landing</button>
   <button onClick={()=> handleNavegation("/login")}>Login</button>
   <button onClick={()=> handleNavegation("/register")}>Register</button>
   <button onClick={()=> handleNavegation("/candidates")}>Candidates</button>
