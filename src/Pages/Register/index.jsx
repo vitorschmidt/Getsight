@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../Components/Input";
 import { useRegister } from "../../Providers/Register";
+import banner from "../../Assets/img//banner.jpg";
 
 const Register = () => {
   const history = useHistory();
@@ -54,6 +55,10 @@ const Register = () => {
 
   return (
     <Container>
+
+    <div className="boxImg">
+          <img src={banner} alt="banner" />
+        </div>
       <Content>
         <picture>
           <img src={Logo} alt="Logo GetSight" />

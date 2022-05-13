@@ -9,21 +9,32 @@ height: 100%;
   align-items: stretch;
   text-align: center;
   background-color: var(--background-primary);
-picture{
-    width:80%;
-    height:40px;
-}
-img{
-    max-width:150px;
-    min-width:150px;
-    height:40px;
-}
+
+.boxImg {
+    display: none;
+  }
 @media (min-width: 769px) {
 
 height:100vh;
 }
 
-`
+
+
+  @media (min-width: 1101px) {
+    display: flex;
+    padding: 0;
+    .boxImg {
+      display: block;
+
+      img {
+        width: 60vw;
+        height: 100vh;
+      }
+    }
+  }
+`;
+
+
 
 
 export const Content = styled.div`
@@ -35,6 +46,17 @@ export const Content = styled.div`
   width: 100%;
   max-width: 400px;
   margin: auto;
+
+  picture{
+    width:80%;
+    height:40px;
+}
+img{
+    max-width:150px;
+    min-width:150px;
+    height:40px;
+}
+
 `
 
 const fadeIn = keyframes`
