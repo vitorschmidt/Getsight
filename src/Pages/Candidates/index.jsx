@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
-import ListCandidates from "../../Components/Candidates/ListCandidates";
+import ListCandidates from "../../Components/ListCandidates";
+
 import { Container } from "./styles";
 const Candidates = () => {
   const history = useHistory();

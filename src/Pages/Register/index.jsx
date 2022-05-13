@@ -1,15 +1,16 @@
 import { Container } from "./style";
 import { useHistory } from "react-router-dom";
-import Logo from "../../Components/img/logo.png";
+import Logo from "../../Assets/img/logo.png";
 import { Button } from "../../Components/Button";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../Components/Input";
+import { useRegister } from "../../Providers/Register";
 
 const Register = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path)
+  const handleNavegation = (path) => history.push(path);
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -20,7 +21,7 @@ const Register = () => {
         "Apenas letras e espaços"
       ),
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
-    city: yup.string().required("Cidade obrigatoria"),
+    cidade: yup.string().required("Cidade obrigatoria"),
     password: yup
       .string()
       .required("Senha obrigatoria")
@@ -42,9 +43,11 @@ const Register = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = ({ name, email, city, password }) => {
-    const user = { name, email, city, password };
-    console.log(user);
+  const { postUser } = useRegister();
+
+  const onSubmitFunction = ({ name, email, cidade, password }) => {
+    const user = { name, cidade, email, password };
+    postUser(user);
 
     history.push("/");
   };
@@ -52,7 +55,7 @@ const Register = () => {
   return (
     <Container>
       <picture>
-        <img src={Logo} alt="Logo GetSight"/>
+        <img src={Logo} alt="Logo GetSight" />
       </picture>
 
       <form onSubmit={handleSubmit(onSubmitFunction)}>
@@ -73,11 +76,11 @@ const Register = () => {
         />
 
         <Inputs
-          name="city"
-          label="Cidade"
+          name="cidade"
+          label="cidade"
           placeholder="Digite sua cidade"
           register={register}
-          error={errors.city?.message}
+          error={errors.cidade?.message}
         />
 
         <Inputs
@@ -101,7 +104,7 @@ const Register = () => {
         <Button type="submit">Cadastrar</Button>
       </form>
 
-      <Button onClick={()=> handleNavegation("/home")}>Home</Button>
+      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
     </Container>
   );
 };
