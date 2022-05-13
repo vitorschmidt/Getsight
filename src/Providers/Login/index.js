@@ -6,7 +6,7 @@ export const LoginContext = createContext();
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState([]);
 
-  const getUser = ({ users }) => {
+  const getUser = (users ) => {
     Api.post("/login", users)
       .then((response) => {
         const { token } = response.data;
@@ -18,7 +18,7 @@ export const LoginProvider = ({ children }) => {
   };
 
   return (
-    <LoginContext.Provider value={(user, getUser)}>
+    <LoginContext.Provider value={{user, getUser}}>
       {children}
     </LoginContext.Provider>
   );
