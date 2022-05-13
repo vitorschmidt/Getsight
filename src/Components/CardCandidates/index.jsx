@@ -30,6 +30,7 @@ const CardCandidates = ({ candidate }) => {
         <div className="saberMais">
           <a href="https://www.google.com/">Clique para ver mais...</a>
         </div>
+        <button className="botaoMobile">+</button>
       </Container>
     </>
   );

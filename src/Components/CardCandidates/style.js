@@ -71,6 +71,10 @@ export const Container = styled.div`
     width: 50px;
   }
 
+  .botaoMobile {
+    display: none;
+  }
+
   @media (max-width: 500px) {
     padding: 10px 10px;
     font-size: 12px;
@@ -88,6 +92,11 @@ export const Container = styled.div`
     .informacoes {
       padding-left: 15px;
       width: 100px;
+    }
+
+    .name {
+      font-size: 14px;
+      min-width: 30px;
     }
 
     .saberMais {
@@ -112,6 +121,24 @@ export const Container = styled.div`
     .botao {
       font-size: 12px;
       padding: 0px 10px;
+      display: none;
+    }
+
+    .botaoMobile {
+      display: inline-block;
+      background-color: #4a5347;
+      width: 30px;
+      height: 30px;
+      color: #fff;
+      font-size: 20px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .botaoMobile:hover {
+      background-color: #bebcbc;
+      color: #4a5347;
+      border: 1px solid #4a5347;
     }
   }
 `;
