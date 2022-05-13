@@ -2,10 +2,10 @@ import { Container } from "./style";
 
 import { useEffect } from "react";
 import CardCola from "../CardCola";
-import {useCola} from "../../Providers/Cola"
+import { useCola } from "../../Providers/Cola";
 
 const ListCola = () => {
-  const {cola, getColas } = useCola();
+  const { cola, getColas } = useCola();
 
   useEffect(() => {
     getColas();
