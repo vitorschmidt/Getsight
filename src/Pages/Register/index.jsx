@@ -1,4 +1,4 @@
-import { Container, Content, FormContainer } from "./style";
+import { Container, FormContainer } from "./style";
 import { useHistory } from "react-router-dom";
 import Logo from "../../Assets/img/logo.png";
 import { Button } from "../../Components/Button";
@@ -16,7 +16,7 @@ const Register = () => {
     name: yup
       .string()
       .required("Nome obrigatorio")
-      .min(2,"No minimo duas caracteres")
+      .min(2, "No minimo duas caracteres")
       .matches(
         /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/,
         "Apenas letras e espaços"
@@ -55,11 +55,10 @@ const Register = () => {
 
   return (
     <Container>
-
-    <div className="boxImg">
-          <img src={banner} alt="banner" />
-        </div>
-      <Content>
+      <div className="boxImg">
+        <img src={banner} alt="banner" />
+      </div>
+      <FormContainer>
         <picture>
           <img src={Logo} alt="Logo GetSight" />
         </picture>
@@ -119,7 +118,7 @@ const Register = () => {
           </form>
         </FormContainer>
         {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
-      </Content>
+      </FormContainer>
     </Container>
   );
 };

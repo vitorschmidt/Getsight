@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin-bottom: 30px;
   border-radius: 5px;
   align-items: center;
+  justify-content: space-between;
 
   img {
     width: 100px;
@@ -43,12 +44,17 @@ export const Container = styled.div`
     color: #000;
   }
 
+  .saberMais {
+    display: none;
+  }
+
   @media (max-width: 500px) {
     padding: 10px 10px;
 
     img {
       width: 50px;
       height: 50px;
+      margin: 0;
     }
 
     .ocupacao {
@@ -57,6 +63,18 @@ export const Container = styled.div`
     .historia {
       display: none;
     }
+
+    .informacoes {
+      padding-left: 15px;
+    }
+
+    .saberMais {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 10px;
+      width: 70px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+      background-color: #908c8c;
+    }
   }
 `;
-

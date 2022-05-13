@@ -19,6 +19,7 @@ const CardCandidates = ({ candidate }) => {
           <p>{candidate.historia}</p>
           <a href="https://www.google.com/">ver mais...</a>
         </div>
+        <div className="saberMais">Clique para saber mais...</div>
       </Container>
     </>
   );
