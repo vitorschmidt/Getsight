@@ -1,4 +1,4 @@
-import candidateLogo from "../../img/candidate.png";
+import candidateLogo from "../../Assets/img/candidate.png";
 import { Container } from "./style";
 
 const CardCandidates = ({ candidate }) => {
