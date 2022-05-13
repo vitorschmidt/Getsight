@@ -32,7 +32,11 @@ export default createGlobalStyle`
         font-size: 16px;
         font-weight: 500;
     }
-    
+    span{
+
+    color: var(--red-1);
+    font-size:0.6rem;
+    }
     h1,h2,h3,h4 {
         font-weight: 700;
     }
