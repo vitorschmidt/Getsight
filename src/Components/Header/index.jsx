@@ -9,7 +9,7 @@ const Header = ({
     bg, 
     height,
     headerVersion,
-    user = "Paulo,"
+    user = "Teste,"
 }) =>{
 
     const history = useHistory()
@@ -99,7 +99,24 @@ const Header = ({
                     </ColRight>
                  </Headers>
                 :
+                /* versão cola */
+                headerVersion === "cola" ?
+                <Headers>
+                    <LogoContainer width="100%" height="80px" maxWidth="300px">
+                        <Logo/>
 
+                    </LogoContainer>
+                    
+                    <ColRight width="350px" fontSize="22px">
+                        {/* aqui será inserido o nome do usuário  */}
+                        <p>{user}</p>
+                        <Button onClick={()=> history.push("/")} width="100%" maxWidth="200px" height="50px" 
+                        backGround="#000000" textColor="#fff" borderRadius="20px">Sair</Button>
+                    </ColRight>
+                
+                 
+                </Headers>
+                :
                 /* versão vai até aqui */
                 ""
         
