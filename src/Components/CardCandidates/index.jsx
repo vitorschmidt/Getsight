@@ -1,4 +1,3 @@
-import candidateLogo from "../../Assets/img/candidate.png";
 import { Button } from "../Button";
 import { Container } from "./style";
 
@@ -10,7 +9,7 @@ const CardCandidates = ({ candidate }) => {
         <div className="informacoes">
           <div className="ocupacao">
             <p className="name">{candidate.name}</p>
-            <p>{candidate.cargo}</p>
+            <p className="cargo">{candidate.cargo}</p>
           </div>
           <p>{candidate.numero}</p>
           <p>Partido: {candidate.partido}</p>
