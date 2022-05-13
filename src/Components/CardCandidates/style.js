@@ -14,24 +14,34 @@ export const Container = styled.div`
     border-radius: 50%;
     margin-left: 10px;
   }
-
+  
   .informacoes {
     width: 300px;
+   
     padding-left: 30px;
   }
 
   .ocupacao {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
-
+  .cargo{
+    width:143px;
+  }
   .name {
     margin-right: 10px;
+    font-size:22px;
+    min-width:125px;
+    font-weight:700;
+    color:#22333B;
+    
   }
 
   .historia {
     margin: 10px;
     padding: 20px;
-    width: 760px;
+    width: 660px;
     border-radius: 10px;
     background-color: #908c8c;
     display: flex;
@@ -45,18 +55,21 @@ export const Container = styled.div`
 
   @media (max-width: 500px) {
     padding: 10px 10px;
-
+    
     img {
       width: 50px;
       height: 50px;
     }
-
-    .ocupacao {
-      flex-direction: column;
-    }
+   
     .historia {
       display: none;
     }
+    .informacoes{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
   }
 `;
 
