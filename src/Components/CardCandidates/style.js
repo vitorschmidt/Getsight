@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin-bottom: 30px;
   border-radius: 5px;
   align-items: center;
+  justify-content: space-around;
 
   img {
     width: 100px;
@@ -17,21 +18,30 @@ export const Container = styled.div`
 
   .informacoes {
     width: 300px;
+
     padding-left: 30px;
   }
 
   .ocupacao {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
-
+  .cargo {
+    width: 143px;
+  }
   .name {
     margin-right: 10px;
+    font-size: 22px;
+    min-width: 125px;
+    font-weight: 700;
+    color: #22333b;
   }
 
   .historia {
     margin: 10px;
     padding: 20px;
-    width: 760px;
+    width: 660px;
     border-radius: 10px;
     background-color: #908c8c;
     display: flex;
@@ -39,24 +49,96 @@ export const Container = styled.div`
     align-items: flex-end;
   }
 
+  .botao {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 25px;
+    height: 60px;
+    width: 140px;
+  }
+
   .historia a {
     color: #000;
   }
 
+  .saberMais {
+    display: none;
+  }
+
+  .categoria {
+    width: 50px;
+  }
+
+  .botaoMobile {
+    display: none;
+  }
+
   @media (max-width: 500px) {
     padding: 10px 10px;
+    font-size: 12px;
 
     img {
       width: 50px;
       height: 50px;
+      margin: 0;
     }
 
-    .ocupacao {
-      flex-direction: column;
-    }
     .historia {
       display: none;
     }
+
+    .informacoes {
+      padding-left: 15px;
+      width: 100px;
+    }
+
+    .name {
+      font-size: 14px;
+      min-width: 30px;
+    }
+
+    .saberMais {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 10px;
+      width: 70px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
+      font-size: 12px;
+      background-color: #aaa8a8;
+    }
+
+    .saberMais:hover {
+      background-color: #908c8c;
+    }
+
+    .saberMais a {
+      color: #000;
+    }
+
+    .botao {
+      font-size: 12px;
+      padding: 0px 10px;
+      display: none;
+    }
+
+    .botaoMobile {
+      display: inline-block;
+      background-color: #4a5347;
+      width: 30px;
+      height: 30px;
+      color: #fff;
+      font-size: 20px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .botaoMobile:hover {
+      background-color: #bebcbc;
+      color: #4a5347;
+      border: 1px solid #4a5347;
+    }
   }
 `;
-
