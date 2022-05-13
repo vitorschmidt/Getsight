@@ -50,7 +50,7 @@ const Register = () => {
     const user = { name, cidade, email, password };
     postUser(user);
 
-    history.push("/");
+    history.push("/home");
   };
 
   return (
