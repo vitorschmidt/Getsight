@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
@@ -46,7 +46,6 @@ export const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   row-gap: 15px;
-  animation: ${fadeIn} 1s;
   width: 100%;
   max-height: 500px;
   background-color: var(--light-grey);
