@@ -1,22 +1,96 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 
 export const  Container = styled.div`
 
-text-align: left;
-display:flex;
-flex-direction: column;
-align-items: center;
-margin-top:200px;
+height: 100%;
+  width: 100%;
+  padding: 1rem;
+  align-items: stretch;
+  text-align: center;
+  background-color: var(--background-primary);
+picture{
+    width:80%;
+    height:40px;
+}
 img{
-    width:350px;
-    height:70px;
+    max-width:150px;
+    min-width:150px;
+    height:40px;
 }
-form{
-    height:50vh;
-    display:flex;
-    flex-direction:column;
-    justify-content: space-around;
-    align-items: center;
+@media (min-width: 769px) {
+
+height:100vh;
 }
+
 `
+
+
+export const Content = styled.div`
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+`
+
+const fadeIn = keyframes`
+from{
+    opacity: 0;  
+}
+to {
+    opacity: 100%;
+}
+`;
+
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 15px;
+  animation: ${fadeIn} 1s;
+  width: 100%;
+  background-color: var(--light-grey);
+  padding: 1rem;
+  border-radius: 4px;
+  
+  form,
+  .boxCadastro {
+      
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #f3f3f3;
+    h1 {
+      margin: 25px 0;
+      color: #f3f3f3;
+      font-size: 1rem;
+    }
+    .label {
+      margin-bottom: 10px;
+      color: var(--black)
+    }
+    button {
+      width: 100%;
+      font-weight: 500;
+    }
+  }
+
+  .boxCadastro {
+    color: var(--black);
+    span {
+      font-weight: 1000;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+`;

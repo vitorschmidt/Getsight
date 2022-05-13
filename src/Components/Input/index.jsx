@@ -13,8 +13,8 @@ const Inputs = ({
   return (
     <Container>
       <div className="label">
-        {label}
-        {!!error && <span> - {error}</span>}
+        {label} - 
+        {!!error && <span> {error}</span>}
       </div>
       <InputContainer>
         <input {...register(name)} {...rest} />
