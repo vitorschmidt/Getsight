@@ -78,6 +78,7 @@ export const FormContainer = styled.div`
     .label {
       color: var(--black);
       margin-bottom: 10px;
+      color: var(--black);
     }
     button {
       width: 100%;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100vh;
@@ -12,46 +12,31 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (min-width: 1101px) {
-    display: flex;
-    padding: 0;
-    .boxImg {
-      display: block;
+text-align: left;
+display:flex;
+flex-direction: column;
+justify-content:center;
+align-items: center;
+height:100vh;
 
-      img {
-        width: 60vw;
-        height: 100vh;
-      }
-    }
-  }
-`;
-
-export const Content = styled.div`
-  display: flex;
-  row-gap: 10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 400px;
-  margin: auto;
-
-  picture {
-    width: 80%;
-    height: 40px;
-  }
-  img {
-    max-width: 150px;
-    min-width: 150px;
-    height: 40px;
-  }
-`;
-const fadeIn = keyframes`
-from{
-    opacity: 0;  
+picture{
+    max-width:350px;
+    width:80%;
+    min-width:150px;
 }
-to {
-    opacity: 100%;
+
+img{
+    width:100%;
+    
+    height:70px;
+}
+form{
+    min-height:50vh;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    gap:10px;
 }
 `;
 
@@ -61,7 +46,6 @@ export const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   row-gap: 15px;
-  animation: ${fadeIn} 1s;
   width: 100%;
   max-height: 500px;
   background-color: var(--light-grey);
