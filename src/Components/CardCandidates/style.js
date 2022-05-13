@@ -15,10 +15,10 @@ export const Container = styled.div`
     border-radius: 50%;
     margin-left: 10px;
   }
-  
+
   .informacoes {
     width: 300px;
-   
+
     padding-left: 30px;
   }
 
@@ -27,16 +27,15 @@ export const Container = styled.div`
     align-items: center;
     flex-wrap: wrap;
   }
-  .cargo{
-    width:143px;
+  .cargo {
+    width: 143px;
   }
   .name {
     margin-right: 10px;
-    font-size:22px;
-    min-width:125px;
-    font-weight:700;
-    color:#22333B;
-    
+    font-size: 22px;
+    min-width: 125px;
+    font-weight: 700;
+    color: #22333b;
   }
 
   .historia {
@@ -81,13 +80,14 @@ export const Container = styled.div`
       height: 50px;
       margin: 0;
     }
-   
+
     .historia {
       display: none;
     }
 
     .informacoes {
       padding-left: 15px;
+      width: 100px;
     }
 
     .saberMais {
