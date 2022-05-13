@@ -69,13 +69,14 @@ export const FormContainer = styled.div`
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-    color: #f3f3f3;
+    color: var(--light-grey);
     h1 {
       margin: 25px 0;
-      color: #f3f3f3;
+      color: var(--light-grey);
       font-size: 1rem;
     }
     .label {
+      color: var(--black);
       margin-bottom: 10px;
       color: var(--black);
     }
