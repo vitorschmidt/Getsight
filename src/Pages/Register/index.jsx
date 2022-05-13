@@ -1,6 +1,6 @@
 import { Container } from "./style";
 import { useHistory } from "react-router-dom";
-import Logo from "../../Components/img/logo.png";
+import Logo from "../../Components/img/logo.svg";
 import { Button } from "../../Components/Button";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
