@@ -8,10 +8,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../Components/Input";
 import { useRegister } from "../../Providers/Register";
 import banner from "../../Assets/img//banner.jpg";
-
 const Register = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path);
+
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -35,7 +34,6 @@ const Register = () => {
       .required("Confirmação de senha obrigatoria")
       .oneOf([yup.ref("password"), null], "As senhas devem ser identicas"),
   });
-
   const {
     register,
     handleSubmit,
@@ -43,16 +41,12 @@ const Register = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-
   const { postUser } = useRegister();
-
   const onSubmitFunction = ({ name, email, cidade, password }) => {
     const user = { name, cidade, email, password };
     postUser(user);
-
     history.push("/home");
   };
-
   return (
     <Container>
       <div className="boxImg">
@@ -121,5 +115,4 @@ const Register = () => {
     </Container>
   );
 };
-
 export default Register;
