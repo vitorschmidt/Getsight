@@ -1,4 +1,5 @@
 import candidateLogo from "../../Assets/img/candidate.png";
+import { Button } from "../Button";
 import { Container } from "./style";
 
 const CardCandidates = ({ candidate }) => {
@@ -13,13 +14,23 @@ const CardCandidates = ({ candidate }) => {
           </div>
           <p>{candidate.numero}</p>
           <p>Partido: {candidate.partido}</p>
-          <p>Categoria: {candidate.categoria}</p>
+          <p className="categoria">Categoria: {candidate.categoria}</p>
         </div>
         <div className="historia">
           <p>{candidate.historia}</p>
           <a href="https://www.google.com/">ver mais...</a>
         </div>
-        <div className="saberMais">Clique para saber mais...</div>
+        <Button
+          backGround={"#051B03"}
+          textColor={"#FFF"}
+          backGroundHover={"#908c8c"}
+          className="botao"
+        >
+          Adicionar
+        </Button>
+        <div className="saberMais">
+          <a href="https://www.google.com/">Clique para ver mais...</a>
+        </div>
       </Container>
     </>
   );

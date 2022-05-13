@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin-bottom: 30px;
   border-radius: 5px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   img {
     width: 100px;
@@ -40,6 +40,16 @@ export const Container = styled.div`
     align-items: flex-end;
   }
 
+  .botao {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 25px;
+    height: 60px;
+    width: 140px;
+  }
+
   .historia a {
     color: #000;
   }
@@ -48,8 +58,13 @@ export const Container = styled.div`
     display: none;
   }
 
+  .categoria {
+    width: 50px;
+  }
+
   @media (max-width: 500px) {
     padding: 10px 10px;
+    font-size: 12px;
 
     img {
       width: 50px;
@@ -73,8 +88,23 @@ export const Container = styled.div`
       padding: 10px;
       border-radius: 10px;
       width: 70px;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
+      font-size: 12px;
+      background-color: #aaa8a8;
+    }
+
+    .saberMais:hover {
       background-color: #908c8c;
+    }
+
+    .saberMais a {
+      color: #000;
+    }
+
+    .botao {
+      font-size: 12px;
+      padding: 0px 10px;
     }
   }
 `;
