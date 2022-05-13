@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { Container } from "./styles";
 import logo from "../../Assets/img/logo.png";
-import vote from "../../Assets/img/vote.jpg";
+
 const Landing = () => {
   const history = useHistory();
   const handleNavegation = (path) => history.push(path);
@@ -13,7 +13,6 @@ const Landing = () => {
             <img id="logo" src={logo} alt="Logo GetSight" />
           </div>
           <div className="buttons">
-            <a onClick={() => handleNavegation("/candidates")}>Candidates</a>
             <a onClick={() => handleNavegation("/login")}>Login</a>
           </div>
         </div>
@@ -42,9 +41,7 @@ const Landing = () => {
               <a onClick={() => handleNavegation("/home")}>Clique aqui</a>
             </p>
           </div>
-          <div className="politico">
-            <img src={vote} alt="vote" />
-          </div>
+         
         </div>
       </Container>
     </>
