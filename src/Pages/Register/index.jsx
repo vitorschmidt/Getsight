@@ -118,7 +118,7 @@ const Register = () => {
           </form>
         </FormContainer>
         {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
-      </FormContainer>
+
     </Container>
   );
 };
