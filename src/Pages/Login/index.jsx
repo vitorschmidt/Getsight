@@ -5,8 +5,8 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../Components/Input";
-import logo from "../../Components/img/logo.png";
-import banner from "../../Components/img/banner.jpg";
+import logo from "../../Assets/img/logo.png";
+import banner from "../../Assets/img//banner.jpg";
 
 import { Button } from "../../Components/Button";
 import { useLogin } from "../../Providers/Login";
@@ -33,14 +33,12 @@ const Login = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const {getUser} = useLogin()
-
-  
+  const { getUser } = useLogin();
 
   const onSubmitFunction = ({ email, password }) => {
     const user = { email, password };
-    
-    getUser(user)
+
+    getUser(user);
 
     history.push("/home");
   };
@@ -73,7 +71,12 @@ const Login = () => {
                 error={errors.password?.message}
               />
 
-              <Button backGround="teal" textColor="white" backGroundHover="red" type="submit">
+              <Button
+                backGround="teal"
+                textColor="white"
+                backGroundHover="red"
+                type="submit"
+              >
                 Login
               </Button>
               {/* <button type="submit">Logar</button> */}

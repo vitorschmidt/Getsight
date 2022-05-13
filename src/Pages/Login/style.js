@@ -76,6 +76,7 @@ export const FormContainer = styled.div`
       font-size: 1rem;
     }
     .label {
+      color: var(--black);
       margin-bottom: 10px;
       color: var(--black);
     }

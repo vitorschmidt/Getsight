@@ -1,14 +1,15 @@
 import { Container } from "./style";
-import { useCandidate } from "../../../Providers/Candidates";
+
 import { useEffect } from "react";
 import CardCandidates from "../CardCandidates";
+import { useCandidate } from "../../Providers/Candidates";
 
 const ListCandidates = () => {
   const { candidate, getCandidates } = useCandidate();
 
   useEffect(() => {
     getCandidates();
-  }, []);
+  }, [getCandidates]);
 
   console.log(candidate);
 
