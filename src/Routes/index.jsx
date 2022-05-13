@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Landing from "../Pages/Landing";
+import Cola from "../Pages/Cola";
 
 const Routes = () => {
   return (
@@ -19,6 +20,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/register">
         <Register type="user" />
+      </Route>
+      <Route exact path="/cola">
+        <Cola />
       </Route>
       <Route exact path="/candidates">
         <Candidates />
