@@ -1,24 +1,16 @@
 import styled, { keyframes } from "styled-components";
 
-
-export const  Container = styled.div`
-
-height: 100%;
+export const Container = styled.div`
+  height: 100vh;
   width: 100%;
   padding: 1rem;
   align-items: stretch;
   text-align: center;
   background-color: var(--background-primary);
 
-.boxImg {
+  .boxImg {
     display: none;
   }
-@media (min-width: 769px) {
-
-height:100vh;
-}
-
-
 
   @media (min-width: 1101px) {
     display: flex;
@@ -34,9 +26,6 @@ height:100vh;
   }
 `;
 
-
-
-
 export const Content = styled.div`
   display: flex;
   row-gap: 10px;
@@ -47,18 +36,16 @@ export const Content = styled.div`
   max-width: 400px;
   margin: auto;
 
-  picture{
-    width:80%;
-    height:40px;
-}
-img{
-    max-width:150px;
-    min-width:150px;
-    height:40px;
-}
-
-`
-
+  picture {
+    width: 80%;
+    height: 40px;
+  }
+  img {
+    max-width: 150px;
+    min-width: 150px;
+    height: 40px;
+  }
+`;
 const fadeIn = keyframes`
 from{
     opacity: 0;  
@@ -76,29 +63,28 @@ export const FormContainer = styled.div`
   row-gap: 15px;
   animation: ${fadeIn} 1s;
   width: 100%;
+  max-height: 500px;
   background-color: var(--light-grey);
   padding: 1rem;
   border-radius: 4px;
-  
+  overflow-y: scroll;
   form,
   .boxCadastro {
-      
-    
     display: flex;
     flex-direction: column;
     row-gap: 15px;
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-    color: #f3f3f3;
+    color: var(--light-grey);
     h1 {
       margin: 25px 0;
-      color: #f3f3f3;
+      color: var(--light-grey);
       font-size: 1rem;
     }
     .label {
       margin-bottom: 10px;
-      color: var(--black)
+      color: var(--black);
     }
     button {
       width: 100%;
