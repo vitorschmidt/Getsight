@@ -57,28 +57,28 @@ const CardCandidates = ({ candidate }) => {
           </a>
         </div>
         <button className="botaoMobile">+</button>
-      </Container>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClone={handleCloseModal}
-        style={customStyles}
-      >
-        <Button
-          backGround={"#051B03"}
-          textColor={"#FFF"}
-          backGroundHover={"#908c8c"}
-          onClick={handleCloseModal}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClone={handleCloseModal}
+          style={customStyles}
         >
-          Fechar
-        </Button>
-        <h3>Ficha Completa</h3>
-        <p className="name">Nome: {candidate.name}</p>
-        <p className="cargo">Cargo: {candidate.cargo}</p>
-        <p>Numero: {candidate.numero}</p>
-        <p>Partido: {candidate.partido}</p>
-        <p className="categoria">Categoria: {candidate.categoria}</p>
-        <p className="name">Descrição: {candidate.historia}</p>
-      </Modal>
+          <Button
+            backGround={"#051B03"}
+            textColor={"#FFF"}
+            backGroundHover={"#908c8c"}
+            onClick={handleCloseModal}
+          >
+            Fechar
+          </Button>
+          <h3>Ficha Completa</h3>
+          <p className="name">Nome: {candidate.name}</p>
+          <p className="cargo">Cargo: {candidate.cargo}</p>
+          <p>Numero: {candidate.numero}</p>
+          <p>Partido: {candidate.partido}</p>
+          <p className="categoria">Categoria: {candidate.categoria}</p>
+          <p className="name">Descrição: {candidate.historia}</p>
+        </Modal>
+      </Container>
     </>
   );
 };
