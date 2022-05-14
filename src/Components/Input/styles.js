@@ -19,7 +19,6 @@ export const InputContainer = styled.div`
   &:focus-within {
     border: 2px solid var(--black);
   }
- 
 
   input {
     width: 100%;

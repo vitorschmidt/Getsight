@@ -52,7 +52,6 @@ const Register = () => {
       <div className="boxImg">
         <img src={banner} alt="banner" />
       </div>
-
       <picture>
         <img src={Logo} alt="Logo GetSight" />
       </picture>
@@ -111,7 +110,7 @@ const Register = () => {
           </Button>
         </form>
       </FormContainer>
-      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
+      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */} 
     </Container>
   );
 };
