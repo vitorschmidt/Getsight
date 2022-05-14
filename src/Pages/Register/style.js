@@ -15,6 +15,7 @@ export const Container = styled.div`
   @media (min-width: 1101px) {
     display: flex;
     padding: 0;
+
     .boxImg {
       display: block;
 
@@ -102,9 +103,7 @@ export const FormContainer = styled.div`
     }
   }
 
-  @media (min-width: 1001px) {
-
-    overflow-y:hidden;
-
+  @media (min-width: 1101px) {
+    overflow: hidden;
   }
 `;
