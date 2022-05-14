@@ -101,4 +101,10 @@ export const FormContainer = styled.div`
       }
     }
   }
+
+  @media (min-width: 1001px) {
+
+    overflow-y:hidden;
+
+  }
 `;

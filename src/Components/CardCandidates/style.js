@@ -59,6 +59,10 @@ export const Container = styled.div`
     width: 140px;
   }
 
+  .historia p {
+    position: relative;
+  }
+
   .historia a {
     color: #000;
   }
@@ -74,6 +78,7 @@ export const Container = styled.div`
   .botaoMobile {
     display: none;
   }
+
 
   @media (max-width: 500px) {
     padding: 10px 10px;
