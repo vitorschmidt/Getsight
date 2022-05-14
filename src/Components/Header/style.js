@@ -1,100 +1,89 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family : "Inter", sans-serif ;
-    width: 100%;
- 
-    height: ${(props)=> props.height};
-    background-color: ${(props)=> props.bg};
-    padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  width: 100%;
 
-    button{
-        padding: 0 15px;
-       
-    }
+  height: ${(props) => props.height};
+  background-color: ${(props) => props.bg};
+  padding: 1rem;
 
-`
+  button {
+    padding: 0 15px;
+  }
+`;
 
 export const Headers = styled.header`
-    display: flex ;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: ${(props)=> props.position};
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
 
-`
+  justify-content: space-between;
+  width: 100%;
+
+  .inputContainer {
+    max-width: 350px;
+    min-width: 288px;
+  }
+  .inputBox {
+    margin: 0;
+    max-width: 350px;
+    background-color: var(--light-grey);
+  }
+`;
 
 export const ColRight = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: ${(props)=> props.width};
-    padding-right: ${(props)=> props.paddingRight};
-    a{
-        margin: 0 20px;
-        color: #000000;
-    }
-    
-    p{
-        font-size: ${(props)=> props.fontSize}
-    }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding-right: ${(props) => props.paddingRight};
+  a {
+    margin: 0 20px;
+    color: #000000;
+  }
+  p {
+    font-size: 1rem;
+  }
 
-`
+  @media (min-width: 1101px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
 export const LogoContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    position: ${(props)=> props.position};
-    bottom: 48px;
-    svg{
-        width: ${(props)=> props.width};
-        max-width: ${(props)=> props.maxWidth};
-        height:  ${(props)=> props.height}
-    }
-   
-     
-`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
-export const Input = styled.input`
-    width: 100%;
-    height: 45px;
-     
-    border: none;
-    border-radius: 8px 0px 0px 8px;
-    padding: 0 20px;
-    font-size: clamp(10px, 1.6vw, 18px);
-     
-    
-    &::placeholder{
-        color: #808080;
-        
-    }
-`
+  svg {
+    height: 40px;
+    max-width: 143px;
+  }
+`;
 
-export const InputContainer = styled.div`
-    width: ${(props)=> props.width};
-    display: flex;
-    max-width: 800px;
-    padding-left: ${(props)=> props.paddingLeft};
+// export const Input = styled.input`
+//     width: 100%;
+//     height: 45px;
 
-`
+//     border: none;
+//     border-radius: 8px 0px 0px 8px;
+//     padding: 0 20px;
+//     font-size: clamp(10px, 1.6vw, 18px);
+
+//     &::placeholder{
+//         color: #808080;
+
+//     }
+// `
+
 export const Description = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding:  0 40px;
-    font-size: 18px;
-    
-    .positionTop{
-        position: absolute;
-        bottom: 48px;
-        
-    }
-`
-
-
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+  justify-content: space-between;
+  font-size: 1rem;
+`;
