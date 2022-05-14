@@ -20,6 +20,7 @@ export default createGlobalStyle`
       --blue-3: #9FB6F0;
       --red-1: #FB0000;
       --red-2: #752020;
+      
     }
     body {
         font-size: 1rem;

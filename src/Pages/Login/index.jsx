@@ -71,12 +71,7 @@ const Login = () => {
                 error={errors.password?.message}
               />
 
-              <Button
-                backGround="teal"
-                textColor="white"
-                backGroundHover="red"
-                type="submit"
-              >
+              <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
                 Login
               </Button>
               {/* <button type="submit">Logar</button> */}

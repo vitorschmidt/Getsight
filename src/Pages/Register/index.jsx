@@ -95,12 +95,7 @@ const Register = () => {
               register={register}
               error={errors.confirmPassword?.message}
             />
-            <Button
-              type="submit"
-              backGround="teal"
-              textColor="white"
-              backGroundHover="red"
-            >
+            <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
               Cadastrar
             </Button>
           </form>

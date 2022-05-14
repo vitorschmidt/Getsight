@@ -9,9 +9,7 @@ const ListCandidates = () => {
 
   useEffect(() => {
     getCandidates();
-  }, [getCandidates]);
-
-  console.log(candidate);
+  }, []);
 
   return (
     <Container>
