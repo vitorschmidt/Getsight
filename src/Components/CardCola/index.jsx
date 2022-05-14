@@ -1,24 +1,17 @@
-import { Container } from "./style";
+import { Container, Content } from "./style";
 
-const CardCola= ({cola}) => {
+const CardCola = ({ cola }) => {
   return (
-    <>
-      <Container>
+    <Container>
+      <div>
         <img src={cola.image} alt="Foto do candidato" />
-        <div className="informacoes">
-          <div className="ocupacao">
-            <p className="name">{cola.name}</p>
-            <p>{cola.cargo}</p>
-          </div>
-          <p>{cola.numero}</p>
-          <p>Partido: {cola.partido}</p>
-          <p>Categoria: {cola.categoria}</p>
-        </div>
-        <div className="historia">
-          <p>{cola.historia}</p>
-        </div>
-      </Container>
-    </>
+      </div>
+      <Content>
+        <h2 className="name">{cola.name}</h2>
+        <h3>{cola.cargo}</h3>
+        <p>{cola.numero}</p>
+      </Content>
+    </Container>
   );
 };
 

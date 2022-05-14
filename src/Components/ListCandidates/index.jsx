@@ -13,8 +13,6 @@ const ListCandidates = () => {
     getCandidates();
   }, []);
 
-  console.log(candidate);
-
   return (
     <Container>
       {candidate.map((candidate, index) => (

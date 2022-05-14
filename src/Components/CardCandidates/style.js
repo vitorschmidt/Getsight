@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   background-color: #bebcbc;
-  margin-bottom: 30px;
   border-radius: 5px;
   align-items: center;
   justify-content: space-around;
-
+  width: 100%;
   img {
     width: 100px;
     height: 100px;
@@ -18,7 +17,6 @@ export const Container = styled.div`
 
   .informacoes {
     width: 300px;
-
     padding-left: 30px;
   }
 
@@ -79,10 +77,11 @@ export const Container = styled.div`
     display: none;
   }
 
-
   @media (max-width: 500px) {
+
     padding: 10px 10px;
     font-size: 12px;
+    max-width: 450px;
 
     img {
       width: 50px;
