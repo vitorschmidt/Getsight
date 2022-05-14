@@ -57,6 +57,10 @@ export const Container = styled.div`
     width: 140px;
   }
 
+  .historia p {
+    position: relative;
+  }
+
   .historia a {
     color: #000;
   }
@@ -73,7 +77,8 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (max-width: 1101px) {
+  @media (max-width: 500px) {
+
     padding: 10px 10px;
     font-size: 12px;
     max-width: 450px;

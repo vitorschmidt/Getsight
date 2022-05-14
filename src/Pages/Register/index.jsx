@@ -52,56 +52,65 @@ const Register = () => {
       <div className="boxImg">
         <img src={banner} alt="banner" />
       </div>
-      <Content>
-        <picture>
-          <img src={Logo} alt="Logo GetSight" />
-        </picture>
-        <FormContainer>
-          <form onSubmit={handleSubmit(onSubmitFunction)}>
-            <Inputs
-              name="name"
-              label="Nome"
-              placeholder="Digite seu nome"
-              register={register}
-              error={errors.name?.message}
-            />
-            <Inputs
-              name="email"
-              label="Email"
-              placeholder="Digite seu email"
-              register={register}
-              error={errors.email?.message}
-            />
-            <Inputs
-              name="cidade"
-              label="Cidade"
-              placeholder="Digite sua cidade"
-              register={register}
-              error={errors.cidade?.message}
-            />
-            <Inputs
-              name="password"
-              label="Senha"
-              type="password"
-              placeholder="Digite sua senha"
-              register={register}
-              error={errors.password?.message}
-            />
-            <Inputs
-              name="confirmPassword"
-              type="password"
-              label="Confirmar senha"
-              placeholder="Digite seu email"
-              register={register}
-              error={errors.confirmPassword?.message}
-            />
-            <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
-              Cadastrar
-            </Button>
-          </form>
-        </FormContainer>
-        {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
-      </Content>
+      <picture>
+        <img src={Logo} alt="Logo GetSight" />
+      </picture>
+
+      <FormContainer>
+        <form onSubmit={handleSubmit(onSubmitFunction)}>
+          <Inputs
+            name="name"
+            label="Nome"
+            placeholder="Digite seu nome"
+            register={register}
+            error={errors.name?.message}
+          />
+
+          <Inputs
+            name="email"
+            label="Email"
+            placeholder="Digite seu email"
+            register={register}
+            error={errors.email?.message}
+          />
+
+          <Inputs
+            name="cidade"
+            label="Cidade"
+            placeholder="Digite sua cidade"
+            register={register}
+            error={errors.cidade?.message}
+          />
+
+          <Inputs
+            name="password"
+            label="Senha"
+            type="password"
+            placeholder="Digite sua senha"
+            register={register}
+            error={errors.password?.message}
+          />
+
+          <Inputs
+            name="confirmPassword"
+            type="password"
+            label="Confirmar senha"
+            placeholder="Digite seu email"
+            register={register}
+            error={errors.confirmPassword?.message}
+          />
+
+          <Button
+            type="submit"
+            backGround="teal"
+            textColor="white"
+            backGroundHover="red"
+          >
+            Cadastrar
+          </Button>
+        </form>
+      </FormContainer>
+      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */} 
     </Container>
   );
 };
