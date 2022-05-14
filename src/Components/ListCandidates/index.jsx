@@ -7,9 +7,11 @@ import { useCandidate } from "../../Providers/Candidates";
 const ListCandidates = () => {
   const { candidate, getCandidates } = useCandidate();
 
+  console.log(candidate);
+
   useEffect(() => {
     getCandidates();
-  }, [getCandidates]);
+  }, []);
 
   console.log(candidate);
 
