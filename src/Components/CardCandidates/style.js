@@ -77,8 +77,7 @@ export const Container = styled.div`
     display: none;
   }
 
-  @media (max-width: 500px) {
-
+  @media (max-width: 700px) {
     padding: 10px 10px;
     font-size: 12px;
     max-width: 450px;

@@ -29,12 +29,16 @@ const CardCandidates = ({ candidate }) => {
 
   return (
     <>
-    <Container>
-      <img src={candidate.image} alt="Foto do candidato" />
-      <div className="informacoes">
-        <div className="ocupacao">
-          <p className="name">{candidate.name}</p>
-          <p className="cargo">{candidate.cargo}</p>
+      <Container>
+        <img src={candidate.image} alt="Foto do candidato" />
+        <div className="informacoes">
+          <div className="ocupacao">
+            <p className="name">{candidate.name}</p>
+            <p className="cargo">{candidate.cargo}</p>
+          </div>
+          <p>{candidate.numero}</p>
+          <p>Partido: {candidate.partido}</p>
+          <p className="categoria">Categoria: {candidate.categoria}</p>
         </div>
         <div className="historia">
           <p>{candidate.historia}</p>

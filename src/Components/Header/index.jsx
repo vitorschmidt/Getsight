@@ -58,7 +58,11 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
               />
               <Description>
                 <p>Tipo de eleição</p>
-                <p>Municipal</p>
+                <select>
+                  <option>Municipal</option>
+                  <option>Estadual</option>
+                  <option>Federal</option>
+                </select>
               </Description>
             </ColRight>
           </Headers>
