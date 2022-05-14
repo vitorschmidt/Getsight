@@ -81,6 +81,8 @@ const CardCandidates = ({ candidate }) => {
         <p>Partido: {candidate.partido}</p>
         <p className="categoria">Categoria: {candidate.categoria}</p>
         <p className="name">Descrição: {candidate.historia}</p>
+        <p>Cidade: {candidate.cidade}</p>
+        <p>Tipo de eleição: {candidate.eleicao}</p>
       </Modal>
     </>
   );
