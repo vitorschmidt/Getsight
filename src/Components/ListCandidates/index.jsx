@@ -1,6 +1,4 @@
 import { Container } from "./style";
-
-import { useEffect } from "react";
 import CardCandidates from "../CardCandidates";
 import { useCandidate } from "../../Providers/Candidates";
 
@@ -8,10 +6,6 @@ const ListCandidates = () => {
   const { candidate, getCandidates } = useCandidate();
 
   console.log(candidate);
-
-  useEffect(() => {
-    getCandidates();
-  }, []);
 
   return (
     <Container>
