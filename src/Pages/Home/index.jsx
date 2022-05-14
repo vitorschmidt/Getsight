@@ -6,6 +6,7 @@ const Home = () => {
   return (
   <>
    {/* coloquei a header aqui da versao não logada pra testar */}
+   <Header bg="#C2D8DA" height="130px" headerVersion="dashboard"/>
   <Header bg="#C2D8DA" height="130px" headerVersion="home"/>
   <div>Home</div>
   <button onClick={()=> handleNavegation("/")}>Landing</button>
