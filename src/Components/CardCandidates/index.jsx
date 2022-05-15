@@ -60,17 +60,10 @@ const CardCandidates = ({ candidate }) => {
           </a>
         </div>
         <button className="botaoMobile">+</button>
-      </Container>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClone={handleCloseModal}
-        style={customStyles}
-      >
-        <Button
-          backGround={"#051B03"}
-          textColor={"#FFF"}
-          backGroundHover={"#908c8c"}
-          onClick={handleCloseModal}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClone={handleCloseModal}
+          style={customStyles}
         >
           Fechar
         </Button>
