@@ -1,23 +1,22 @@
 import { Container } from "./style";
-
-import { useEffect } from "react";
 import CardCandidates from "../CardCandidates";
 import { useCandidate } from "../../Providers/Candidates";
+import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
 
 const ListCandidates = () => {
-  const { candidate, getCandidates } = useCandidate();
+  const { candidate, filteredCandidates, value } = useCandidate();
 
-  console.log(candidate);
-
-  useEffect(() => {
-    getCandidates();
-  }, []);
+  console.log(value);
 
   return (
     <Container>
-      {candidate.map((candidate, index) => (
-        <CardCandidates key={index} candidate={candidate} />
-      ))}
+      {value === false
+        ? candidate.map((candidate, index) => (
+            <CardCandidates key={index} candidate={candidate} />
+          ))
+        : filteredCandidates.map((candidate, index) => (
+            <CardCandidates key={index} candidate={candidate} />
+          ))}
     </Container>
   );
 };

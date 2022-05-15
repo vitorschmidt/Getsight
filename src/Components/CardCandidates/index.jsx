@@ -36,6 +36,9 @@ const CardCandidates = ({ candidate }) => {
             <p className="name">{candidate.name}</p>
             <p className="cargo">{candidate.cargo}</p>
           </div>
+          <p>{candidate.numero}</p>
+          <p>Partido: {candidate.partido}</p>
+          <p className="categoria">Categoria: {candidate.categoria}</p>
         </div>
         <div className="historia">
           <p>{candidate.historia}</p>
@@ -62,23 +65,18 @@ const CardCandidates = ({ candidate }) => {
           onRequestClone={handleCloseModal}
           style={customStyles}
         >
-          <Button
-            backGround={"#051B03"}
-            textColor={"#FFF"}
-            backGroundHover={"#908c8c"}
-            onClick={handleCloseModal}
-          >
-            Fechar
-          </Button>
-          <h3>Ficha Completa</h3>
-          <p className="name">Nome: {candidate.name}</p>
-          <p className="cargo">Cargo: {candidate.cargo}</p>
-          <p>Numero: {candidate.numero}</p>
-          <p>Partido: {candidate.partido}</p>
-          <p className="categoria">Categoria: {candidate.categoria}</p>
-          <p className="name">Descrição: {candidate.historia}</p>
-        </Modal>
-      </Container>
+          Fechar
+        </Button>
+        <h3>Ficha Completa</h3>
+        <p className="name">Nome: {candidate.name}</p>
+        <p className="cargo">Cargo: {candidate.cargo}</p>
+        <p>Numero: {candidate.numero}</p>
+        <p>Partido: {candidate.partido}</p>
+        <p className="categoria">Categoria: {candidate.categoria}</p>
+        <p className="name">Descrição: {candidate.historia}</p>
+        <p>Cidade: {candidate.cidade}</p>
+        <p>Tipo de eleição: {candidate.eleicao}</p>
+      </Modal>
     </>
   );
 };
