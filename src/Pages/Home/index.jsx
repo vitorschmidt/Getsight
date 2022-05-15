@@ -1,6 +1,9 @@
 import { useHistory } from "react-router-dom";
 import { Button } from "../../Components/Button";
 import Header from "../../Components/Header";
+
+import Posts from "../../Components/Posts";
+
 import { Container, DashDiv, Menu, SubHeader } from "./styles";
 const Home = () => {
   const history = useHistory();
@@ -39,6 +42,7 @@ const Home = () => {
           </Button>
         </div>
       </Menu>
+      <Posts />
     </Container>
   );
 };

@@ -28,45 +28,43 @@ const CardCandidates = ({ candidate }) => {
   };
 
   return (
-    <>
-      <Container>
-        <img src={candidate.image} alt="Foto do candidato" />
-        <div className="informacoes">
-          <div className="ocupacao">
-            <p className="name">{candidate.name}</p>
-            <p className="cargo">{candidate.cargo}</p>
-          </div>
-          <p>{candidate.numero}</p>
-          <p>Partido: {candidate.partido}</p>
-          <p className="categoria">Categoria: {candidate.categoria}</p>
+    <Container>
+      <img src={candidate.image} alt="Foto do candidato" />
+      <div className="informacoes">
+        <div className="ocupacao">
+          <p className="name">{candidate.name}</p>
+          <p className="cargo">{candidate.cargo}</p>
         </div>
-        <div className="historia">
-          <p>{candidate.historia}</p>
-          <a href="#" onClick={handleOpenModal}>
-            ver mais...
-          </a>
-        </div>
-        <Button
-          backGround={"#051B03"}
-          textColor={"#FFF"}
-          backGroundHover={"#908c8c"}
-          className="botao"
-        >
-          Adicionar
-        </Button>
-        <div className="saberMais">
-          <a href="#" onClick={handleOpenModal}>
-            Clique para ver mais...
-          </a>
-        </div>
-        <button className="botaoMobile">+</button>
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClone={handleCloseModal}
-          style={customStyles}
-        >
-          Fechar
-        </Button>
+        <p>{candidate.numero}</p>
+        <p>Partido: {candidate.partido}</p>
+        <p className="categoria">Categoria: {candidate.categoria}</p>
+      </div>
+      <div className="historia">
+        <p>{candidate.historia}</p>
+        <a href="#" onClick={handleOpenModal}>
+          ver mais...
+        </a>
+      </div>
+      <Button
+        backGround={"#051B03"}
+        textColor={"#FFF"}
+        backGroundHover={"#908c8c"}
+        className="botao"
+      >
+        Adicionar
+      </Button>
+      <div className="saberMais">
+        <a href="#" onClick={handleOpenModal}>
+          Clique para ver mais...
+        </a>
+      </div>
+      <button className="botaoMobile">+</button>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClone={handleCloseModal}
+        style={customStyles}
+      >
+        Fechar
         <h3>Ficha Completa</h3>
         <p className="name">Nome: {candidate.name}</p>
         <p className="cargo">Cargo: {candidate.cargo}</p>
@@ -77,7 +75,7 @@ const CardCandidates = ({ candidate }) => {
         <p>Cidade: {candidate.cidade}</p>
         <p>Tipo de eleição: {candidate.eleicao}</p>
       </Modal>
-    </>
+    </Container>
   );
 };
 
