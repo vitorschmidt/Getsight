@@ -6,8 +6,6 @@ import PostCard from "../PostCard";
 const Posts = () => {
   const { posts, getPosts } = useHome();
 
-  console.log(posts);
-
   useEffect(() => {
     getPosts();
   }, []);
