@@ -83,7 +83,7 @@ const PostCard = ({ post }) => {
           </form>
         </ModalContent>
       </Modal>
-      <p>Ver comentários...</p>
+      <h4>Ver comentários...</h4>
     </Container>
   );
 };
