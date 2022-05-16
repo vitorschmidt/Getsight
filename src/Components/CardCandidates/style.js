@@ -70,12 +70,13 @@ export const Container = styled.div`
   }
 
   .categoria {
-    width: 50px;
+    width: 200px;
   }
 
   .botaoMobile {
     display: none;
   }
+
 
   @media (max-width: 700px) {
     padding: 10px 10px;
@@ -101,6 +102,10 @@ export const Container = styled.div`
       font-size: 14px;
       min-width: 30px;
     }
+
+    .categoria {
+    width: 50px;
+  }
 
     .saberMais {
       display: inline-block;

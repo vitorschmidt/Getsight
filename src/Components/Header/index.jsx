@@ -60,8 +60,8 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
                 <p>Tipo de eleição</p>
                 <select>
                   <option>Municipal</option>
-                  <option>Estadual</option>
-                  <option>Federal</option>
+                  <option>Federal/Estadual</option>
+                  
                 </select>
               </Description>
             </ColRight>
