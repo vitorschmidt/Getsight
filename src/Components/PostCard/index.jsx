@@ -1,4 +1,11 @@
-import { Container, Feed, ModalContent, Post, UserInfo } from "./style";
+import {
+  Comments,
+  Container,
+  Feed,
+  ModalContent,
+  Post,
+  UserInfo,
+} from "./style";
 import logo from "../../Assets/img/candidate.png";
 import Modal from "react-modal";
 import { useState } from "react";
@@ -6,6 +13,8 @@ import { Button } from "../../Components/Button";
 
 const PostCard = ({ post }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [showComments, setShowComments] = useState(false);
+  const comments = post.comments;
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -14,6 +23,10 @@ const PostCard = ({ post }) => {
   function handleCloseModal() {
     setIsOpen(false);
   }
+
+  const showHiddenComments = () => {
+    setShowComments(true);
+  };
 
   const customStyles = {
     content: {
@@ -26,8 +39,6 @@ const PostCard = ({ post }) => {
       background: "#c6c6c6c6",
     },
   };
-
-  const comments = post.comments;
 
   return (
     <Container>
@@ -83,7 +94,14 @@ const PostCard = ({ post }) => {
           </form>
         </ModalContent>
       </Modal>
-      <h4>Ver comentários...</h4>
+      <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+      {showComments &&
+        comments.map((el) => (
+          <Comments>
+            <h3>{el.message}</h3>
+            <h2>{el.like}</h2>
+          </Comments>
+        ))}
     </Container>
   );
 };

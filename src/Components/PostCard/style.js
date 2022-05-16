@@ -127,3 +127,15 @@ export const ModalContent = styled.div`
     }
   }
 `;
+
+export const Comments = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card);
+  border-radius: 8px;
+  margin: 10px;
+
+  h2 {
+    margin-top: 10px;
+  }
+`;
