@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: var(--light-grey);
   border-radius: 8px;
-  height: 300px;
+  min-height: 300px;
 
   margin-top: 10px;
 
@@ -133,9 +133,52 @@ export const Comments = styled.div`
   flex-direction: column;
   background-color: var(--card);
   border-radius: 8px;
-  margin: 10px;
-
+  margin:0 auto;
+  width:100%;
+  height:100%;
+  justify-content:space-between;
+  border-radius: 8px;
+  .user{
+    display: flex;
+  flex-direction: row;
+  }
   h2 {
     margin-top: 10px;
+    width:10%;
   }
+  h3{
+    width:70%;
+    margin-top:10px;
+
+  }
+  margin: 10px;
+ 
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .user div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-left: 10px;
+    border-radius: 8px;
+    
+
+  }
+  div{
+    display:flex;
+    width:100%;
+    justify-content:space-evenly;
+    background-color:var(--light-grey);
+    border-radius: 8px;
+    
+
+  }
+
+  
 `;

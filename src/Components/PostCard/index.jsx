@@ -98,8 +98,18 @@ const PostCard = ({ post }) => {
       {showComments &&
         comments.map((el) => (
           <Comments>
+            <div className="user">
+            <img src={logo} alt="foto-perfil" />
+          <div >
+          <h2>nome</h2>
+          <p>Cidade - Estado</p>
+          </div>
+            </div>
+            <div>
             <h3>{el.message}</h3>
+
             <h2>{el.like}</h2>
+            </div>
           </Comments>
         ))}
     </Container>
