@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "../../Components/Button";
 import Header from "../../Components/Header";
@@ -7,6 +8,12 @@ import Posts from "../../Components/Posts";
 import { Container, DashDiv, Menu, SubHeader } from "./styles";
 const Home = () => {
   const history = useHistory();
+
+  const [showPosts, setShowPosts] = useState(false);
+
+  const showHiddenPosts = () => {
+    setShowPosts(true);
+  };
 
   return (
     <Container>
@@ -32,7 +39,12 @@ const Home = () => {
 
       <Menu>
         <DashDiv>
-          <Button backGround="#000000" textColor="#fff" borderRadius="8px">
+          <Button
+            onClick={showHiddenPosts}
+            backGround="#000000"
+            textColor="#fff"
+            borderRadius="8px"
+          >
             Posts
           </Button>
         </DashDiv>
@@ -42,7 +54,7 @@ const Home = () => {
           </Button>
         </div>
       </Menu>
-      <Posts />
+      {showPosts && <Posts />}
     </Container>
   );
 };

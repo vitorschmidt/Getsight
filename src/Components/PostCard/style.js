@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: var(--light-grey);
   border-radius: 8px;
-  height: 200px;
+  height: 300px;
 
   margin-top: 10px;
 
@@ -20,6 +20,13 @@ export const Container = styled.div`
   h2 {
     margin-left: 10px;
   }
+
+  h4 {
+    font-size: 12px;
+    color: var(--placeholder-tex);
+    margin-top: 5px;
+    font-weight: 400;
+  }
 `;
 
 export const UserInfo = styled.div`
@@ -27,6 +34,7 @@ export const UserInfo = styled.div`
   flex-direction: row;
 
   margin: 10px;
+  margin-top: 10px;
   margin-right: 100px;
 
   img {
