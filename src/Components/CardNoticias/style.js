@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.li`
   display: flex;
   flex-direction: row;
   background-color: #bebcbc;
@@ -8,7 +8,9 @@ export const Container = styled.div`
   border-radius: 5px;
   align-items: center;
   justify-content: space-between;
-  width: 250px;
+  width: 100%;
+  min-width:320px;
+  max-width:400px;
   height: 80px;
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
 
@@ -43,16 +45,17 @@ export const Content = styled.div`
   margin-right: 10px;
 
   h2 {
-    font-size: 18px;
+    font-size: 0.8rem;
+    margin-left:10px;
   }
   h3 {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 0.7rem;
     color: var(--placeholder-text);
   }
 
   p {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--red-2);
   }
