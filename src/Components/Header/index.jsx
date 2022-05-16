@@ -28,7 +28,13 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
             </LogoContainer>
 
             <ColRight width="300px">
-              <Link to="/login">Login</Link>
+              <Button
+                onClick={() => history.push("/login")}
+                backGround="#000000"
+                textColor="#fff"
+              >
+                Sair
+              </Button>
               <Button
                 onClick={() => history.push("/register")}
                 backGround="#000000"
