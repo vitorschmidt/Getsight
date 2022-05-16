@@ -2,6 +2,7 @@ import { Button } from "../Button";
 import { Container } from "./style";
 import Modal from "react-modal";
 import { useState } from "react";
+import "./style.css";
 
 Modal.setAppElement("#root");
 
@@ -15,17 +16,6 @@ const CardCandidates = ({ candidate }) => {
   function handleCloseModal() {
     setIsOpen(false);
   }
-
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      right: "auto",
-      bottom: "auto",
-      background: "#c6c6c6c6",
-    },
-  };
 
   return (
     <Container>
@@ -62,9 +52,13 @@ const CardCandidates = ({ candidate }) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClone={handleCloseModal}
-        style={customStyles}
+        // style={customStyles}
+        className="Modal"
+        overlayClassName="Overlay"
       >
-        <a href="#" onClick={handleCloseModal}>Fechar</a>
+        <a href="#" onClick={handleCloseModal}>
+          Fechar
+        </a>
         <h3>Ficha Completa</h3>
         <p className="name">Nome: {candidate.name}</p>
         <p className="cargo">Cargo: {candidate.cargo}</p>

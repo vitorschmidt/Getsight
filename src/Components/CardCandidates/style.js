@@ -77,6 +77,10 @@ export const Container = styled.div`
     display: none;
   }
 
+  .back {
+    background-color: #000;
+    padding: 10px;
+  }
 
   @media (max-width: 700px) {
     padding: 10px 10px;
@@ -104,8 +108,8 @@ export const Container = styled.div`
     }
 
     .categoria {
-    width: 50px;
-  }
+      width: 50px;
+    }
 
     .saberMais {
       display: inline-block;
