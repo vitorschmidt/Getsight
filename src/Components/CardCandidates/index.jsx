@@ -64,7 +64,7 @@ const CardCandidates = ({ candidate }) => {
         onRequestClone={handleCloseModal}
         style={customStyles}
       >
-        Fechar
+        <a href="#" onClick={handleCloseModal}>Fechar</a>
         <h3>Ficha Completa</h3>
         <p className="name">Nome: {candidate.name}</p>
         <p className="cargo">Cargo: {candidate.cargo}</p>
