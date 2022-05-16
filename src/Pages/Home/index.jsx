@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { Button } from "../../Components/Button";
 import Header from "../../Components/Header";
+import ListNoticia from "../../Components/listNoticia";
 
 import Posts from "../../Components/Posts";
 
@@ -38,6 +39,7 @@ const Home = () => {
         </DashDiv>
         <div>
           <Button backGround="#000000" textColor="#fff" borderRadius="8px">
+           <ListNoticia/>
             Notícias
           </Button>
         </div>
