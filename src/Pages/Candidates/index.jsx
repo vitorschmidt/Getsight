@@ -5,10 +5,15 @@ import { useCandidate } from "../../Providers/Candidates";
 import { Container } from "./styles";
 
 const Candidates = () => {
-  const { filteredCandidates, setFilteredCandidates, filter, setValue } =
-    useCandidate();
+  const { setSearch, filter } = useCandidate();
   const history = useHistory();
   const handleNavegation = (path) => history.push(path);
+
+  const handleDual = (evt) => {
+    setSearch(evt.target.value);
+    filter();
+  };
+
   return (
     <>
       {/* coloquei a header aqui da versao não logada pra testar */}
@@ -16,7 +21,7 @@ const Candidates = () => {
       <Container>
         <input
           placeholder="Digite o nome"
-          onChange={(evt) => setFilteredCandidates(evt.target.value)}
+          onChange={(evt) => handleDual(evt)}
         ></input>
         <button onClick={() => filter()}>Pesquisar</button>
         <ListCandidates />
