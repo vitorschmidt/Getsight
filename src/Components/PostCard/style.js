@@ -62,10 +62,60 @@ export const Post = styled.div`
 
 export const Feed = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--card);
   border-radius: 8px;
   width: 95%;
 
   margin-top: 5px;
+  margin-bottom: 10px;
+
+  p {
+    margin-right: 10px;
+  }
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  textarea {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  input {
+    width: 100%;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px;
+
+    margin: 10px 0;
+  }
+
+  .header {
+    display: flex;
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
 `;
