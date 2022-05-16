@@ -11,9 +11,16 @@ const Home = () => {
   const history = useHistory();
 
   const [showPosts, setShowPosts] = useState(false);
+  const [showNews, setshowNews] = useState(false);
 
   const showHiddenPosts = () => {
     setShowPosts(true);
+    setshowNews(false);
+  };
+
+  const showHiddenNews = () => {
+    setShowPosts(false);
+    setshowNews(true);
   };
 
   return (
@@ -50,13 +57,18 @@ const Home = () => {
           </Button>
         </DashDiv>
         <div>
-          <Button backGround="#000000" textColor="#fff" borderRadius="8px">
-           <ListNoticia/>
+          <Button
+            onClick={showHiddenNews}
+            backGround="#000000"
+            textColor="#fff"
+            borderRadius="8px"
+          >
             Notícias
           </Button>
         </div>
       </Menu>
       {showPosts && <Posts />}
+      {showNews && <ListNoticia />}
     </Container>
   );
 };
