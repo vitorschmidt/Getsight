@@ -1,3 +1,15 @@
+
+//Styled-component imports
+import { Container, DashDiv, Menu, SubHeader } from "./styles";
+
+//Components imports
+import { Button } from "../../Components/Button";
+import Header from "../../Components/Header";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
+
+
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "../../Components/Button";
@@ -6,7 +18,6 @@ import ListNoticia from "../../Components/listNoticia";
 
 import Posts from "../../Components/Posts";
 
-import { Container, DashDiv, Menu, SubHeader } from "./styles";
 const Home = () => {
   const history = useHistory();
 

@@ -1,10 +1,13 @@
-import { Button } from "../Button";
+//styles-component import
 import { Container } from "./style";
 import Modal from "react-modal";
 import { useState } from "react";
 import "./style.css";
 
 Modal.setAppElement("#root");
+
+//Components import
+import { Button } from "../Button";
 
 const CardCandidates = ({ candidate }) => {
   const [modalIsOpen, setIsOpen] = useState(false);

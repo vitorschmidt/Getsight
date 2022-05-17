@@ -1,7 +1,10 @@
+//Styled-component imports
+import { Container } from "./styles";
+
+//Components imports
 import Header from "../../Components/Header";
 import ListCola from "../../Components/listCola";
 import { Button } from "../../Components/Button";
-import { Container } from "./styles";
 
 const Cola = () => {
   return (

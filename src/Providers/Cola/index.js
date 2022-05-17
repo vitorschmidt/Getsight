@@ -1,5 +1,8 @@
+//Hooks imports
 import { createContext, useContext, useState } from "react";
-import Api from "../../services/Api";
+
+//Service imports
+import { Api } from "../../services/Api";
 
 export const ColaContext = createContext();
 
@@ -17,7 +20,7 @@ export const ColaProvider = ({ children }) => {
   };
 
   return (
-    <ColaContext.Provider value={{cola, getColas}}>
+    <ColaContext.Provider value={{ cola, getColas }}>
       {children}
     </ColaContext.Provider>
   );

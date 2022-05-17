@@ -1,5 +1,8 @@
-import Routes from "./Routes";
+//Styled-component imports
 import GlobalStyles from "./styles/global";
+
+//Router-dom imports
+import Routes from "./Routes";
 
 function App() {
   return (

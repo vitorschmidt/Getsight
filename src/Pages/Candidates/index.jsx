@@ -1,8 +1,13 @@
-import { useHistory } from "react-router-dom";
+//Styled-component imports
+import { Container } from "./styles";
+
+//Components imports
 import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
+
 import { useCandidate } from "../../Providers/Candidates";
 import { Container } from "./styles";
+
 
 const Candidates = () => {
   const { setSearch, filter } = useCandidate();
