@@ -34,11 +34,19 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
 
             <ColRight width="300px">
               <Button
-                onClick={() => history.push("/login")}
+                onClick={() => history.push("/")}
                 backGround="#000000"
                 textColor="#fff"
               >
                 Sair
+              </Button>
+              <div className="teste">
+              <Button
+                onClick={() => history.push("/login")}
+                backGround="#000000"
+                textColor="#fff"
+              >
+                Login
               </Button>
               <Button
                 onClick={() => history.push("/register")}
@@ -47,6 +55,8 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
               >
                 Cadastrar
               </Button>
+              </div>
+              
             </ColRight>
           </Headers>
         ) : headerVersion === "homeCandidates" ? (
