@@ -11,7 +11,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import { Button } from "../../Components/Button";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, authenticated }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const comments = post.comments;
@@ -39,6 +39,8 @@ const PostCard = ({ post }) => {
       background: "#c6c6c6c6",
     },
   };
+
+  console.log(authenticated);
 
   return (
     <Container>
@@ -95,23 +97,28 @@ const PostCard = ({ post }) => {
         </ModalContent>
       </Modal>
       <h4 onClick={showHiddenComments}>Ver comentários...</h4>
-      {showComments &&
+      <></>
+      {authenticated ? (
+        showComments &&
         comments.map((el) => (
           <Comments>
             <div className="user">
-            <img src={logo} alt="foto-perfil" />
-          <div >
-          <h2>nome</h2>
-          <p>Cidade - Estado</p>
-          </div>
+              <img src={logo} alt="foto-perfil" />
+              <div>
+                <h2>nome</h2>
+                <p>Cidade - Estado</p>
+              </div>
             </div>
             <div>
-            <h3>{el.message}</h3>
+              <h3>{el.message}</h3>
 
-            <h2>{el.like}</h2>
+              <h2>{el.like}</h2>
             </div>
           </Comments>
-        ))}
+        ))
+      ) : (
+        <div>precisa logar pra comentar</div>
+      )}
     </Container>
   );
 };
