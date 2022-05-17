@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useHome } from "../../Providers/Home";
-
+import { Container } from "./style"; 
 import PostCard from "../PostCard";
 
 const Posts = () => {
@@ -11,11 +11,11 @@ const Posts = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {posts.map((post, index) => (
         <PostCard key={index} post={post} />
       ))}
-    </div>
+    </Container>
   );
 };
 

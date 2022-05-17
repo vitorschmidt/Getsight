@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,12 +59,12 @@ export const UserInfo = styled.div`
 export const Post = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--card);
+  background-color: var(--grey-1);
   border-radius: 8px;
 
   width: 95%;
   height: 80%;
-
+  justify-content:center;
   margin-top: 5px;
 `;
 
@@ -73,7 +73,7 @@ export const Feed = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--card);
+  background-color: var(--grey-1);
   border-radius: 8px;
   width: 95%;
 
