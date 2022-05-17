@@ -4,7 +4,7 @@ import CardNoticia from "../CardNoticias";
 import { useNoticia } from "../../Providers/Noticia";
 
 const ListNoticia = () => {
-  //caso va usar a api fake
+  //caso va utilizar a api fake
   const { noticia, getNoticiaPropria } = useNoticia();
   useEffect(() => {
       getNoticiaPropria();
