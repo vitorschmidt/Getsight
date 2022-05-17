@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,6 @@ export const Container = styled.div`
   background-color: var(--light-grey);
   border-radius: 8px;
   min-height: 300px;
-
   margin-top: 10px;
 
   h3 {
@@ -50,8 +49,7 @@ export const UserInfo = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
+    justify-content: start;
     margin-left: 10px;
   }
 `;
@@ -59,12 +57,12 @@ export const UserInfo = styled.div`
 export const Post = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--card);
+  background-color: var(--grey-1);
   border-radius: 8px;
-
+  padding:10px;
   width: 95%;
   height: 80%;
-
+  justify-content:center;
   margin-top: 5px;
 `;
 
@@ -73,7 +71,7 @@ export const Feed = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--card);
+  background-color: var(--grey-1);
   border-radius: 8px;
   width: 95%;
 
@@ -127,6 +125,7 @@ export const ModalContent = styled.div`
     h2 {
       font-size: 18px;
       margin-bottom: 10px;
+      
     }
   }
 `;
@@ -141,6 +140,7 @@ export const Comments = styled.div`
   height: 100%;
   justify-content: space-between;
   border-radius: 8px;
+  
   .user {
     display: flex;
     flex-direction: row;
@@ -173,7 +173,7 @@ export const Comments = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    background-color: var(--light-grey);
+    background-color: var(--grey-1);
     border-radius: 8px;
   }
 `;
