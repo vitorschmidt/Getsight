@@ -23,7 +23,9 @@ export const Headers = styled.header`
 
   justify-content: space-between;
   width: 100%;
-
+  .teste button{
+    margin-left:20px;
+  }
   .inputContainer {
     max-width: 350px;
     min-width: 288px;
