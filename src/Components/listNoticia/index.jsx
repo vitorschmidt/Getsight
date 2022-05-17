@@ -2,7 +2,7 @@ import { Container } from "./style";
 import { useEffect } from "react";
 import CardNoticia from "../CardNoticias";
 import { useNoticia } from "../../Providers/Noticia";
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {Carousel} from "react-responsive-carousel"
 const ListNoticia = () => {
   //caso va utilizar a api fake
