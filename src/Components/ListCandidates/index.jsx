@@ -5,10 +5,6 @@ import CardCandidates from "../CardCandidates";
 
 //Providers imports
 import { useCandidate } from "../../Providers/Candidates";
-import { hasUnreliableEmptyValue } from "@testing-library/user-event/dist/utils";
-
-//Hooks imports
-import { useEffect } from "react";
 
 const ListCandidates = () => {
   const { candidate, filteredCandidates, value } = useCandidate();

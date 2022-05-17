@@ -47,7 +47,7 @@ export const CandidatesProvider = ({ children }) => {
 
   return (
     <CandidateContext.Provider
-      value={{ candidate, getCandidates, value, filteredCandidates, setSearch }}
+      value={{ candidate, getCandidates, value, filteredCandidates,filter, setSearch }}
     >
       {children}
     </CandidateContext.Provider>

@@ -8,15 +8,33 @@ import Cola from "../Pages/Cola";
 
 //Router-dom imports
 import { Route, Switch } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { useLogin } from "../Providers/Login";
 
 const Routes = () => {
+  const { getUserLogged } = useLogin();
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("@GetSight:token");
+    const id = localStorage.getItem("@GetSight:userId");
+
+    if (token) {
+      setAuthenticated(true);
+      if (id) {
+        getUserLogged(id, token);
+      }
+    }
+  }, [authenticated]);
+
   return (
     <Switch>
       <Route exact path="/">
         <Landing />
       </Route>
       <Route exact path="/home">
-        <Home />
+        <Home authenticated={authenticated} />
       </Route>
       <Route exact path="/login">
         <Login />
@@ -25,10 +43,10 @@ const Routes = () => {
         <Register type="user" />
       </Route>
       <Route exact path="/cola">
-        <Cola />
+        <Cola authenticated={authenticated} />
       </Route>
       <Route exact path="/candidates">
-        <Candidates />
+        <Candidates authenticated={authenticated} />
       </Route>
     </Switch>
   );
