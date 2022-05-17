@@ -12,9 +12,9 @@ export const LoginProvider = ({ children }) => {
   const getUser = (users) => {
     Api.post("/login", users)
       .then((response) => {
-        const { token } = response.data;
+        const { accessToken } = response.data;
 
-        localStorage.setItem("@GetSight:token", token);
+        localStorage.setItem("@GetSight:token", accessToken);
         setUser(response.data);
       })
       .catch((err) => console.log(err));

@@ -8,15 +8,26 @@ import Cola from "../Pages/Cola";
 
 //Router-dom imports
 import { Route, Switch } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Routes = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("@GetSight:token");
+
+    if (token) {
+      setAuthenticated(true);
+    }
+  }, [authenticated]);
+
   return (
     <Switch>
       <Route exact path="/">
         <Landing />
       </Route>
       <Route exact path="/home">
-        <Home />
+        <Home authenticated={authenticated} />
       </Route>
       <Route exact path="/login">
         <Login />
@@ -25,10 +36,10 @@ const Routes = () => {
         <Register type="user" />
       </Route>
       <Route exact path="/cola">
-        <Cola />
+        <Cola authenticated={authenticated} />
       </Route>
       <Route exact path="/candidates">
-        <Candidates />
+        <Candidates authenticated={authenticated} />
       </Route>
     </Switch>
   );

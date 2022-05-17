@@ -104,6 +104,9 @@ export const ModalContent = styled.div`
     margin-bottom: 10px;
     border-radius: 8px;
     padding: 10px;
+    resize: none;
+    width: 100%;
+    height: 100px;
   }
 
   input {
@@ -133,26 +136,24 @@ export const Comments = styled.div`
   flex-direction: column;
   background-color: var(--card);
   border-radius: 8px;
-  margin:0 auto;
-  width:100%;
-  height:100%;
-  justify-content:space-between;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
   border-radius: 8px;
-  .user{
+  .user {
     display: flex;
-  flex-direction: row;
+    flex-direction: row;
   }
   h2 {
     margin-top: 10px;
-    width:10%;
+    width: 10%;
   }
-  h3{
-    width:70%;
-    margin-top:10px;
-
+  h3 {
+    width: 70%;
+    margin-top: 10px;
   }
   margin: 10px;
- 
 
   img {
     width: 70px;
@@ -164,21 +165,15 @@ export const Comments = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     margin-left: 10px;
     border-radius: 8px;
-    
-
   }
-  div{
-    display:flex;
-    width:100%;
-    justify-content:space-evenly;
-    background-color:var(--light-grey);
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: var(--light-grey);
     border-radius: 8px;
-    
-
   }
-
-  
 `;
