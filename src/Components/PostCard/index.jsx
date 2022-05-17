@@ -10,8 +10,10 @@ import logo from "../../Assets/img/candidate.png";
 import Modal from "react-modal";
 import { useState } from "react";
 import { Button } from "../../Components/Button";
+import { useHome } from "../../Providers/Home";
 
 const PostCard = ({ post, authenticated }) => {
+  const { createPost, createNewPos } = useHome();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const comments = post.comments;
@@ -40,96 +42,130 @@ const PostCard = ({ post, authenticated }) => {
     },
   };
 
-  console.log(authenticated);
-
   return (
-    <Container>
-      <UserInfo>
-        <img src={logo} alt="foto-perfil" />
-        <div>
-          <h2>nome</h2>
-          <p>Cidade - Estado</p>
-        </div>
-      </UserInfo>
-      <Post>
-        <h2>{post.title}</h2>
-        <h3>{post.post}</h3>
-      </Post>
-      <Feed>
-        <h2>{post.likePost}</h2>
-        <p onClick={handleOpenModal}>Comentar</p>
-      </Feed>
+    <>
       {authenticated ? (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClone={handleCloseModal}
-          style={customStyles}
-        >
-          <ModalContent>
-            <form>
-              <div className="header">
-                <h2>Faca um comentario sobre essa postagem</h2>
-                <p onClick={handleCloseModal}>X</p>
-              </div>
-              <h3>Título</h3>
-              <input
-                type="text"
-                name="title"
-                id="PostTitle"
-                placeholder="Insira o titulo do seu comentario"
-              />
-              <h3>Cometário</h3>
-              <textarea
-                name="comentario"
-                id="comentario"
-                placeholder="Insira o seu comentário..."
-              ></textarea>
-              <Button
-                width="100%"
-                maxWidth="200px"
-                height="40px"
-                backGround="#000000"
-                textColor="#fff"
-                borderRadius="20px"
-              >
-                Comentar
-              </Button>
-            </form>
-          </ModalContent>
-        </Modal>
-      ) : (
-        // substituir pelo toastify
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClone={handleCloseModal}
-          style={customStyles}
-        >
-          <ModalContent>
-            <div>Logar pra comentar</div>
-            <p onClick={handleCloseModal}>X</p>
-          </ModalContent>
-        </Modal>
-      )}
-
-      <h4 onClick={showHiddenComments}>Ver comentários...</h4>
-      {showComments &&
-        comments.map((el) => (
-          <Comments>
-            <div className="user">
-              <img src={logo} alt="foto-perfil" />
-              <div>
-                <h2>nome</h2>
-                <p>Cidade - Estado</p>
-              </div>
-            </div>
+        <Container>
+          <UserInfo>
+            <img src={logo} alt="foto-perfil" />
             <div>
-              <h3>{el.message}</h3>
-
-              <h2>{el.like}</h2>
+              <h2>nome</h2>
+              <p>Cidade - Estado</p>
             </div>
-          </Comments>
-        ))}
-    </Container>
+          </UserInfo>
+          <Post>
+            <h2>{post.title}</h2>
+            <h3>{post.post}</h3>
+          </Post>
+          <Feed>
+            <h2>{post.likePost}</h2>
+            <p onClick={handleOpenModal}>Comentar</p>
+          </Feed>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClone={handleCloseModal}
+            style={customStyles}
+          >
+            <ModalContent>
+              <form>
+                <div className="header">
+                  <h2>Faca um comentario sobre essa postagem</h2>
+                  <p onClick={handleCloseModal}>X</p>
+                </div>
+                <h3>Título</h3>
+                <input
+                  type="text"
+                  name="title"
+                  id="PostTitle"
+                  placeholder="Insira o titulo do seu comentario"
+                />
+                <h3>Cometário</h3>
+                <textarea
+                  name="comentario"
+                  id="comentario"
+                  placeholder="Insira o seu comentário..."
+                ></textarea>
+                <Button
+                  width="100%"
+                  maxWidth="200px"
+                  height="40px"
+                  backGround="#000000"
+                  textColor="#fff"
+                  borderRadius="20px"
+                >
+                  Comentar
+                </Button>
+              </form>
+            </ModalContent>
+          </Modal>
+          <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+          {showComments &&
+            comments.map((el) => (
+              <Comments>
+                <div className="user">
+                  <img src={logo} alt="foto-perfil" />
+                  <div>
+                    <h2>nome</h2>
+                    <p>Cidade - Estado</p>
+                  </div>
+                </div>
+                <div>
+                  <h3>{el.message}</h3>
+
+                  <h2>{el.like}</h2>
+                </div>
+              </Comments>
+            ))}
+        </Container>
+      ) : (
+        <Container>
+          <UserInfo>
+            <img src={logo} alt="foto-perfil" />
+            <div>
+              <h2>nome</h2>
+              <p>Cidade - Estado</p>
+            </div>
+          </UserInfo>
+          <Post>
+            <h2>{post.title}</h2>
+            <h3>{post.post}</h3>
+          </Post>
+          <Feed>
+            <h2>{post.likePost}</h2>
+            <p onClick={handleOpenModal}>Comentar</p>
+          </Feed>
+
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClone={handleCloseModal}
+            style={customStyles}
+          >
+            <ModalContent>
+              <div>Logar pra comentar</div>
+              <p onClick={handleCloseModal}>X</p>
+            </ModalContent>
+          </Modal>
+          <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+          {showComments &&
+            comments.map((el) => (
+              <Comments>
+                <div className="user">
+                  <img src={logo} alt="foto-perfil" />
+                  <div>
+                    <h2>nome</h2>
+                    <p>Cidade - Estado</p>
+                  </div>
+                </div>
+                <div>
+                  <h3>{el.message}</h3>
+
+                  <h2>{el.like}</h2>
+                </div>
+              </Comments>
+            ))}
+        </Container>
+      )}
+    </>
   );
 };
 
