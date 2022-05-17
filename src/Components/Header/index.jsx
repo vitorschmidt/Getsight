@@ -22,6 +22,11 @@ import { Link } from "react-router-dom";
 const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
   const history = useHistory();
 
+  const logout = () => {
+    localStorage.clear();
+    history.push("/");
+  };
+
   return (
     <Container bg={bg} height={height}>
       {
@@ -33,30 +38,25 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
             </LogoContainer>
 
             <ColRight width="300px">
-              <Button
-                onClick={() => history.push("/")}
-                backGround="#000000"
-                textColor="#fff"
-              >
+              <Button onClick={logout} backGround="#000000" textColor="#fff">
                 Sair
               </Button>
               <div className="teste">
-              <Button
-                onClick={() => history.push("/login")}
-                backGround="#000000"
-                textColor="#fff"
-              >
-                Login
-              </Button>
-              <Button
-                onClick={() => history.push("/register")}
-                backGround="#000000"
-                textColor="#fff"
-              >
-                Cadastrar
-              </Button>
+                <Button
+                  onClick={() => history.push("/login")}
+                  backGround="#000000"
+                  textColor="#fff"
+                >
+                  Login
+                </Button>
+                <Button
+                  onClick={() => history.push("/register")}
+                  backGround="#000000"
+                  textColor="#fff"
+                >
+                  Cadastrar
+                </Button>
               </div>
-              
             </ColRight>
           </Headers>
         ) : headerVersion === "homeCandidates" ? (
@@ -82,7 +82,6 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
                 <select>
                   <option>Municipal</option>
                   <option>Federal/Estadual</option>
-                  
                 </select>
               </Description>
             </ColRight>
@@ -100,7 +99,7 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
               <p>{user}</p>
               <Link to="/candidates">Candidatos</Link>
               <Button
-                onClick={() => history.push("/")}
+                onClick={logout}
                 width="100%"
                 maxWidth="200px"
                 height="50px"
@@ -117,7 +116,7 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
             <Inputs icon={FaSearch} />
             <ColRight>
               <Button
-                onClick={() => history.push("/")}
+                onClick={logout}
                 width="100%"
                 maxWidth="100px"
                 height="50px"
@@ -139,11 +138,7 @@ const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
             <ColRight>
               {/* aqui será inserido o nome do usuário  */}
               <p>{user}</p>
-              <Button
-                onClick={() => history.push("/")}
-                backGround="#000000"
-                textColor="#fff"
-              >
+              <Button onClick={logout} backGround="#000000" textColor="#fff">
                 Sair
               </Button>
             </ColRight>
