@@ -17,11 +17,12 @@ const Candidates = () => {
     setSearch(evt.target.value);
     filter();
   };
+  
 
   return (
     <>
       {/* coloquei a header aqui da versao não logada pra testar */}
-      <Header bg="#C2D8DA" height="130px" headerVersion="homeCandidates" />
+      <Header bg="#C2D8DA" height="130px" headerVersion="dashboardCandidates" />
       <Container>
         <input
           placeholder="Digite o nome"
