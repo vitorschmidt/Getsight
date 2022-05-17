@@ -14,6 +14,7 @@ const ListNoticia = () => {
     //api real
   
   const { noticia, getNoticia } = useNoticia();
+  console.log(noticia)
   useEffect(() => {
       getNoticia();
     }, []);
