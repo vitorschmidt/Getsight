@@ -21,6 +21,7 @@ export default createGlobalStyle`
       --red-1: #FB0000;
       --red-2: #752020;
       --green-1: #051B03;
+      --card: #908C8C;
     }
     body {
         font-size: 1rem;

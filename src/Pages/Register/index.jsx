@@ -77,6 +77,7 @@ const Register = () => {
               register={register}
               error={errors.name?.message}
             />
+
             <Inputs
               name="email"
               label="Email"
@@ -84,6 +85,7 @@ const Register = () => {
               register={register}
               error={errors.email?.message}
             />
+
             <Inputs
               name="cidade"
               label="Cidade"
@@ -91,6 +93,7 @@ const Register = () => {
               register={register}
               error={errors.cidade?.message}
             />
+
             <Inputs
               name="password"
               label="Senha"
@@ -99,6 +102,7 @@ const Register = () => {
               register={register}
               error={errors.password?.message}
             />
+
             <Inputs
               name="confirmPassword"
               type="password"
@@ -107,13 +111,19 @@ const Register = () => {
               register={register}
               error={errors.confirmPassword?.message}
             />
-            <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
+
+            <Button
+              type="submit"
+              backGround="teal"
+              textColor="white"
+              backGroundHover="red"
+            >
               Cadastrar
             </Button>
           </form>
         </FormContainer>
-        {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
       </Content>
+      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
     </Container>
   );
 };

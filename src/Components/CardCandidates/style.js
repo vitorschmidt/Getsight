@@ -57,6 +57,10 @@ export const Container = styled.div`
     width: 140px;
   }
 
+  .historia p {
+    position: relative;
+  }
+
   .historia a {
     color: #000;
   }
@@ -66,14 +70,19 @@ export const Container = styled.div`
   }
 
   .categoria {
-    width: 50px;
+    width: 200px;
   }
 
   .botaoMobile {
     display: none;
   }
 
-  @media (max-width: 1101px) {
+  .back {
+    background-color: #000;
+    padding: 10px;
+  }
+
+  @media (max-width: 700px) {
     padding: 10px 10px;
     font-size: 12px;
     max-width: 450px;
@@ -96,6 +105,10 @@ export const Container = styled.div`
     .name {
       font-size: 14px;
       min-width: 30px;
+    }
+
+    .categoria {
+      width: 50px;
     }
 
     .saberMais {

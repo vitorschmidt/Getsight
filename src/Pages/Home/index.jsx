@@ -1,3 +1,4 @@
+
 //Styled-component imports
 import { Container, DashDiv, Menu, SubHeader } from "./styles";
 
@@ -8,8 +9,30 @@ import Header from "../../Components/Header";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 
+
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Button } from "../../Components/Button";
+import Header from "../../Components/Header";
+import ListNoticia from "../../Components/listNoticia";
+
+import Posts from "../../Components/Posts";
+
 const Home = () => {
   const history = useHistory();
+
+  const [showPosts, setShowPosts] = useState(false);
+  const [showNews, setshowNews] = useState(false);
+
+  const showHiddenPosts = () => {
+    setShowPosts(true);
+    setshowNews(false);
+  };
+
+  const showHiddenNews = () => {
+    setShowPosts(false);
+    setshowNews(true);
+  };
 
   return (
     <Container>
@@ -35,16 +58,28 @@ const Home = () => {
 
       <Menu>
         <DashDiv>
-          <Button backGround="#000000" textColor="#fff" borderRadius="8px">
+          <Button
+            onClick={showHiddenPosts}
+            backGround="#000000"
+            textColor="#fff"
+            borderRadius="8px"
+          >
             Posts
           </Button>
         </DashDiv>
         <div>
-          <Button backGround="#000000" textColor="#fff" borderRadius="8px">
+          <Button
+            onClick={showHiddenNews}
+            backGround="#000000"
+            textColor="#fff"
+            borderRadius="8px"
+          >
             Notícias
           </Button>
         </div>
       </Menu>
+      {showPosts && <Posts />}
+      {showNews && <ListNoticia />}
     </Container>
   );
 };
