@@ -59,47 +59,51 @@ const PostCard = ({ post, authenticated }) => {
         <h2>{post.likePost}</h2>
         <p onClick={handleOpenModal}>Comentar</p>
       </Feed>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClone={handleCloseModal}
-        style={customStyles}
-      >
-        <ModalContent>
-          <form>
-            <div className="header">
-              <h2>Faca um comentario sobre essa postagem</h2>
-              <p onClick={handleCloseModal}>X</p>
-            </div>
-            <h3>Título</h3>
-            <input
-              type="text"
-              name="title"
-              id="PostTitle"
-              placeholder="Insira o titulo do seu comentario"
-            />
-            <h3>Cometário</h3>
-            <textarea
-              name="comentario"
-              id="comentario"
-              placeholder="Insira o seu comentário..."
-            ></textarea>
-            <Button
-              width="100%"
-              maxWidth="200px"
-              height="40px"
-              backGround="#000000"
-              textColor="#fff"
-              borderRadius="20px"
-            >
-              Comentar
-            </Button>
-          </form>
-        </ModalContent>
-      </Modal>
-      <h4 onClick={showHiddenComments}>Ver comentários...</h4>
-      <></>
       {authenticated ? (
-        showComments &&
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClone={handleCloseModal}
+          style={customStyles}
+        >
+          <ModalContent>
+            <form>
+              <div className="header">
+                <h2>Faca um comentario sobre essa postagem</h2>
+                <p onClick={handleCloseModal}>X</p>
+              </div>
+              <h3>Título</h3>
+              <input
+                type="text"
+                name="title"
+                id="PostTitle"
+                placeholder="Insira o titulo do seu comentario"
+              />
+              <h3>Cometário</h3>
+              <textarea
+                name="comentario"
+                id="comentario"
+                placeholder="Insira o seu comentário..."
+              ></textarea>
+              <Button
+                width="100%"
+                maxWidth="200px"
+                height="40px"
+                backGround="#000000"
+                textColor="#fff"
+                borderRadius="20px"
+              >
+                Comentar
+              </Button>
+            </form>
+          </ModalContent>
+        </Modal>
+      ) : (
+        // substituir pelo toastify
+        <div>logar pra comentar</div>
+      )}
+
+      <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+      {showComments &&
         comments.map((el) => (
           <Comments>
             <div className="user">
@@ -115,10 +119,7 @@ const PostCard = ({ post, authenticated }) => {
               <h2>{el.like}</h2>
             </div>
           </Comments>
-        ))
-      ) : (
-        <div>precisa logar pra comentar</div>
-      )}
+        ))}
     </Container>
   );
 };
