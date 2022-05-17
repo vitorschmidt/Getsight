@@ -1,13 +1,9 @@
 //Hooks imports
 import { createContext, useContext, useState } from "react";
 
-
-
 import { Api } from "../../services/Api";
 
-import Api from "../../services/Api";
 import { useEffect } from "react";
-
 
 export const CandidateContext = createContext();
 

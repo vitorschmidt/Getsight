@@ -1,4 +1,3 @@
-
 //Styled-component imports
 import { Container, DashDiv, Menu, SubHeader } from "./styles";
 
@@ -9,11 +8,7 @@ import Header from "../../Components/Header";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 
-
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Button } from "../../Components/Button";
-import Header from "../../Components/Header";
 import ListNoticia from "../../Components/listNoticia";
 
 import Posts from "../../Components/Posts";

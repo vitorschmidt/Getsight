@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import Api from "../../services/Api";
+import { Api } from "../../services/Api";
 
 export const HomeContext = createContext();
 
