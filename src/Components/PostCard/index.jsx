@@ -13,10 +13,34 @@ import { AiFillHeart as HeartIcon } from "react-icons/ai";
 import { useState } from "react";
 import { Button } from "../../Components/Button";
 
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { useLogin } from "../../Providers/Login";
+import { Api } from "../../services/Api";
+import { useHome } from "../../Providers/Home";
+
 const PostCard = ({ post, authenticated }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const comments = post.comments;
+  const { user } = useLogin();
+  const { getPosts } = useHome();
+
+  const formSchema = yup.object().shape({
+    comment: yup
+      .string()
+      .required("Faca seu comentário")
+      .min(2, "Minímo 2 caractéres"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -44,6 +68,37 @@ const PostCard = ({ post, authenticated }) => {
       bottom: "auto",
       background: "#c6c6c6c6",
     },
+  };
+
+  const newComment = (data) => {
+    const token = localStorage.getItem("@GetSight:token");
+    const commentsUpdated = [
+      ...post.comments,
+      {
+        userId: user.id,
+        userName: user.name,
+        like: 0,
+        cidade: user.cidade,
+        id: post.comments.length + 1,
+        message: data.comment,
+      },
+    ];
+    Api.patch(
+      `/dashboard/${post.id}`,
+      { comments: commentsUpdated },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then((response) => {
+        getPosts();
+        handleCloseModal();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -74,7 +129,7 @@ const PostCard = ({ post, authenticated }) => {
             style={customStyles}
           >
             <ModalContent>
-              <form>
+              <form onSubmit={handleSubmit(newComment)}>
                 <div className="header">
                   <h2>Faca um comentario sobre essa postagem</h2>
                   <p onClick={handleCloseModal}>X</p>
@@ -82,11 +137,14 @@ const PostCard = ({ post, authenticated }) => {
 
                 <h3>Cometário</h3>
                 <textarea
-                  name="comentario"
+                  name="comment"
                   id="comentario"
                   placeholder="Insira o seu comentário..."
+                  {...register("comment")}
                 ></textarea>
+                <span>{errors.comment && errors.comment.message}</span>
                 <Button
+                  type="submit"
                   width="100%"
                   maxWidth="200px"
                   height="40px"
