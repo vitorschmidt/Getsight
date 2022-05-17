@@ -8,6 +8,8 @@ import {
 } from "./style";
 import logo from "../../Assets/img/candidate.png";
 import Modal from "react-modal";
+import {BsChatSquareText as ChatIcon} from "react-icons/bs"
+import {AiFillHeart as HeartIcon} from "react-icons/ai"
 import { useState } from "react";
 import { Button } from "../../Components/Button";
 import { useHome } from "../../Providers/Home";
@@ -27,7 +29,12 @@ const PostCard = ({ post, authenticated }) => {
   }
 
   const showHiddenComments = () => {
-    setShowComments(true);
+      if(showComments === false){
+        setShowComments(true);
+      }else{
+        setShowComments(false)
+      }
+    
   };
 
   const customStyles = {
@@ -58,8 +65,9 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
-            <h2>{post.likePost}</h2>
-            <p onClick={handleOpenModal}>Comentar</p>
+            <h2>{post.likePost}<HeartIcon/></h2>
+            <ChatIcon onClick={handleOpenModal}/>
+             
           </Feed>
           <Modal
             isOpen={modalIsOpen}
@@ -98,7 +106,13 @@ const PostCard = ({ post, authenticated }) => {
               </form>
             </ModalContent>
           </Modal>
+          {showComments === false
+          ? 
           <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+          :
+          <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
+          }
+         
           {showComments &&
             comments.map((el) => (
               <Comments>
