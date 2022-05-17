@@ -11,7 +11,7 @@ import {
 } from  "./style.js"
 
 //Assets
-import { ReactComponent as Logo } from "../img/logo.svg";
+import { ReactComponent as Logo } from "../../Assets/img/logo.svg";
 import { FaSearch } from "react-icons/fa";
 
 //Components imports

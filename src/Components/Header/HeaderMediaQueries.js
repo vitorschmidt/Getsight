@@ -39,6 +39,10 @@ export const HeaderMediaQueries = styled.div`
                         max-width: 800px;
                     }
 
+                    .inputBox{
+                        max-width: 800px;
+                    }
+
                 }
                 ${ColRight}{
                     justify-content: center;
@@ -146,6 +150,11 @@ export const HeaderMediaQueries = styled.div`
 
                     .inputContainer{
                         width: 100%;
+                        max-width: 800px;
+                    }
+
+
+                    .inputBox{
                         max-width: 800px;
                     }
             }
