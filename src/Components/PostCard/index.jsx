@@ -78,13 +78,7 @@ const PostCard = ({ post, authenticated }) => {
                   <h2>Faca um comentario sobre essa postagem</h2>
                   <p onClick={handleCloseModal}>X</p>
                 </div>
-                <h3>Título</h3>
-                <input
-                  type="text"
-                  name="title"
-                  id="PostTitle"
-                  placeholder="Insira o titulo do seu comentario"
-                />
+
                 <h3>Cometário</h3>
                 <textarea
                   name="comentario"

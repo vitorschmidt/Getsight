@@ -57,7 +57,7 @@ const Register = () => {
   const onSubmitFunction = ({ name, email, cidade, password }) => {
     const user = { name, cidade, email, password };
     postUser(user);
-    history.push("/login");
+    history.push("/home");
   };
   return (
     <Container>
