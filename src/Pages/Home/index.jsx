@@ -53,7 +53,6 @@ const Home = ({ authenticated }) => {
               Candidatos
             </Button>
           </SubHeader>
-
           <Menu>
             <DashDiv>
               <Button
