@@ -1,3 +1,4 @@
+//Styled-components import
 import { Container, Content } from "./style";
 
 const CardCola = ({ cola }) => {

@@ -1,8 +1,14 @@
+//Styled-component imports
 import { Container } from "./style";
 
-import { useEffect } from "react";
+//Components imports
 import CardCola from "../CardCola";
+
+//Providers imports
 import { useCola } from "../../Providers/Cola";
+
+//Hooks imports
+import { useEffect } from "react";
 
 const ListCola = () => {
   const { cola, getColas } = useCola();

@@ -1,8 +1,14 @@
+//Styled-component imports
 import { Container } from "./style";
 
-import { useEffect } from "react";
+//Components imports
 import CardCandidates from "../CardCandidates";
+
+//Providers imports
 import { useCandidate } from "../../Providers/Candidates";
+
+//Hooks imports
+import { useEffect } from "react";
 
 const ListCandidates = () => {
   const { candidate, getCandidates } = useCandidate();

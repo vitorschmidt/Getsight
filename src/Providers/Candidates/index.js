@@ -1,5 +1,8 @@
+//Hooks imports
 import { createContext, useContext, useState } from "react";
-import Api from "../../services/Api";
+
+//Service imports
+import { Api } from "../../services/Api";
 
 export const CandidateContext = createContext();
 
@@ -17,7 +20,7 @@ export const CandidatesProvider = ({ children }) => {
   };
 
   return (
-    <CandidateContext.Provider value={{candidate, getCandidates}}>
+    <CandidateContext.Provider value={{ candidate, getCandidates }}>
       {children}
     </CandidateContext.Provider>
   );

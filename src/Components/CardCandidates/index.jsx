@@ -1,5 +1,8 @@
-import { Button } from "../Button";
+//styles-component import
 import { Container } from "./style";
+
+//Components import
+import { Button } from "../Button";
 
 const CardCandidates = ({ candidate }) => {
   return (

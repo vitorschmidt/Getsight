@@ -1,7 +1,14 @@
-import { Link, useHistory } from "react-router-dom";
+//Styled-component imports
 import { Container } from "./styles";
+
+//Assets
 import logo from "../../Assets/img/logo.png";
+
+//Components imports
 import { Button } from "../../Components/Button";
+
+//Router-dom imports
+import { Link, useHistory } from "react-router-dom";
 
 const Landing = () => {
   const history = useHistory();

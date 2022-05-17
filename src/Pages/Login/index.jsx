@@ -1,15 +1,25 @@
+//Styled-component imports
 import { Container, Content, FormContainer } from "./style";
 
-import { useHistory } from "react-router-dom";
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Inputs from "../../Components/Input";
-import logo from "../../Assets/img/logo.png";
+//Assets
 import banner from "../../Assets/img//banner.jpg";
+import logo from "../../Assets/img/logo.png";
 
+//Libs Imports
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import Inputs from "../../Components/Input";
+import * as yup from "yup";
+
+//Components imports
 import { Button } from "../../Components/Button";
+
+//Provider imports
 import { useLogin } from "../../Providers/Login";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
+
 const Login = () => {
   const history = useHistory();
   const handleNavegation = (path) => history.push(path);

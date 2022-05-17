@@ -1,5 +1,8 @@
+//Hooks imports
 import { createContext, useContext, useState } from "react";
-import Api from "../../services/Api";
+
+//Service imports
+import { Api } from "../../services/Api";
 
 export const RegisterContext = createContext();
 
@@ -7,7 +10,7 @@ export const RegisterProvider = ({ children }) => {
   const [registerUser, setRegister] = useState([]);
 
   const postUser = (user) => {
-    Api.post("/users",user)
+    Api.post("/users", user)
       .then((response) => {
         console.log(response.data);
         setRegister(response.data);
@@ -16,7 +19,7 @@ export const RegisterProvider = ({ children }) => {
   };
 
   return (
-    <RegisterContext.Provider value={{postUser,registerUser}}>
+    <RegisterContext.Provider value={{ postUser, registerUser }}>
       {children}
     </RegisterContext.Provider>
   );

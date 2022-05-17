@@ -1,13 +1,25 @@
+//Styled-component imports
 import { Container, Content, FormContainer } from "./style";
-import { useHistory } from "react-router-dom";
+
+//Assets
+import banner from "../../Assets/img//banner.jpg";
 import Logo from "../../Assets/img/logo.png";
+
+//Components imports
 import { Button } from "../../Components/Button";
+import Inputs from "../../Components/Input";
+
+//Libs Imports
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Inputs from "../../Components/Input";
+
+//Provider imports
 import { useRegister } from "../../Providers/Register";
-import banner from "../../Assets/img//banner.jpg";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
+
 const Register = () => {
   const history = useHistory();
 

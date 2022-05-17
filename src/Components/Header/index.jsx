@@ -1,18 +1,23 @@
-import { Link } from "react-router-dom";
-
-import { ReactComponent as Logo } from "../img/logo.svg";
-import { Button } from "../Button";
-import { FaSearch } from "react-icons/fa";
-import Inputs from "../Input";
+//Styled-component imports
 import {
   Container,
   LogoContainer,
   Headers,
   ColRight,
-  InputContainer,
   Description,
 } from "./style.js";
+
+//Assets
+import { ReactComponent as Logo } from "../img/logo.svg";
+import { FaSearch } from "react-icons/fa";
+
+//Components imports
+import { Button } from "../Button";
+import Inputs from "../Input";
+
+//Router-dom imports
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = ({ bg, height, headerVersion, user = "Teste," }) => {
   const history = useHistory();

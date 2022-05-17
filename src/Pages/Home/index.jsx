@@ -1,7 +1,13 @@
-import { useHistory } from "react-router-dom";
+//Styled-component imports
+import { Container, DashDiv, Menu, SubHeader } from "./styles";
+
+//Components imports
 import { Button } from "../../Components/Button";
 import Header from "../../Components/Header";
-import { Container, DashDiv, Menu, SubHeader } from "./styles";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
+
 const Home = () => {
   const history = useHistory();
 

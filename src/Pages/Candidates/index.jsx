@@ -1,7 +1,12 @@
-import { useHistory } from "react-router-dom";
+//Styled-component imports
+import { Container } from "./styles";
+
+//Components imports
 import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
-import { Container } from "./styles";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
 
 const Candidates = () => {
   const history = useHistory();
