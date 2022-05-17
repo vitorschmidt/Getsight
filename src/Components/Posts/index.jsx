@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useHome } from "../../Providers/Home";
-
+import { Container } from "./style"; 
 import PostCard from "../PostCard";
 import { Perfil, Post } from "./style";
 import imgPerfil from "../../Assets/img/candidate.png";
@@ -48,8 +48,8 @@ const Posts = ({ authenticated }) => {
   }, []);
 
   return (
-    <div>
-      <Perfil>
+    <Container>
+       <Perfil>
         <img src={imgPerfil} alt="perfil-usuario" />
         <h2>{user.name}</h2>
         <p>{user.cidade}</p>
@@ -86,7 +86,7 @@ const Posts = ({ authenticated }) => {
       {posts.map((post, index) => (
         <PostCard authenticated={authenticated} key={index} post={post} />
       ))}
-    </div>
+    </Container>
   );
 };
 
