@@ -99,7 +99,16 @@ const PostCard = ({ post, authenticated }) => {
         </Modal>
       ) : (
         // substituir pelo toastify
-        <div>logar pra comentar</div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClone={handleCloseModal}
+          style={customStyles}
+        >
+          <ModalContent>
+            <div>Logar pra comentar</div>
+            <p onClick={handleCloseModal}>X</p>
+          </ModalContent>
+        </Modal>
       )}
 
       <h4 onClick={showHiddenComments}>Ver comentários...</h4>
