@@ -77,10 +77,21 @@ export const Feed = styled.div`
 
   margin-top: 5px;
   margin-bottom: 10px;
+  h2{
+      display: flex;
+      align-items: center;
 
-  p {
-    margin-right: 10px;
+      svg{
+          fill: var(--red-2);
+      }
   }
+
+
+    svg{
+        fill: var(--blue-2);
+        margin-right: 10px;
+    }
+  
 `;
 
 export const ModalContent = styled.div`

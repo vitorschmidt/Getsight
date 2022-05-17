@@ -34,7 +34,7 @@ const Home = ({ authenticated }) => {
       {authenticated ? (
         <Container>
           {/* coloquei a header aqui da versao não logada pra testar */}
-          <Header bg="#C2D8DA" height="80px" headerVersion="home" />
+          <Header bg="#C2D8DA" height="80px" headerVersion="dashboard" />
           <SubHeader>
             <h2>Esta com alguma dúvida sobre seu candidato?</h2>
             <p>
