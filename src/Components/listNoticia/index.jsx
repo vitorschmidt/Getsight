@@ -5,18 +5,18 @@ import { useNoticia } from "../../Providers/Noticia";
 
 const ListNoticia = () => {
   //caso va utilizar a api fake
-  const { noticia, getNoticiaPropria } = useNoticia();
-  useEffect(() => {
-      getNoticiaPropria();
-    }, [getNoticiaPropria]);
+  // const { noticia, getNoticiaPropria } = useNoticia();
+  // useEffect(() => {
+  //     getNoticiaPropria();
+  //   }, [getNoticiaPropria]);
     
     
     //api real
   
-  // const { noticia, getNoticia } = useNoticia();
-  // useEffect(() => {
-  //     getNoticia();
-  //   }, []);
+  const { noticia, getNoticia } = useNoticia();
+  useEffect(() => {
+      getNoticia();
+    }, []);
 
   return (
     <Container>
