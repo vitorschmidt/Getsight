@@ -1,26 +1,39 @@
-import { Container } from "./style";
-import { useHistory } from "react-router-dom";
-import Logo from "../../Components/img/logo.svg";
+//Styled-component imports
+import { Container, Content, FormContainer } from "./style";
+
+//Assets
+import banner from "../../Assets/img//banner.jpg";
+import Logo from "../../Assets/img/logo.png";
+
+//Components imports
 import { Button } from "../../Components/Button";
+import Inputs from "../../Components/Input";
+
+//Libs Imports
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Inputs from "../../Components/Input";
+
+//Provider imports
+import { useRegister } from "../../Providers/Register";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path)
+
   const formSchema = yup.object().shape({
     name: yup
       .string()
       .required("Nome obrigatorio")
-      .min(2)
+      .min(2, "No minimo duas caracteres")
       .matches(
         /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/,
         "Apenas letras e espaços"
       ),
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
-    city: yup.string().required("Cidade obrigatoria"),
+    cidade: yup.string().required("Cidade obrigatoria"),
     password: yup
       .string()
       .required("Senha obrigatoria")
@@ -33,7 +46,6 @@ const Register = () => {
       .required("Confirmação de senha obrigatoria")
       .oneOf([yup.ref("password"), null], "As senhas devem ser identicas"),
   });
-
   const {
     register,
     handleSubmit,
@@ -41,69 +53,78 @@ const Register = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-
-  const onSubmitFunction = ({ name, email, city, password }) => {
-    const user = { name, email, city, password };
-    console.log(user);
-
-    history.push("/");
+  const { postUser } = useRegister();
+  const onSubmitFunction = ({ name, email, cidade, password }) => {
+    const user = { name, cidade, email, password };
+    postUser(user);
+    history.push("/home");
   };
-
   return (
     <Container>
-      <picture>
-        <img src={Logo} alt="Logo GetSight"/>
-      </picture>
+      <div className="boxImg">
+        <img src={banner} alt="banner" />
+      </div>
+      <Content>
+        <picture>
+          <img src={Logo} alt="Logo GetSight" />
+        </picture>
+        <FormContainer>
+          <form onSubmit={handleSubmit(onSubmitFunction)}>
+            <Inputs
+              name="name"
+              label="Nome"
+              placeholder="Digite seu nome"
+              register={register}
+              error={errors.name?.message}
+            />
 
-      <form onSubmit={handleSubmit(onSubmitFunction)}>
-        <Inputs
-          name="name"
-          label="Nome"
-          placeholder="Digite seu nome"
-          register={register}
-          error={errors.name?.message}
-        />
+            <Inputs
+              name="email"
+              label="Email"
+              placeholder="Digite seu email"
+              register={register}
+              error={errors.email?.message}
+            />
 
-        <Inputs
-          name="email"
-          label="email"
-          placeholder="Digite seu email"
-          register={register}
-          error={errors.email?.message}
-        />
+            <Inputs
+              name="cidade"
+              label="Cidade"
+              placeholder="Digite sua cidade"
+              register={register}
+              error={errors.cidade?.message}
+            />
 
-        <Inputs
-          name="city"
-          label="Cidade"
-          placeholder="Digite sua cidade"
-          register={register}
-          error={errors.city?.message}
-        />
+            <Inputs
+              name="password"
+              label="Senha"
+              type="password"
+              placeholder="Digite sua senha"
+              register={register}
+              error={errors.password?.message}
+            />
 
-        <Inputs
-          name="password"
-          label="Senha"
-          type="password"
-          placeholder="Digite sua senha"
-          register={register}
-          error={errors.password?.message}
-        />
+            <Inputs
+              name="confirmPassword"
+              type="password"
+              label="Confirmar senha"
+              placeholder="Digite seu email"
+              register={register}
+              error={errors.confirmPassword?.message}
+            />
 
-        <Inputs
-          name="confirmPassword"
-          type="password"
-          label="Confirmar senha"
-          placeholder="Digite seu email"
-          register={register}
-          error={errors.confirmPassword?.message}
-        />
-
-        <Button type="submit">Cadastrar</Button>
-      </form>
-
-      <Button onClick={()=> handleNavegation("/home")}>Home</Button>
+            <Button
+              type="submit"
+              backGround="teal"
+              textColor="white"
+              backGroundHover="red"
+            >
+              Cadastrar
+            </Button>
+          </form>
+        </FormContainer>
+      </Content>
+      {/* <Button onClick={()=> handleNavegation("/home")}>Home</Button> */}
     </Container>
   );
 };
-
 export default Register;

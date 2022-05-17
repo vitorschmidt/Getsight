@@ -1,10 +1,4 @@
-import { Link } from "react-router-dom";
-
-import {ReactComponent as Logo} from "../img/logo.svg"
-import { Button } from "../Button";
-import {FaSearch} from "react-icons/fa"
-import Inputs from "../Input";
-
+//Styled-component imports
 import {
     Container, 
     HeaderTop, 
@@ -16,9 +10,18 @@ import {
     Row
 } from  "./style.js"
 
-import { useHistory } from "react-router-dom";
- 
+//Assets
+import { ReactComponent as Logo } from "../img/logo.svg";
+import { FaSearch } from "react-icons/fa";
+
+//Components imports
 import { HeaderMediaQueries } from "./HeaderMediaQueries";
+import { Button } from "../Button";
+import Inputs from "../Input";
+
+//Router-dom imports
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = ({bg, height, headerVersion, user = "teste,"}) =>{
     const history = useHistory()
@@ -110,30 +113,46 @@ const Header = ({bg, height, headerVersion, user = "teste,"}) =>{
                     
                     </Headers>
             
-                    ):
+                    ):headerVersion === "dashboardCandidates" ? (
+                        <Headers version={headerVersion}>
+                            <HeaderTop>
+                                <Button onClick={()=> history.push("/")}  
+                                        backGround="#000000" textColor="#fff">SAIR</Button>
+                            </HeaderTop>
 
-                    headerVersion === "dashboardCandidates" ? (
-                    <Headers version={headerVersion}>
-                        <HeaderTop>
-                            <Button onClick={()=> history.push("/")}  
-                                    backGround="#000000" textColor="#fff">SAIR</Button>
-                        </HeaderTop>
+                            <ColLeft width="70%">
+                                <Inputs InputContainerClass="inputContainer"
+                                    inputClass="inputBox"
+                                    icon={FaSearch}
+                                    placeholder="Pesquisar Candidato"/>
+                            </ColLeft>
 
-                        <ColLeft width="70%">
-                            <Inputs InputContainerClass="inputContainer"
-                                inputClass="inputBox"
-                                icon={FaSearch}
-                                placeholder="Pesquisar Candidato"/>
-                        </ColLeft>
-
-                        <ColRight>
-                            <Button onClick={()=> history.push("/")}  
-                                    backGround="#000000" textColor="#fff">SAIR</Button>
+                            <ColRight>
+                                <Button onClick={()=> history.push("/")}  
+                                        backGround="#000000" textColor="#fff">SAIR</Button>
+                            
+                            </ColRight> 
                         
-                        </ColRight> 
-                    
-                    </Headers>
-                    ):("")
+                        </Headers>
+                    ):headerVersion === "cola" ? (
+                        <Headers>
+                          <LogoContainer>
+                            <Logo />
+                          </LogoContainer>
+              
+                          <ColRight>
+                            {/* aqui será inserido o nome do usuário  */}
+                            <p>{user}</p>
+                            <Button
+                              onClick={() => history.push("/")}
+                              backGround="#000000"
+                              textColor="#fff"
+                            >
+                              Sair
+                            </Button>
+                          </ColRight>
+                        </Headers>
+                      ):("")
                     /* versão logada vai até aqui */
                 
                 }

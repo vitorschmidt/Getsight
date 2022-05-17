@@ -1,7 +1,13 @@
+//Libs imports
 import axios from "axios";
 
 const Api = axios.create({
   baseURL: "https://json-capstone.herokuapp.com/",
 });
 
-export default Api;
+const ApiNoticias = axios.create({
+  baseURL:
+    "https://newsdata.io/api/",
+});
+
+export { Api, ApiNoticias };

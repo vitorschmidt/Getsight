@@ -20,6 +20,8 @@ export default createGlobalStyle`
       --blue-3: #9FB6F0;
       --red-1: #FB0000;
       --red-2: #752020;
+      --green-1: #051B03;
+      --card: #908C8C;
     }
     body {
         font-size: 1rem;
@@ -32,7 +34,11 @@ export default createGlobalStyle`
         font-size: 16px;
         font-weight: 500;
     }
-    
+    span{
+
+    color: var(--red-1);
+    font-size:0.6rem;
+    }
     h1,h2,h3,h4 {
         font-weight: 700;
     }

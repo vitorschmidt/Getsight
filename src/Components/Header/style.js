@@ -1,7 +1,5 @@
 import styled, {css} from "styled-components";
-import { version } from "styled-components";
  
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -92,7 +90,19 @@ export const ColLeft = styled.div`
     max-width: ${(props)=> props.maxWidth};
 
 
-`
+  justify-content: space-between;
+  width: 100%;
+
+  .inputContainer {
+    max-width: 350px;
+    min-width: 288px;
+  }
+  .inputBox {
+    margin: 0;
+    max-width: 350px;
+    background-color: var(--light-grey);
+  }
+`;
 
 export const ColRight = styled.div`
     display: flex;
