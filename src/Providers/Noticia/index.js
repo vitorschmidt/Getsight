@@ -21,7 +21,7 @@ export const NoticiaProvider = ({ children }) => {
 
   //api original
   const getNoticia = () => {
-    ApiNoticias.get("/1/news?apikey=pub_744605865aea08263cc7397e48279f8766ca&q=Brasil&country=br&language=pt&category=politics")
+    ApiNoticias.get("/1/news?apikey=pub_74705df7a1e9dc9468ac9027529cce4ec49c&q=politica&country=br&language=pt&category=politics")
       .then((response) => {
          setNoticia(response.data.results);
        
