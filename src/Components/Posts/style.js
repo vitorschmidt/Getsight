@@ -24,8 +24,7 @@ export const Perfil = styled.div`
 
 export const Post = styled.div`
   display: flex;
-
-  align-items: flex-start;
+  align-items: center;
 
   background-color: var(--light-grey);
   box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
@@ -34,7 +33,7 @@ export const Post = styled.div`
 
   border-radius: 8px;
 
-  height: 200px;
+  height: 220px;
 
   img {
     width: 40px;
@@ -42,6 +41,8 @@ export const Post = styled.div`
     border-radius: 50%;
 
     margin: 10px;
+
+    align-self: flex-start;
   }
 
   form {
@@ -72,6 +73,7 @@ export const Post = styled.div`
     border-radius: 20px;
 
     border: none;
+    resize: none;
 
     background-color: var(--card);
 
@@ -80,5 +82,14 @@ export const Post = styled.div`
     &::placeholder {
       color: var(--light-grey);
     }
+  }
+
+  textarea:hover,
+  input:hover {
+    border: 1px solid var(--black);
+  }
+
+  button {
+    align-self: flex-end;
   }
 `;
