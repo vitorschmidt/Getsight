@@ -1,50 +1,113 @@
 import styled, {css} from "styled-components";
+import { version } from "styled-components";
  
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family : "Inter", sans-serif ;
-    width: 100%;
-    
-    height: ${(props)=> props.height};
-    background-color: ${(props)=> props.bg};
-    padding: 0 25px;
     position: relative;
     
-    button{
-        padding: 0 15px;
-        font-size: clamp(16px, 1.5vw, 18px);
-        min-width: 120px;
-    }
-    a{
+    padding: 0 25px;
+    
+    width: 100%;
+    height: ${(props)=> props.height};
 
+    background-color: ${(props)=> props.bg};
+  
+    font-family : "Inter", sans-serif ;
+    
+    button{
+        font-size: clamp(16px, 1.5vw, 18px);
+        
+    }
+
+    a{
         font-size: clamp(12px, 2vw, 16px);
     }
+    
+`
 
+export const LogoContainer = styled.div`
+    width: ${(props)=> props.width};   
+    max-width: ${(props)=> props.maxWidth};
+    
+
+`
+export const HeaderTop = styled.div`
+    display: flex;
+    justify-content: ${(props)=> props.version === "homeCandidates" ? "space-between" : "flex-start"};
+    align-items: center;
+    width: 100%;
+    height: 40px;
+
+    margin-bottom: 5px;
+ 
+   
 `
 
 export const Headers = styled.header`
     display: flex ;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: ${({version})=> 
+                        version === "home" ? "row"
+                        : 
+                        version === "homeCandidates" ? "column"
+                        :
+                        "" 
+                        };
+                        
     justify-content: space-between;
+    align-items: center;
+
+    input{
+        font-size: clamp(14px, 2vw, 18px);
+    }
+
+    .inputContainer {
+        max-width: 350px;
+    }
+    .inputBox {
+        margin: 0;
+        max-width: 800px;
+
+        background-color: var(--light-grey);
+    }
 
  
 `
 
+export const Row = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+` 
+export const ColLeft = styled.div`
+    display: flex;
+    margin-right: 15px;
+
+    width: 100%;
+    max-width: ${(props)=> props.maxWidth};
+
+
+`
 
 export const ColRight = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: ${(props)=> props.width};
-    padding-right: ${(props)=> props.paddingRight};
+
+    width: 100%;
+    max-width: ${(props)=> props.maxWidth};
+
     a{
         margin: 0 20px;
-        color: #000000;
+
         font-size: ${(props)=> props.aTagFontSize};
+        color: #000000;
+        
     }
     
     p{
@@ -56,84 +119,33 @@ export const ColRight = styled.div`
     }
     
 `
-export const LogoContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    position: ${(props)=> props.position};
-    top: 4px;
-    svg{
-        width: ${(props)=> props.width};
-        max-width: ${(props)=> props.maxWidth};
-        height:  ${(props)=> props.height}
-    }
-   
-`
-
- 
-export const Input = styled.input`
-    display:  ${(props)=> props.desktop ? "block" : "none"};
-    width: 100%;
-    height: 45px;
-     
-    border: none;
-    border-radius: 8px 0px 0px 8px;
-    padding: 0 20px;
-    font-size: clamp(14px, 2vw, 18px);
-  
-    
-    &::placeholder{
-        color: #808080;
-        
-    }
-
-    @media (max-width: 1220px) {
-        display: ${(props)=> props.mobile ? "block" : "none"};
-    }
-
-`
- 
-export const InputContainer = styled.div`
-    width: ${(props)=> props.width};
-    display: flex;
-    max-width: 800px;
-    padding-left: ${(props)=> props.paddingLeft};
-    margin-right: 15px;
-
-   
-
-`
 export const ElectionType = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    min-width: 160px;
-   
-    margin:  0 auto;
-    border-radius: 12px;
-    background-color:#CFE7E9;
-    padding: 5px 15px;
-    
-;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 0;
     color: #808080;
+    height: 42px;
+ 
+
     label{
         width: 100%;
-        border-bottom: 2px dashed rgba(34, 51, 59, 0.1);
-		font-size: clamp(12px,1.6vw,18px);
-	
-		margin-bottom: 5px;
-        text-align: center;
+        font-size: clamp(12px,1.6vw,14px);
     }
 
     select{
-        background-color: #c2d8da;
-;
-        border: none;width: 100%;
-        border-radius: 5px;
-        font-size: 12px;
-        color: #808080;
+        width: 100%;
         padding: 0 5px;
-        font-family: "Inter", sans-serif;
+        border-radius: 4px;
+        background-color: #c2d8da;
+        font-size: 12px;
+        font-family: "Inter",sans-serif;
+        color: #808080;
+        height: 100%;
+        border: 1px solid;
+        
         &:focus{
             color: black;
         }
@@ -146,11 +158,4 @@ export const ElectionType = styled.div`
 
      }
     
-`
-
-export const MediaQueries = styled.div`
-       
-   
-
-
 `

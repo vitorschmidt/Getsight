@@ -2,129 +2,141 @@ import { Link } from "react-router-dom";
 
 import {ReactComponent as Logo} from "../img/logo.svg"
 import { Button } from "../Button";
-import {Container, LogoContainer, Headers, ColRight, Input, InputContainer, ElectionType} from  "./style.js"
+import {FaSearch} from "react-icons/fa"
+import Inputs from "../Input";
+
+import {
+    Container, 
+    HeaderTop, 
+    Headers, 
+    ColRight, 
+    LogoContainer,
+    ColLeft, 
+    ElectionType,
+    Row
+} from  "./style.js"
 
 import { useHistory } from "react-router-dom";
  
 import { HeaderMediaQueries } from "./HeaderMediaQueries";
 
-const Header = ({
-    bg, 
-    height,
-    headerVersion,
-    user = "Paulo,"
-}) =>{
-
+const Header = ({bg, height, headerVersion, user = "teste,"}) =>{
     const history = useHistory()
 
- 
-    
     return (
         <Container bg={bg} height={height} >
             <HeaderMediaQueries version={headerVersion}>
-            {
-               
-                /*  versão não logada*/
-                headerVersion === "home" ?
-                    <Headers>
-                        <LogoContainer width="100%" height="80px" maxWidth="300px">
-                            <Logo/>
+                {
+                    /*  versão não logada*/
+                    headerVersion === "home" ? (
+                        <Headers version={headerVersion}>
+                            <ColLeft >
+                                <LogoContainer width="100%" maxWidth="200px">
+                                    <Logo />
+                                </LogoContainer>
+                                
+                            </ColLeft>
+                            
+                            <ColRight>
+                                <Link to="/login">Login</Link>
 
-                        </LogoContainer>
-                        
-                        <ColRight width="300px">
-                            <Link to="/login">Login</Link>
-                            <Button onClick={()=> history.push("/register")} width="100%" maxWidth="200px" height="40px" 
-                            backGround="#000000" textColor="#fff" borderRadius="20px">Cadastrar</Button>
-                        </ColRight>
-                        
-                    </Headers>
-                
-                :
-
-                headerVersion === "homeCandidates" ?
-                <Headers >
-                     <LogoContainer width="100%" height="30px" maxWidth="143px" position="absolute">
-                            <Logo/>
-                           
-                    </LogoContainer>
-                   
-                        <InputContainer paddingLeft="40px" width="70%">
-                            <Input desktop placeholder="Pesquisar Candidato, categoria, partido, numero, cargo"/>
-                            <Input mobile placeholder="Pesquisar Candidato"/>
-                            <Button backGround="#22333B" textColor="#FFFFFF" width="100%"  
-                            maxWidth="160px" height="45px" borderRadius="0 8px 8px 0">PESQUISAR</Button>
-                        </InputContainer>    
-
-                        <ColRight paddingRight="20px" width="50%"  >
-                            <ElectionType>
-                                <label>Tipo de Eleição</label>
-                                <select>
-                                    <option>Municipal</option>
-                                    <option>Estadual</option>
-                                </select>
-                            </ElectionType>
-
-                            <Button onClick={()=> history.push("/login")} width="100%" maxWidth="200px" 
-                                backGround="#000000" textColor="#fff" borderRadius="20px">LOGIN</Button>
-                        </ColRight>
-
-                  
-                   
-                
-                </Headers>
-                /* versão não logada vai até aqui */
-                :
-
-                /* versão logada */
-                headerVersion === "dashboard" ?
-                <Headers>
-                    <LogoContainer width="100%" height="80px" maxWidth="300px">
-                        <Logo/>
-
-                    </LogoContainer>
+                                <Button onClick={()=> history.push("/register")} 
+                                backGround="#000000" textColor="#fff" 
+                                >Cadastrar</Button>
+                            </ColRight>
+                            
+                        </Headers>
                     
-                    <ColRight width="350px" aTagFontSize="clamp(14px, 2vw, 18px)" pTagFontSize="clamp(16px, 3vw, 22px)">
-                        {/* aqui será inserido o nome do usuário  */}
-                        <p>{user}</p>
-                        <Link to="/candidates">Candidatos</Link>
-                        <Button onClick={()=> history.push("/")} width="100%" maxWidth="200px"
-                        backGround="#000000" textColor="#fff" borderRadius="20px">Sair</Button>
-                    </ColRight>
-                
-                 
-                </Headers>
-        
-                :
+                    ):
 
-                headerVersion === "dashboardCandidates" ?
-                <Headers>
-                    <Link to="/">SAIR</Link>
-                    <InputContainer width="70%">
-                        <Input desktop placeholder="Pesquisar Candidato, categoria, partido, numero, cargo"/>
-                        <Input mobile placeholder="Pesquisar Candidato"/>
-                        <Button backGround="#22333B" textColor="#FFFFFF" width="100%"  height="45px"
-                        maxWidth="160px" borderRadius="0 8px 8px 0">PESQUISAR</Button>
-                    </InputContainer> 
-                
-                    <ColRight width="20%"  >
-                            <ElectionType>
-                                <label>Tipo de Eleição</label>
-                                <select>
-                                    <option>Municipal</option>
-                                    <option>Estadual</option>
-                                </select>
-                            </ElectionType>
-                        <Button onClick={()=> history.push("/")} width="100%" maxWidth="100px" 
-                            backGround="#000000" textColor="#fff" borderRadius="20px">SAIR</Button>
-                    </ColRight>
-                 </Headers>
-                :
+                    headerVersion === "homeCandidates" ? (
+                    <Headers version={headerVersion}>
+                        <HeaderTop version={headerVersion}>
+                            <LogoContainer width="100%" maxWidth="150px">
+                                <Logo />
+                            </LogoContainer>
+                            <Button onClick={()=> history.push("/login")} 
+                                backGround="#000000" textColor="#fff"
+                                >LOGIN</Button>
+                        </HeaderTop>
 
-                /* versão logada vai até aqui */
-                ""
+                        <Row>
+                            <ColLeft  maxWidth="800px">
+                                <Inputs InputContainerClass="inputContainer"
+                                        inputClass="inputBox"
+                                        icon={FaSearch}
+                                        placeholder="Pesquisar Candidato"/>
+                            </ColLeft>    
+
+                            <ColRight  maxWidth="500px"  >
+                                <ElectionType>
+                                    <label>Tipo de Eleição</label>
+
+                                    <select>
+                                        <option>Municipal</option>
+                                        <option>Estadual</option>
+                                    </select>
+                                </ElectionType>
+
+                                
+                            </ColRight>
+
+                        </Row>
+                        
+                    
+                    </Headers>
+                    /* versão não logada vai até aqui */
+                    ):
+
+                    /* versão logada */
+                    headerVersion === "dashboard" ? (
+                    <Headers version={headerVersion}>
+                        <ColLeft width="100%">
+                            <LogoContainer width="100%" maxWidth="200px">
+                                <Logo />
+                            </LogoContainer>
+                        </ColLeft>
+                        
+                        <ColRight maxWidth="350px" aTagFontSize="clamp(14px, 2vw, 18px)" pTagFontSize="clamp(16px, 3vw, 22px)">
+                            {/* aqui será inserido o nome do usuário  */}
+                            <p>{user}</p>
+                            <Link to="/candidates">Candidatos</Link>
+                            
+                            <Button onClick={()=> history.push("/")} 
+                                backGround="#000000" textColor="#fff" 
+                                >Sair</Button>
+                        </ColRight>
+                    
+                    
+                    </Headers>
             
-            }
+                    ):
+
+                    headerVersion === "dashboardCandidates" ? (
+                    <Headers version={headerVersion}>
+                        <HeaderTop>
+                            <Button onClick={()=> history.push("/")}  
+                                    backGround="#000000" textColor="#fff">SAIR</Button>
+                        </HeaderTop>
+
+                        <ColLeft width="70%">
+                            <Inputs InputContainerClass="inputContainer"
+                                inputClass="inputBox"
+                                icon={FaSearch}
+                                placeholder="Pesquisar Candidato"/>
+                        </ColLeft>
+
+                        <ColRight>
+                            <Button onClick={()=> history.push("/")}  
+                                    backGround="#000000" textColor="#fff">SAIR</Button>
+                        
+                        </ColRight> 
+                    
+                    </Headers>
+                    ):("")
+                    /* versão logada vai até aqui */
+                
+                }
             </HeaderMediaQueries>
         </Container>
     )

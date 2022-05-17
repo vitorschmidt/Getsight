@@ -1,224 +1,174 @@
 import styled, {css} from "styled-components"
-import { Headers, LogoContainer, InputContainer, ColRight, ElectionType } from "./style.js"
+import {
+    Container, 
+    HeaderTop, 
+    Headers, 
+    ColRight, 
+    LogoContainer,
+    ColLeft, 
+    ElectionType,
+    Row
+} from  "./style.js"
 
 export const HeaderMediaQueries = styled.div`
-    ${({version})=> version === "home" && css`
-            a{
-                margin: 0 10px 0 40px;
-            }
+    ${({version})=> (version === "home" || version === "homeCandidates") && css`
+ 
 
-        @media (max-width: 700px){
-            
-
-            ${LogoContainer}{
-                max-width: 200px;
-            }
+        @media (max-width: 800px){
            
             ${ColRight}{
                 
                 button{
                     max-width: 120px;
-                    height: 35px;
+                }
+
+                a{
+                    margin: 0;
                 }
             }
-        }
-        
-    
-    
-    `}
 
-    ${({version})=> version === "dashboard" && css`
-        
-    
-    `}
-
-    ${({version})=> version === "dashboardCandidates" && css`
-        a{
-            display: none;
-        }
-
-        ${ElectionType}{
-            display: none;
-        }
-
-        @media (max-width: 750px){
-            a{
-                display: block;
-                align-self: flex-end;
-                margin: 10px 0;
-                color: black;
-            }
-
-            ${Headers}{
+            ${Row}{
+                justify-content: center;
                 flex-direction: column;
-            }
-
-            ${InputContainer}{
-                input{
-                    height: 35px;
-                    font-size: 12px;
-                }
-
-                button{
-                    max-width: 100px;
-                    font-size: 12px;
-                    height: 35px;
-                    
-                }
-
-            }
-
-            ${ColRight}{
-                width: 100%;
-                justify-content: flex-end;
-                padding-right: 0;
-                margin-top: 10px;
-
-                button{
-                    display: none;
-                    
-                };
 
 
-                ${ElectionType}{
-                    display: block;
+                ${ColLeft}{
+                    justify-content: center;
                     margin: 0;
 
-                    min-width: 120px;
-                    label{
-                        display: none;
-
+                    .inputContainer{
+                        width: 100%;
+                        max-width: 800px;
                     }
 
-                    select{
-                        font-size: 12px;
-                        background-color: transparent;
-                    }
-                
-                    
+                }
+                ${ColRight}{
+                    justify-content: center;
+                     
+                    max-width: none;
+
                 }
                 
             }
-
-            ${InputContainer}{
-                width: 100%;
-                margin-right: 0;
-                padding-left: 0;
-            }
-            
         }
-    
-    `}
 
-
-
-    ${({version})=> version === "homeCandidates"  && css`
-        @media (max-width: 900px) {
-            
-
+        @media (max-width: 600px){
             button{
-                max-width: 120px;
-                
+                height: 28px;
+                margin-left: 15px;
             }
-        
-        }
-
-        @media (max-width: 750px){
-            ${LogoContainer}{
-                display: none;
-            }
-
             ${Headers}{
                 flex-direction: column;
+                
+
             }
 
-            ${InputContainer}{
-                width: 100%;
-                margin-right: 0;
-                padding-left: 0;
+            ${LogoContainer}{
+                display: flex;
+                justify-content: center;
+            }
+
+            ${ColLeft}{
+                justify-content: center;
+                margin: 0;
+
+                svg{
+                    max-width: 180px;
+                }
             }
 
             ${ColRight}{
-                width: 100%;
-                justify-content: flex-end;
-                padding-right: 0;
+                justify-content: space-between;
+                max-width: 180px;
                 margin-top: 10px;
-
-                button{
-                    display: none;
-                    
-                };
-
-
-                ${ElectionType}{
-                    margin: 0;
-                    min-width: 120px;
-                    label{
-                        display: none;
-
-                    }
-
-                    select{
-                        font-size: 12px;
-                        background-color: transparent;
-                    }
-                
-                
-                    
-                }
-
-            
-                
             }
             
         }
-
-        @media (max-width: 425px){
-            ${InputContainer}{
-                input{
-                    height: 35px;
-                    font-size: 12px;
-                }
-
-                button{
-                    font-size: 12px;
-                    height: 35px;
-                    
-                }
-
-            }
-           
-
-            ${ElectionType}{
-                min-width: 120px;
-                padding: 0 5px;
-                label{
-                    display: none;
-
-                }
-
-                select{
-                    font-size: 12px;
-                    background-color: transparent;
-                }
-            }
-          
-        }
-
-        @media (max-width: 340px){
-            ${InputContainer}{
-                button{
-                    min-width: 80px;
-            
-                }
-
-            }
-
-        }
-        
-        
+    
     `}
 
+    ${({version})=>version === "dashboard"  && css`
+        @media (max-width: 600px){
+                a{
+                    margin: 5px 0;
+                }
+
+                ${Headers}{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                ${ColLeft}{
+                    justify-content: center;
+                    margin-right: 0;
+                    max-width: 180px;
+
+                }
+
+                ${ColRight}{
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    max-width: 180px;
+                    button{
+                        width: 100%;
+                        height: 28px;
+                        margin: 0;
+                    }
+                }
+            }
+    
+    
+    `}
+   ${({version})=> version === "dashboardCandidates" && css`
+     
+
+        ${HeaderTop}{
+            display: none;
+            
+        }
+        
+        @media (max-width: 800px){
+            ${Headers}{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            }
+
+            ${HeaderTop}{
+            display: flex;
+            justify-content: flex-end;
+
+            }
+
+            ${ColLeft}{
+                justify-content: center;
+                    margin: 0;
+
+                    .inputContainer{
+                        width: 100%;
+                        max-width: 800px;
+                    }
+            }
+
+            ${ColRight}{
+                display: none;
+        
+            }
+        }
 
 
+        @media (max-width: 600px){
+            ${HeaderTop}{
+                button{
+                    height: 28px;
+                }
+            }
+        }
+   
+   
+   `}
+   
+    
 `

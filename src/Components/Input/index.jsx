@@ -8,16 +8,23 @@ const Inputs = ({
   register,
   name,
   error,
+  inputClass,
+  InputContainerClass,
   ...rest
 }) => {
   return (
-    <Container>
+    <Container className={InputContainerClass}>
       <div className="label">
         {label}
-        {!!error && <span> - {error}</span>}
+        {!!error && " -"}
+        {!!error && <span> {error}</span>}
       </div>
-      <InputContainer>
-        <input {...register(name)} {...rest} />
+      <InputContainer className={inputClass}>
+        {register ? (
+          <input {...register(name)} {...rest} />
+        ) : (
+          <input {...rest} />
+        )}
         {Icon && <Icon onClick={handleShowPassword} />}
       </InputContainer>
     </Container>
