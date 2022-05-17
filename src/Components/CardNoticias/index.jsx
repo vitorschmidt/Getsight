@@ -8,8 +8,11 @@ const CardNoticia = ({ noticia }) => {
         <img src={logoNoticia} alt="Foto noticia" />
       </div>
       <Content>
-        {/* api original <h2 className="name">{noticia.title}</h2> */}
-        <h2 className="name">{noticia.noticia}</h2> 
+        {/* api original  */}
+        <h2 className="name">{noticia.title}</h2>
+        <h3>{noticia.description}</h3>
+        <span className="center">{noticia.pubDate}</span>
+        {/* <h2 className="name">{noticia.noticia}</h2>  */}
         
       </Content>
     </Container>

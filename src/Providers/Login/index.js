@@ -7,7 +7,7 @@ import { Api } from "../../services/Api";
 export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
 
   const getUser = (users) => {
     Api.post("/login", users)
@@ -15,13 +15,24 @@ export const LoginProvider = ({ children }) => {
         const { accessToken } = response.data;
 
         localStorage.setItem("@GetSight:token", accessToken);
-        setUser(response.data);
+        localStorage.setItem("@GetSight:userId", response.data.user.id);
+        setUser(response.data.user);
       })
       .catch((err) => console.log(err));
   };
 
+  const getUserLogged = (id, token) => {
+    Api.get(`/users/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      setUser(response.data);
+    });
+  };
+
   return (
-    <LoginContext.Provider value={{ user, getUser }}>
+    <LoginContext.Provider value={{ user, getUser, getUserLogged }}>
       {children}
     </LoginContext.Provider>
   );

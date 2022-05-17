@@ -5,7 +5,7 @@ export const HomeContext = createContext();
 
 export const HomeProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
-  const [createPost, setCreatePost] = useState([]);
+  const [token] = useState(localStorage.getItem("@GetSight:token") || "");
 
   const getPosts = () => {
     Api.get("/dashboard")
@@ -15,10 +15,15 @@ export const HomeProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
-  const createNewPost = () => {
-    Api.post("/dashboard")
-      .then((response) => {
-        setCreatePost(response.data);
+  const createNewPost = (data) => {
+    console.log(data);
+    Api.post("/dashboard", data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(() => {
+        getPosts();
       })
       .catch((err) => {
         console.log(err);
@@ -26,9 +31,7 @@ export const HomeProvider = ({ children }) => {
   };
 
   return (
-    <HomeContext.Provider
-      value={{ posts, getPosts, createPost, createNewPost }}
-    >
+    <HomeContext.Provider value={{ posts, getPosts, createNewPost }}>
       {children}
     </HomeContext.Provider>
   );

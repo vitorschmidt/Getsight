@@ -10,14 +10,21 @@ import Cola from "../Pages/Cola";
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { useLogin } from "../Providers/Login";
+
 const Routes = () => {
+  const { getUserLogged } = useLogin();
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("@GetSight:token");
+    const id = localStorage.getItem("@GetSight:userId");
 
     if (token) {
       setAuthenticated(true);
+      if (id) {
+        getUserLogged(id, token);
+      }
     }
   }, [authenticated]);
 

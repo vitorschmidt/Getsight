@@ -9,18 +9,33 @@ export const Container = styled.li`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-width:320px;
-  max-width:400px;
+  min-width: 320px;
+  max-width: 400px;
   height: 80px;
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
+  height: 500px;
+  padding-top: 100px;
+  margin-top: 20px;
 
   img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     padding: 5px;
-    margin-left: 10px;
+    margin-right: 30px;
     box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
+    position: relative;
+    bottom: 190px;
+    left: 120px;
+  }
+
+  .name {
+    margin-bottom: 20px;
+  }
+
+  .center {
+    margin-top: 10px;
+    margin-left: 70px;
   }
 
   @media (min-width: 1101px) {
@@ -46,7 +61,7 @@ export const Content = styled.div`
 
   h2 {
     font-size: 0.8rem;
-    margin-left:10px;
+    margin-left: 10px;
   }
   h3 {
     font-weight: 400;
