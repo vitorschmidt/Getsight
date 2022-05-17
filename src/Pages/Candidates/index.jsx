@@ -17,6 +17,7 @@ const Candidates = () => {
     setSearch(evt.target.value);
     filter();
   };
+  
 
   return (
     <>
