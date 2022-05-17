@@ -23,7 +23,11 @@ const Posts = ({ authenticated }) => {
       <Post>
         <img src={imgPerfil} alt="perfil-usuario" />
         <form>
-          <input type="text" placeholder="Titulo da sua publicacao" />
+          <input
+            type="text"
+            name="title"
+            placeholder="Titulo da sua publicacao"
+          />
           <textarea name="post" placeholder="Comecar publicacao"></textarea>
           <Button
             width="40%"

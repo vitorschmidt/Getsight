@@ -1,12 +1,10 @@
 import styled, {css} from "styled-components"
 import {
-    Container, 
     HeaderTop, 
     Headers, 
     ColRight, 
     LogoContainer,
     ColLeft, 
-    ElectionType,
     Row
 } from  "./style.js"
 

@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
  
 export const Container = styled.div`
     display: flex;
@@ -92,7 +92,9 @@ export const ColLeft = styled.div`
 
   justify-content: space-between;
   width: 100%;
-
+  .teste button{
+    margin-left:20px;
+  }
   .inputContainer {
     max-width: 350px;
     min-width: 288px;
