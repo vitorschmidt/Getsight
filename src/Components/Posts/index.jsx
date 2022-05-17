@@ -15,6 +15,8 @@ const Posts = ({ authenticated }) => {
   const { posts, getPosts, createNewPost } = useHome();
   const { user } = useLogin();
 
+  console.log(user);
+
   const formSchema = yup.object().shape({
     title: yup
       .string()

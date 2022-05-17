@@ -10,10 +10,8 @@ import logo from "../../Assets/img/candidate.png";
 import Modal from "react-modal";
 import { useState } from "react";
 import { Button } from "../../Components/Button";
-import { useHome } from "../../Providers/Home";
 
 const PostCard = ({ post, authenticated }) => {
-  const { createPost, createNewPos } = useHome();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const comments = post.comments;
@@ -58,7 +56,7 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
-            <h2>{post.likePost}</h2>
+            <h2>{post.postLikes}</h2>
             <p onClick={handleOpenModal}>Comentar</p>
           </Feed>
           <Modal
@@ -131,7 +129,7 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
-            <h2>{post.likePost}</h2>
+            <h2>{post.postLikes}</h2>
             <p onClick={handleOpenModal}>Comentar</p>
           </Feed>
 
