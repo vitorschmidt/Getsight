@@ -16,17 +16,26 @@ export const Container = styled.li`
   height: 500px;
   padding-top: 100px;
   margin-top: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  h2,
+  p,
+  h3 {
+    margin-right: 50px;
+  }
 
   img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     padding: 5px;
     margin-right: 30px;
     box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
     position: relative;
     bottom: 190px;
     left: 120px;
+    margin-left: 50px;
   }
 
   .name {
@@ -36,20 +45,6 @@ export const Container = styled.li`
   .center {
     margin-top: 10px;
     margin-left: 70px;
-  }
-
-  @media (min-width: 1101px) {
-    width: 800px;
-
-    img {
-      margin-left: 50px;
-    }
-
-    h2,
-    p,
-    h3 {
-      margin-right: 50px;
-    }
   }
 `;
 
