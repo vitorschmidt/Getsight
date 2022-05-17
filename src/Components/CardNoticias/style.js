@@ -46,6 +46,23 @@ export const Container = styled.li`
     margin-top: 10px;
     margin-left: 70px;
   }
+
+  @media (max-width: 1100px) {
+    width: 320px;
+
+    img {
+      bottom: 220px;
+      left: 80%;
+    }
+
+    .name {
+      margin-left: 0px;
+    }
+
+    .center {
+      margin-left: 35px;
+    }
+  }
 `;
 
 export const Content = styled.div`
