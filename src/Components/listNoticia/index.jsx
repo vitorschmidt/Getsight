@@ -11,19 +11,23 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 const ListNoticia = () => {
   //caso va utilizar a api fake
-  // const { noticia, getNoticiaPropria } = useNoticia();
-  // useEffect(() => {
-  //     getNoticiaPropria();
-  //   }, [getNoticiaPropria]);
+  const { noticia, getNoticiaPropria } = useNoticia();
+  useEffect(() => {
+      getNoticiaPropria();
+    }, [getNoticiaPropria]);
 
   //api real
 
-  const { noticia, getNoticia } = useNoticia();
-  console.log(noticia);
 
-  useEffect(() => {
-    getNoticia();
-  }, []);
+//   const { noticia, getNoticia } = useNoticia();
+//   console.log(noticia);
+
+  // const { noticia, getNoticia } = useNoticia();
+
+
+  // useEffect(() => {
+  //   getNoticia();
+  // }, []);
 
 
   return (

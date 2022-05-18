@@ -29,10 +29,12 @@ import { useState } from "react";
 
 const Register = () => {
   const history = useHistory();
+
   const [showOrHidePass, setShowOrHidePass] = useState({
       password: false,
       confirmPassword: false
   })
+
   const formSchema = yup.object().shape({
     name: yup
       .string()
@@ -68,6 +70,7 @@ const Register = () => {
     const user = { name, cidade, email, password };
     postUser(user);
     history.push("/login");
+    Location.reload();
   };
 
   const handleShowPassword = (type)=>{
@@ -155,6 +158,14 @@ const Register = () => {
             >
               Cadastrar
             </Button>
+            <div className="boxLogin">
+              <p>
+                Ja tem uma conta?{" "}
+                <span onClick={() => handleNavegation("/login")}>
+                  fazer Login
+                </span>
+              </p>
+            </div>
           </form>
         </FormContainer>
       </Content>

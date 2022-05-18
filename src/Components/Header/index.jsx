@@ -24,10 +24,13 @@ import { useLogin } from "../../Providers/Login/index.js";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useLogin } from "../../Providers/Login";
+
 
 const Header = ({ bg, height, headerVersion, handleDual}) => {
   const history = useHistory();
     const {user} = useLogin()
+    
   const logout = () => {
     localStorage.clear();
     history.push("/");
@@ -41,7 +44,7 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
           headerVersion === "home" ? (
             <Headers version={headerVersion}>
               <ColLeft>
-                <LogoContainer width="100%" maxWidth="200px">
+                <LogoContainer onClick={() => handleNavegation("/")}  width="100%" maxWidth="200px">
                   <Logo />
                 </LogoContainer>
               </ColLeft>
@@ -61,7 +64,7 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
           ) : headerVersion === "homeCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop version={headerVersion}>
-                <LogoContainer width="100%" maxWidth="150px">
+                <LogoContainer onClick={() => handleNavegation("/")}  width="100%" maxWidth="150px">
                   <Logo />
                 </LogoContainer>
                 <Button
@@ -101,7 +104,7 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
           headerVersion === "dashboard" ? (
             <Headers version={headerVersion}>
               <ColLeft width="100%">
-                <LogoContainer width="100%" maxWidth="200px">
+                <LogoContainer onClick={() => handleNavegation("/")} width="100%" maxWidth="200px">
                   <Logo />
                 </LogoContainer>
               </ColLeft>
@@ -112,10 +115,12 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
                 pTagFontSize="clamp(16px, 3vw, 22px)"
               >
                 {/* aqui será inserido o nome do usuário  */}
+
                 <p>{user.name},</p>
                 <Link to="/candidates">Candidatos</Link>
 
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
+
                   Sair
                 </Button>
               </ColRight>
@@ -123,6 +128,7 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
+             
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -139,6 +145,9 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
               </ColLeft>
 
               <ColRight>
+              <Button onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
+                  VOLTAR
+                </Button>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -146,7 +155,7 @@ const Header = ({ bg, height, headerVersion, handleDual}) => {
             </Headers>
           ) : headerVersion === "cola" ? (
             <Headers>
-              <LogoContainer>
+              <LogoContainer onClick={() => handleNavegation("/")} >
                 <Logo />
               </LogoContainer>
 

@@ -64,13 +64,13 @@ export const FormContainer = styled.div`
   row-gap: 15px;
   animation: ${fadeIn} 1s;
   width: 100%;
-  max-height: 500px;
+  max-height: 520px;
   background-color: var(--light-grey);
   padding: 1rem;
   border-radius: 4px;
   overflow-y: scroll;
   form,
-  .boxCadastro {
+  .boxLogin {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -93,7 +93,7 @@ export const FormContainer = styled.div`
     }
   }
 
-  .boxCadastro {
+  .boxLogin {
     color: var(--black);
     span {
       font-weight: 1000;
