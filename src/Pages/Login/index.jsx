@@ -32,11 +32,17 @@ const Login = ({setAuthenticated}) => {
   const [showOrHidePass, setShowOrHidePass] = useState(false);
 
   const handleNavegation = () => {
-    history.push("/register");
-  };
-  const handleLogin = () => {
-    document.location.reload(true);
-  };
+    history.push("/register")
+  }
+  const handleLogin =() =>{
+    document.location.reload(true)
+  }
+  
+ 
+
+  // const handleNavegation = (path) => history.push(path);
+  
+  
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
