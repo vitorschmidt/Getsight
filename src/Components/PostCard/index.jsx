@@ -130,7 +130,9 @@ const PostCard = ({ post, authenticated }) => {
           <Post>
             <h2>{post.title}</h2>
             <h3>{post.post}</h3>
-            <button onClick={deleteUserPost}>Exculir</button>
+            {post.userId === user.id && (
+              <button onClick={deleteUserPost}>Exculir</button>
+            )}
           </Post>
 
           <Feed>
