@@ -23,9 +23,12 @@ import Inputs from "../Input";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useLogin } from "../../Providers/Login";
 
-const Header = ({ bg, height, headerVersion, user = "teste," }) => {
+const Header = ({ bg, height, headerVersion,}) => {
   const history = useHistory();
+  const handleNavegation = (path) => history.push(path);
+  const { user } = useLogin();
 
   const logout = () => {
     localStorage.clear();
@@ -110,10 +113,8 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
                 pTagFontSize="clamp(16px, 3vw, 22px)"
               >
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user}</p>
-                <Link to="/candidates">Candidatos</Link>
-
-                <Button onClick={logout} backGround="#000000" textColor="#fff">
+                <p>Bem vindo, {user.name}</p>
+              <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>
               </ColRight>
@@ -121,6 +122,7 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
+             
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -136,6 +138,9 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
               </ColLeft>
 
               <ColRight>
+              <Button onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
+                  VOLTAR
+                </Button>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
