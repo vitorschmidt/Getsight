@@ -24,7 +24,7 @@ import { useLogin } from "../../Providers/Login";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Header = ({ bg, height, headerVersion, handleDual }) => {
+const Header = ({ bg, height, headerVersion }) => {
   const history = useHistory();
   const { user } = useLogin();
 
@@ -90,7 +90,7 @@ const Header = ({ bg, height, headerVersion, handleDual }) => {
                     inputClass="inputBox"
                     icon={FaSearch}
                     placeholder="Pesquisar Candidato"
-                    onChange={(evt) => handleDual(evt)}
+                    // onChange={(evt) => handleDual(evt)}
                   />
                 </ColLeft>
 
@@ -149,7 +149,7 @@ const Header = ({ bg, height, headerVersion, handleDual }) => {
                   inputClass="inputBox"
                   icon={FaSearch}
                   placeholder="Pesquisar Candidato"
-                  onChange={(evt) => handleDual(evt)}
+                  // onChange={(evt) => handleDual(evt)}
                 />
               </ColLeft>
 
