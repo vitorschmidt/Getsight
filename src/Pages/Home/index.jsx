@@ -14,6 +14,7 @@ import ListNoticia from "../../Components/listNoticia";
 import Posts from "../../Components/Posts";
 
 const Home = ({ authenticated }) => {
+  
   const history = useHistory();
 
   const [showPosts, setShowPosts] = useState(false);
