@@ -43,7 +43,7 @@ const Header = ({ bg, height, headerVersion,}) => {
           headerVersion === "home" ? (
             <Headers version={headerVersion}>
               <ColLeft>
-                <LogoContainer width="100%" maxWidth="200px">
+                <LogoContainer onClick={() => handleNavegation("/")}  width="100%" maxWidth="200px">
                   <Logo />
                 </LogoContainer>
               </ColLeft>
@@ -63,7 +63,7 @@ const Header = ({ bg, height, headerVersion,}) => {
           ) : headerVersion === "homeCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop version={headerVersion}>
-                <LogoContainer width="100%" maxWidth="150px">
+                <LogoContainer onClick={() => handleNavegation("/")}  width="100%" maxWidth="150px">
                   <Logo />
                 </LogoContainer>
                 <Button
@@ -102,7 +102,7 @@ const Header = ({ bg, height, headerVersion,}) => {
           headerVersion === "dashboard" ? (
             <Headers version={headerVersion}>
               <ColLeft width="100%">
-                <LogoContainer width="100%" maxWidth="200px">
+                <LogoContainer onClick={() => handleNavegation("/")} width="100%" maxWidth="200px">
                   <Logo />
                 </LogoContainer>
               </ColLeft>
@@ -148,7 +148,7 @@ const Header = ({ bg, height, headerVersion,}) => {
             </Headers>
           ) : headerVersion === "cola" ? (
             <Headers>
-              <LogoContainer>
+              <LogoContainer onClick={() => handleNavegation("/")} >
                 <Logo />
               </LogoContainer>
 

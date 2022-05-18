@@ -27,6 +27,7 @@ export const Container = styled.div`
 export const LogoContainer = styled.div`
   width: ${(props) => props.width};
   max-width: ${(props) => props.maxWidth};
+  cursor:pointer;
 `;
 export const HeaderTop = styled.div`
   display: flex;
