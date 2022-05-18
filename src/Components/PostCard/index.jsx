@@ -23,6 +23,7 @@ import { useHome } from "../../Providers/Home";
 const PostCard = ({ post, authenticated }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [showComments, setShowComments] = useState(false);
+
   const comments = post.comments;
   const { user } = useLogin();
   const { getPosts } = useHome();
@@ -70,8 +71,8 @@ const PostCard = ({ post, authenticated }) => {
     },
   };
 
+  const token = localStorage.getItem("@GetSight:token");
   const newComment = (data) => {
-    const token = localStorage.getItem("@GetSight:token");
     const commentsUpdated = [
       ...post.comments,
       {
@@ -101,6 +102,20 @@ const PostCard = ({ post, authenticated }) => {
       });
   };
 
+  const deleteUserPost = () => {
+    Api.delete(`/dashboard/${post.id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        getPosts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       {authenticated ? (
@@ -115,7 +130,9 @@ const PostCard = ({ post, authenticated }) => {
           <Post>
             <h2>{post.title}</h2>
             <h3>{post.post}</h3>
+            <button onClick={deleteUserPost}>Exculir</button>
           </Post>
+
           <Feed>
             <h2>
               {post.postLikes}
