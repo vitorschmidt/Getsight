@@ -14,7 +14,7 @@ const Candidates = () => {
   return (
     <>
       {/* coloquei a header aqui da versao não logada pra testar */}
-      <Header bg="#C2D8DA" height="130px" headerVersion="dashboardCandidates" />
+      <Header bg="#C2D8DA" headerVersion="dashboardCandidates" />
       <Container>
         <ListCandidates />
       </Container>

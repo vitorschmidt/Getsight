@@ -24,7 +24,7 @@ import { useLogin } from "../../Providers/Login";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Header = ({ bg, height, headerVersion }) => {
+const Header = ({ bg, maxHeight, headerVersion }) => {
   const history = useHistory();
   const { user } = useLogin();
 
@@ -37,7 +37,7 @@ const Header = ({ bg, height, headerVersion }) => {
   const handleNavegation = (path) => history.push(path);
 
   return (
-    <Container bg={bg} height={height}>
+    <Container bg={bg} maxHeight={maxHeight}>
       <HeaderMediaQueries version={headerVersion}>
         {
           /*  versão não logada*/
@@ -139,6 +139,14 @@ const Header = ({ bg, height, headerVersion }) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
+                <Button
+                  className="btn-back"
+                  onClick={() => handleNavegation("/home")}
+                  backGround="#000000"
+                  textColor="#fff"
+                >
+                  VOLTAR
+                </Button>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -175,9 +183,18 @@ const Header = ({ bg, height, headerVersion }) => {
 
               <ColRight>
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user.name},</p>
+                <p>{user.name}</p>
+                <Button
+                  className="btn-back"
+                  onClick={() => handleNavegation("/home")}
+                  backGround="#000000"
+                  textColor="#fff"
+                >
+                  VOLTAR
+                </Button>
+
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
-                  Sair
+                  SAIR
                 </Button>
               </ColRight>
             </Headers>

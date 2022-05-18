@@ -55,6 +55,7 @@ export const HeaderMediaQueries = styled.div`
         }
         ${Headers} {
           flex-direction: column;
+      
         }
 
         ${LogoContainer} {
@@ -83,6 +84,7 @@ export const HeaderMediaQueries = styled.div`
     version === "dashboard" &&
     css`
       @media (max-width: 600px) {
+        
         a {
           margin: 5px 0;
         }
@@ -91,6 +93,9 @@ export const HeaderMediaQueries = styled.div`
           flex-direction: column;
           justify-content: center;
           align-items: center;
+       
+          
+         
         }
 
         ${ColLeft} {
@@ -128,6 +133,10 @@ export const HeaderMediaQueries = styled.div`
         ${HeaderTop} {
           display: flex;
           justify-content: flex-end;
+
+          .btn-back {
+              margin-right: 15px;
+          }
         }
 
         ${ColLeft} {
@@ -149,10 +158,25 @@ export const HeaderMediaQueries = styled.div`
         }
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 700px) {
+        
+
         ${HeaderTop} {
+          justify-content: center;
           button {
             height: 28px;
+          }
+        }
+
+        ${ColLeft} {
+
+          .inputContainer {
+            width: 100%;
+            max-width: 450px;
+          }
+
+          .inputBox {
+            max-width: 450px;
           }
         }
       }
