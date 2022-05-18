@@ -5,12 +5,24 @@ export const Container = styled.ul`
   background-color: var(--grey-1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items:center;
   height:100%;
+  min-height: 500px;
+  
   @media (min-width: 1101px) {
     width: 80%;
     margin:0 auto;
 
+    section{
+      display:flex;
+      width:80%;
+      justify-content: center;
+      align-items: center;
+      height:250px;
+      margin-bottom:20px;
+    }
+    
   }
 `;
 export const Perfil = styled.div`
@@ -18,6 +30,7 @@ export const Perfil = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width:80%;
   height: 200px;
   background-color: var(--light-grey);
   box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
@@ -29,32 +42,27 @@ export const Perfil = styled.div`
     border-radius: 50%;
     border: 2px solid var(--black);
   }
+  
   @media (min-width: 1101px) {
-    display:none;
+    max-width: 200px;
+    height:80%;
+    border-right: 2px solid var(--black);
   }
-
 `;
 
 export const Post = styled.div`
   display: flex;
   align-items: center;
-
   background-color: var(--light-grey);
   box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
-
   margin: 20px 0;
-
   border-radius: 8px;
-
   height: 220px;
-
   img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-
     margin: 10px;
-
     align-self: flex-start;
   }
 
@@ -96,7 +104,19 @@ export const Post = styled.div`
   button {
     align-self: flex-end;
   }
+
   @media (min-width: 1101px) {
-    display:none;
+    width:70%;
+    height:80%;
+    img{
+      display:none;
+    }
+    box-shadow:none;
+    form{
+      width:100%;
+      max-width:500px;
+      margin: 0 auto;
+    }
   }
+  
 `;
