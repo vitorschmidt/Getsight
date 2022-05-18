@@ -17,19 +17,20 @@ import { FaSearch } from "react-icons/fa";
 //Components imports
 import { HeaderMediaQueries } from "./HeaderMediaQueries";
 import { Button } from "../Button";
-
 import Inputs from "../Input";
 
+//Providers imports
+import { useLogin } from "../../Providers/Login/index.js";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useLogin } from "../../Providers/Login";
 
-const Header = ({ bg, height, headerVersion,}) => {
-  const history = useHistory();
-  const handleNavegation = (path) => history.push(path);
-  const { user } = useLogin();
 
+const Header = ({ bg, height, headerVersion, handleDual}) => {
+  const history = useHistory();
+    const {user} = useLogin()
+    
   const logout = () => {
     localStorage.clear();
     history.push("/");
@@ -82,6 +83,7 @@ const Header = ({ bg, height, headerVersion,}) => {
                     inputClass="inputBox"
                     icon={FaSearch}
                     placeholder="Pesquisar Candidato"
+                    onChange={(evt)=> handleDual(evt)}
                   />
                 </ColLeft>
 
@@ -113,8 +115,12 @@ const Header = ({ bg, height, headerVersion,}) => {
                 pTagFontSize="clamp(16px, 3vw, 22px)"
               >
                 {/* aqui será inserido o nome do usuário  */}
-                <p>Bem vindo, {user.name}</p>
-              <Button onClick={logout} backGround="#000000" textColor="#fff">
+
+                <p>{user.name},</p>
+                <Link to="/candidates">Candidatos</Link>
+
+                <Button onClick={logout} backGround="#000000" textColor="#fff">
+
                   Sair
                 </Button>
               </ColRight>
@@ -134,6 +140,7 @@ const Header = ({ bg, height, headerVersion,}) => {
                   inputClass="inputBox"
                   icon={FaSearch}
                   placeholder="Pesquisar Candidato"
+                  onChange={(evt)=> handleDual(evt)}
                 />
               </ColLeft>
 
@@ -154,7 +161,7 @@ const Header = ({ bg, height, headerVersion,}) => {
 
               <ColRight>
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user}</p>
+                <p>{user.name},</p>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>

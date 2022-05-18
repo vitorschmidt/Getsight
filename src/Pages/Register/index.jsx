@@ -9,6 +9,10 @@ import Logo from "../../Assets/img/logo.png";
 import { Button } from "../../Components/Button";
 import Inputs from "../../Components/Input";
 
+//Icons imports
+import {FaEye} from "react-icons/fa"
+import {FaEyeSlash} from "react-icons/fa"
+
 //Libs Imports
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -20,9 +24,16 @@ import { useRegister } from "../../Providers/Register";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 
+//Reacts imports
+import { useState } from "react";
+
 const Register = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path);
+
+  const [showOrHidePass, setShowOrHidePass] = useState({
+      password: false,
+      confirmPassword: false
+  })
 
   const formSchema = yup.object().shape({
     name: yup
@@ -61,6 +72,26 @@ const Register = () => {
     history.push("/login");
     Location.reload();
   };
+
+  const handleShowPassword = (type)=>{
+    if(type === "pass"){
+        if(showOrHidePass.password){
+            setShowOrHidePass(passValor => {return {...passValor, password: false} })
+        }else{
+            setShowOrHidePass(passValor => {return {...passValor, password: true} })
+        }
+    }  
+    
+    if(type === "confirmPass"){
+        if(showOrHidePass.confirmPassword){
+            setShowOrHidePass(passValor => {return {...passValor, confirmPassword: false} })
+        }else{
+            setShowOrHidePass(passValor => {return {...passValor, confirmPassword: true} })
+        }
+    }
+
+  }
+
   return (
     <Container>
       <div className="boxImg">
@@ -78,6 +109,7 @@ const Register = () => {
               placeholder="Digite seu nome"
               register={register}
               error={errors.name?.message}
+              
             />
 
             <Inputs
@@ -99,19 +131,23 @@ const Register = () => {
             <Inputs
               name="password"
               label="Senha"
-              type="password"
+              type={showOrHidePass.password? "text" : "password"}
               placeholder="Digite sua senha"
               register={register}
               error={errors.password?.message}
+              handleShowPassword={()=> handleShowPassword("pass")} 
+              icon={showOrHidePass.password? FaEyeSlash : FaEye} 
             />
 
             <Inputs
               name="confirmPassword"
-              type="password"
+              type={showOrHidePass.confirmPassword? "text" : "password"}
               label="Confirmar senha"
               placeholder="Digite seu email"
               register={register}
               error={errors.confirmPassword?.message}
+              handleShowPassword={()=> handleShowPassword("confirmPass")} 
+              icon={showOrHidePass.confirmPassword? FaEyeSlash : FaEye} 
             />
 
             <Button

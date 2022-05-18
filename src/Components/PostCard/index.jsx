@@ -136,11 +136,11 @@ const PostCard = ({ post, authenticated }) => {
           </Post>
 
           <Feed>
-            <h2>
+            <h2 >
               {post.postLikes}
-              <HeartIcon />
+              <HeartIcon className="heart-icon"/>
             </h2>
-            <ChatIcon onClick={handleOpenModal} />
+            <ChatIcon className="chat-icon" onClick={handleOpenModal} />
           </Feed>
           <Modal
             isOpen={modalIsOpen}
@@ -151,7 +151,7 @@ const PostCard = ({ post, authenticated }) => {
               <form onSubmit={handleSubmit(newComment)}>
                 <div className="header">
                   <h2>Faca um comentario sobre essa postagem</h2>
-                  <p onClick={handleCloseModal}>X</p>
+                  <p className="icon-close" onClick={handleCloseModal}>X</p>
                 </div>
 
                 <h3>Cometário</h3>
@@ -177,9 +177,9 @@ const PostCard = ({ post, authenticated }) => {
             </ModalContent>
           </Modal>
           {showComments === false ? (
-            <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+            <h4 onClick={showHiddenComments} className="btn-comments">Ver comentários...</h4>
           ) : (
-            <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
+            <h4 onClick={showHiddenComments} className="btn-comments" >Recolher comentários...</h4>
           )}
 
           {showComments &&
@@ -195,7 +195,7 @@ const PostCard = ({ post, authenticated }) => {
                 <div>
                   <h3>{el.message}</h3>
 
-                  <h2>{el.like}</h2>
+                  <h2 className="like">{el.like}<HeartIcon className="heart-icon"/></h2>
                 </div>
               </Comments>
             ))}
@@ -214,11 +214,13 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
+
             <h2>
               {post.postLikes}
               <HeartIcon />
             </h2>
             <ChatIcon onClick={handleOpenModal} />
+
           </Feed>
 
           <Modal
@@ -228,15 +230,17 @@ const PostCard = ({ post, authenticated }) => {
           >
             <ModalContent>
               <div>Logar pra comentar</div>
-              <p onClick={handleCloseModal}>X</p>
+              <p className="icon-close" onClick={handleCloseModal}>X</p>
             </ModalContent>
           </Modal>
           {showComments === false ? (
+
             <h4 onClick={showHiddenComments}>Ver comentários...</h4>
           ) : (
             <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
           )}
            {showComments &&
+
             comments.map((el) => (
               <Comments key={el.id}>
                 <div className="user">
@@ -249,10 +253,12 @@ const PostCard = ({ post, authenticated }) => {
                 <div>
                   <h3>{el.message}</h3>
 
+
                   <h2>
                     <HeartIcon />
                     {el.like}
                   </h2>
+
                 </div>
               </Comments>
             ))}

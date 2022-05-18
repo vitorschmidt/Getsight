@@ -14,16 +14,23 @@ import * as yup from "yup";
 //Components imports
 import { Button } from "../../Components/Button";
 
+//Icons imports
+import {FaEye} from "react-icons/fa"
+import {FaEyeSlash} from "react-icons/fa"
+
 //Provider imports
 import { useLogin } from "../../Providers/Login";
 
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 
+//Reacts imports
+import { useState } from "react";
+
 const Login = () => {
   const history = useHistory();
   const handleNavegation = (path) => history.push(path);
-
+  const [showOrHidePass, setShowOrHidePass] = useState(false)
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
     password: yup
@@ -54,6 +61,14 @@ const Login = () => {
     Location.reload();
   };
 
+  const handleShowPassword = ()=>{
+    if(showOrHidePass){
+        setShowOrHidePass(false)
+    }else{
+        setShowOrHidePass(true)
+    }
+
+  }
   return (
     <>
       <Container>
@@ -76,10 +91,12 @@ const Login = () => {
               <Inputs
                 name="password"
                 label="Senha"
-                type="password"
+                type={showOrHidePass? "text" : "password"}
                 placeholder="Digite sua senha"
                 register={register}
                 error={errors.password?.message}
+                handleShowPassword={handleShowPassword} 
+                icon={showOrHidePass? FaEyeSlash : FaEye} 
               />
 
               <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
