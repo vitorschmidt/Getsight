@@ -24,9 +24,9 @@ import Inputs from "../Input";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Header = ({ bg, height, headerVersion, user = "teste," }) => {
+const Header = ({ bg, height, headerVersion, handleDual, user = "teste," }) => {
   const history = useHistory();
-
+ 
   const logout = () => {
     localStorage.clear();
     history.push("/");
@@ -79,6 +79,7 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
                     inputClass="inputBox"
                     icon={FaSearch}
                     placeholder="Pesquisar Candidato"
+                    onChange={(evt)=> handleDual(evt)}
                   />
                 </ColLeft>
 
@@ -132,6 +133,7 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
                   inputClass="inputBox"
                   icon={FaSearch}
                   placeholder="Pesquisar Candidato"
+                  onChange={(evt)=> handleDual(evt)}
                 />
               </ColLeft>
 

@@ -22,7 +22,7 @@ const Candidates = () => {
   return (
     <>
       {/* coloquei a header aqui da versao não logada pra testar */}
-      <Header bg="#C2D8DA" height="130px" headerVersion="dashboardCandidates" />
+      <Header handleDual={handleDual} bg="#C2D8DA" height="130px" headerVersion="dashboardCandidates" />
       <Container>
         <input
           placeholder="Digite o nome"
