@@ -41,6 +41,7 @@ export default createGlobalStyle`
     }
     h1,h2,h3,h4 {
         font-weight: 700;
+        overflow-wrap: break-word;
     }
     a {
         text-decoration: none;

@@ -30,10 +30,13 @@ export const Container = styled.li`
     font-weight: 400;
     font-size: 16px;
     margin-left: 10px;
+    max-width:100%;
+    
   }
 
   h2 {
     margin-left: 10px;
+    
   }
 
   h4 {
@@ -41,6 +44,7 @@ export const Container = styled.li`
     color: var(--placeholder-tex);
     margin-top: 5px;
     font-weight: 400;
+    
   }
 `;
 
@@ -49,9 +53,10 @@ export const UserInfo = styled.div`
   flex-direction: row;
 
   margin: 10px;
-  margin-top: 10px;
+  
   margin-right: 100px;
-
+  align-items: center;
+    align-self: start;
   img {
     width: 70px;
     height: 70px;
@@ -166,7 +171,7 @@ export const Comments = styled.div`
   background-color: var(--card);
   border-radius: 8px;
   margin: 0 auto;
-  width: 100%;
+  width: 50%;
   height: 100%;
   justify-content: space-between;
   border-radius: 8px;
