@@ -17,16 +17,17 @@ import { FaSearch } from "react-icons/fa";
 //Components imports
 import { HeaderMediaQueries } from "./HeaderMediaQueries";
 import { Button } from "../Button";
-
 import Inputs from "../Input";
 
+//Providers imports
+import { useLogin } from "../../Providers/Login/index.js";
 //Router-dom imports
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Header = ({ bg, height, headerVersion, handleDual, user = "teste," }) => {
+const Header = ({ bg, height, headerVersion, handleDual}) => {
   const history = useHistory();
- 
+    const {user} = useLogin()
   const logout = () => {
     localStorage.clear();
     history.push("/");
@@ -111,7 +112,7 @@ const Header = ({ bg, height, headerVersion, handleDual, user = "teste," }) => {
                 pTagFontSize="clamp(16px, 3vw, 22px)"
               >
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user}</p>
+                <p>{user.name},</p>
                 <Link to="/candidates">Candidatos</Link>
 
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
@@ -151,7 +152,7 @@ const Header = ({ bg, height, headerVersion, handleDual, user = "teste," }) => {
 
               <ColRight>
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user}</p>
+                <p>{user.name},</p>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>
