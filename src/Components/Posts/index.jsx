@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useHome } from "../../Providers/Home";
-import { Container } from "./style"; 
+import { Container } from "./style";
 import PostCard from "../PostCard";
 import { Perfil, Post } from "./style";
 import imgPerfil from "../../Assets/img/candidate.png";
@@ -15,7 +15,7 @@ const Posts = ({ authenticated }) => {
   const { posts, getPosts, createNewPost } = useHome();
   const { user } = useLogin();
 
-  console.log(user);
+  console.log(posts);
 
   const formSchema = yup.object().shape({
     title: yup
@@ -38,6 +38,8 @@ const Posts = ({ authenticated }) => {
 
   const newPost = (data) => {
     data.userId = user.id;
+    data.userName = user.name;
+    data.cidade = user.cidade;
     data.comments = [];
     data.postLikes = 0;
     createNewPost(data);
@@ -49,40 +51,47 @@ const Posts = ({ authenticated }) => {
 
   return (
     <Container>
-       <Perfil>
-        <img src={imgPerfil} alt="perfil-usuario" />
-        <h2>{user.name}</h2>
-        <p>{user.cidade}</p>
-      </Perfil>
-      <Post>
-        <img src={imgPerfil} alt="perfil-usuario" />
-        <form onSubmit={handleSubmit(newPost)}>
-          <input
-            type="text"
-            name="title"
-            placeholder="Titulo da sua publicacao"
-            {...register("title")}
-          />
-          <span>{errors.title && errors.title.message}</span>
-          <textarea
-            name="post"
-            placeholder="Comecar publicacao"
-            {...register("post")}
-          ></textarea>
-          <span>{errors.post && errors.post.message}</span>
-          <Button
-            type="submit"
-            width="40%"
-            maxWidth="200px"
-            height="30px"
-            backGround="#051B03"
-            textColor="#fff"
-            borderRadius="20px"
-          >
-            Postar
-          </Button>
-        </form>
-      </Post>
+      {authenticated ? (
+        <>
+          <Perfil>
+            <img src={imgPerfil} alt="perfil-usuario" />
+            <h2>{user.name}</h2>
+            <p>{user.cidade}</p>
+          </Perfil>
+          <Post>
+            <img src={imgPerfil} alt="perfil-usuario" />
+            <form onSubmit={handleSubmit(newPost)}>
+              <input
+                type="text"
+                name="title"
+                placeholder="Titulo da sua publicacao"
+                {...register("title")}
+              />
+              <span>{errors.title && errors.title.message}</span>
+              <textarea
+                name="post"
+                placeholder="Comecar publicacao"
+                {...register("post")}
+              ></textarea>
+              <span>{errors.post && errors.post.message}</span>
+              <Button
+                type="submit"
+                width="40%"
+                maxWidth="200px"
+                height="30px"
+                backGround="#051B03"
+                textColor="#fff"
+                borderRadius="20px"
+              >
+                Postar
+              </Button>
+            </form>
+          </Post>
+        </>
+      ) : (
+        <></>
+      )}
+
       {posts.map((post, index) => (
         <PostCard authenticated={authenticated} key={index} post={post} />
       ))}

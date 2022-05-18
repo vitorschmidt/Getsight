@@ -59,10 +59,10 @@ export const Post = styled.div`
   flex-direction: column;
   background-color: var(--grey-1);
   border-radius: 8px;
-  padding:10px;
+  padding: 10px;
   width: 95%;
   height: 80%;
-  justify-content:center;
+  justify-content: center;
   margin-top: 5px;
 `;
 
@@ -77,21 +77,19 @@ export const Feed = styled.div`
 
   margin-top: 5px;
   margin-bottom: 10px;
-  h2{
-      display: flex;
-      align-items: center;
+  h2 {
+    display: flex;
+    align-items: center;
 
-      svg{
-          fill: var(--red-2);
-      }
+    svg {
+      fill: var(--red-2);
+    }
   }
 
-
-    svg{
-        fill: var(--blue-2);
-        margin-right: 10px;
-    }
-  
+  svg {
+    fill: var(--blue-2);
+    margin-right: 10px;
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -136,7 +134,6 @@ export const ModalContent = styled.div`
     h2 {
       font-size: 18px;
       margin-bottom: 10px;
-      
     }
   }
 `;
@@ -151,7 +148,7 @@ export const Comments = styled.div`
   height: 100%;
   justify-content: space-between;
   border-radius: 8px;
-  
+
   .user {
     display: flex;
     flex-direction: row;

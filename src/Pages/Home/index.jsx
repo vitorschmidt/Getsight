@@ -101,8 +101,6 @@ const Home = ({ authenticated }) => {
             </Button>
           </SubHeader>
 
-          <h1>Deslogado</h1>
-
           <Menu>
             <DashDiv>
               <Button
