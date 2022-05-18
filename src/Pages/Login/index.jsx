@@ -29,20 +29,9 @@ import { useState } from "react";
 
 const Login = () => {
   const history = useHistory();
-
-  const handleNavegation = () => {
-    history.push("/register")
-  }
-  const handleLogin =() =>{
-    document.location.reload(true)
-  }
-  
- const formSchema = yup.object().shape({
-
   const handleNavegation = (path) => history.push(path);
   const [showOrHidePass, setShowOrHidePass] = useState(false)
   const formSchema = yup.object().shape({
-
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
     password: yup
       .string()
@@ -69,7 +58,6 @@ const Login = () => {
     getUser(user);
 
     history.push("/home");
-
   };
 
   const handleShowPassword = ()=>{
@@ -118,7 +106,7 @@ const Login = () => {
             <div className="boxCadastro">
               <p>
                 Não tem uma conta?{" "}
-                <span onClick={handleNavegation}>
+                <span onClick={() => handleNavegation("/register")}>
                   fazer cadastro
                 </span>
               </p>

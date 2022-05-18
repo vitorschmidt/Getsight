@@ -33,11 +33,6 @@ const ListNoticia = () => {
   return (
     <Container>
         <Swiper 
-            breakpoints={{800:{ 
-                            slidesPerView: 1,
-                            slidesPerGroup: 1
-                            }
-                        }}
             slidesPerView={3}
             spaceBetween={30}
             slidesPerGroup={3}
