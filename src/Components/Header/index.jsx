@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({ bg, height, headerVersion, user = "teste," }) => {
   const history = useHistory();
+  const handleNavegation = (path) => history.push(path);
 
   const logout = () => {
     localStorage.clear();
@@ -121,6 +122,7 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
+             
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -136,6 +138,9 @@ const Header = ({ bg, height, headerVersion, user = "teste," }) => {
               </ColLeft>
 
               <ColRight>
+              <Button onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
+                  VOLTAR
+                </Button>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
