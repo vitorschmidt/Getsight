@@ -6,11 +6,8 @@ export const Container = styled.li`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-
+   
     width: 100%;
-    height: 330px;
-    min-width: 300px;
-    max-width: 330px;
     padding: 20px;
     
 
