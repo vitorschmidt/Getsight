@@ -7,6 +7,11 @@ export const Container = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   height:100%;
+  @media (min-width: 1101px) {
+    width: 80%;
+    margin:0 auto;
+
+  }
 `;
 export const Perfil = styled.div`
   display: flex;
@@ -24,6 +29,10 @@ export const Perfil = styled.div`
     border-radius: 50%;
     border: 2px solid var(--black);
   }
+  @media (min-width: 1101px) {
+    display:none;
+  }
+
 `;
 
 export const Post = styled.div`
@@ -86,5 +95,8 @@ export const Post = styled.div`
 
   button {
     align-self: flex-end;
+  }
+  @media (min-width: 1101px) {
+    display:none;
   }
 `;

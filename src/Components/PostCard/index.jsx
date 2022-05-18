@@ -131,7 +131,7 @@ const PostCard = ({ post, authenticated }) => {
             <h2>{post.title}</h2>
             <h3>{post.post}</h3>
             {post.userId === user.id && (
-              <button onClick={deleteUserPost}>Exculir</button>
+              <button onClick={deleteUserPost}>Excluir</button>
             )}
           </Post>
 
@@ -214,8 +214,11 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
-            <h2>{post.postLikes}</h2>
-            <p onClick={handleOpenModal}>Comentar</p>
+            <h2>
+              {post.postLikes}
+              <HeartIcon />
+            </h2>
+            <ChatIcon onClick={handleOpenModal} />
           </Feed>
 
           <Modal
@@ -228,8 +231,12 @@ const PostCard = ({ post, authenticated }) => {
               <p onClick={handleCloseModal}>X</p>
             </ModalContent>
           </Modal>
-          <h4 onClick={showHiddenComments}>Ver comentários...</h4>
-          {showComments &&
+          {showComments === false ? (
+            <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+          ) : (
+            <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
+          )}
+           {showComments &&
             comments.map((el) => (
               <Comments key={el.id}>
                 <div className="user">
@@ -242,7 +249,10 @@ const PostCard = ({ post, authenticated }) => {
                 <div>
                   <h3>{el.message}</h3>
 
-                  <h2>{el.like}</h2>
+                  <h2>
+                    <HeartIcon />
+                    {el.like}
+                  </h2>
                 </div>
               </Comments>
             ))}
