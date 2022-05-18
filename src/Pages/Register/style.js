@@ -70,7 +70,7 @@ export const FormContainer = styled.div`
   border-radius: 4px;
   overflow-y: scroll;
   form,
-  .boxCadastro {
+  .boxLogin {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -93,7 +93,7 @@ export const FormContainer = styled.div`
     }
   }
 
-  .boxCadastro {
+  .boxLogin {
     color: var(--black);
     span {
       font-weight: 1000;
