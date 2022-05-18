@@ -171,7 +171,7 @@ export const ModalContent = styled.div`
 export const Comments = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--card);
+  background-color: var(--grey-1);
   border-radius: 8px;
   margin: 0 auto;
   width: 80%;
@@ -226,15 +226,19 @@ export const Comments = styled.div`
   }
   @media (min-width: 1101px) {
     flex-direction:row;
+    
     .user{
       border-right: 2px solid var(--black);
-      width:25%;
-      max-width:250px;
-      min-width:180px;
+      width:30%;
+      max-width:300px;
+      
     }
      div{
-
+      width:70%;
       align-items: center;
+    }
+    div h3{
+      max-width:500px;
     }
   }
 `;
