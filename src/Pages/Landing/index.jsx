@@ -12,7 +12,10 @@ import { Link, useHistory } from "react-router-dom";
 
 const Landing = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path);
+  const handleNavegation = () => {
+    history.push("/home")
+    document.location.reload(true)
+  }
   return (
     <Container>
       <div className="text">
@@ -43,7 +46,7 @@ const Landing = () => {
           </div>
           <p>
             Ficou curioso para ver como funciona ?{" "}
-            <Link onClick={() => handleNavegation("/home")}>Clique aqui</Link>
+            <Link onClick={handleNavegation}>Clique aqui</Link>
           </p>
         </div>
       </div>

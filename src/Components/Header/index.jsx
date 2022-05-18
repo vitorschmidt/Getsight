@@ -31,8 +31,9 @@ const Header = ({ bg, height, headerVersion,}) => {
   const { user } = useLogin();
 
   const logout = () => {
-    localStorage.clear();
     history.push("/");
+    document.location.reload(true)
+    localStorage.clear();
   };
 
   return (

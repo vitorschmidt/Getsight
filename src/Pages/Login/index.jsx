@@ -22,9 +22,14 @@ import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path);
-
-  const formSchema = yup.object().shape({
+  const handleNavegation = () => {
+    history.push("/register")
+  }
+  const handleLogin =() =>{
+    document.location.reload(true)
+  }
+  
+ const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
     password: yup
       .string()
@@ -51,6 +56,7 @@ const Login = () => {
     getUser(user);
 
     history.push("/home");
+   
   };
 
   return (
@@ -89,7 +95,7 @@ const Login = () => {
             <div className="boxCadastro">
               <p>
                 Não tem uma conta?{" "}
-                <span onClick={() => handleNavegation("/register")}>
+                <span onClick={handleNavegation}>
                   fazer cadastro
                 </span>
               </p>
