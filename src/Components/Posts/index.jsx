@@ -52,6 +52,7 @@ const Posts = ({ authenticated }) => {
     <Container>
       {authenticated ? (
         <>
+        <section>
           <Perfil>
             <img src={imgPerfil} alt="perfil-usuario" />
             <h2>{user.name}</h2>
@@ -81,11 +82,12 @@ const Posts = ({ authenticated }) => {
                 backGround="#051B03"
                 textColor="#fff"
                 borderRadius="20px"
-              >
+                >
                 Postar
               </Button>
             </form>
           </Post>
+        </section>
         </>
       ) : (
         <></>
