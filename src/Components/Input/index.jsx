@@ -1,4 +1,5 @@
 //Styled-component imports
+import { useCandidate } from "../../Providers/Candidates";
 import { Container, InputContainer } from "./styles";
 
 //INPUT ALINHADO COM E AJUSTADO PARA USO NO REACT-HOOK-FORM
@@ -13,6 +14,13 @@ const Inputs = ({
   InputContainerClass,
   ...rest
 }) => {
+  const { setSearch, filter } = useCandidate();
+
+  const handleDual = (evt) => {
+    setSearch(evt.target.value);
+    filter();
+  };
+
   return (
     <Container className={InputContainerClass}>
       <div className="label">
@@ -24,7 +32,7 @@ const Inputs = ({
         {register ? (
           <input {...register(name)} {...rest} />
         ) : (
-          <input {...rest} />
+          <input {...rest} onChange={(evt) => handleDual(evt)} />
         )}
         {Icon && <Icon onClick={handleShowPassword} />}
       </InputContainer>
