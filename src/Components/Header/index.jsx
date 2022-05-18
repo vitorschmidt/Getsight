@@ -17,17 +17,15 @@ import { FaSearch } from "react-icons/fa";
 //Components imports
 import { HeaderMediaQueries } from "./HeaderMediaQueries";
 import { Button } from "../Button";
-
 import Inputs from "../Input";
 
 //Router-dom imports
+import { useLogin } from "../../Providers/Login";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useLogin } from "../../Providers/Login";
 
-const Header = ({ bg, height, headerVersion,}) => {
+const Header = ({ bg, height, headerVersion, handleDual }) => {
   const history = useHistory();
-  const handleNavegation = (path) => history.push(path);
   const { user } = useLogin();
 
   const logout = () => {
@@ -35,6 +33,8 @@ const Header = ({ bg, height, headerVersion,}) => {
     document.location.reload(true)
     localStorage.clear();
   };
+
+  const handleNavegation = (path) => history.push(path);
 
   return (
     <Container bg={bg} height={height}>
@@ -44,7 +44,11 @@ const Header = ({ bg, height, headerVersion,}) => {
           headerVersion === "home" ? (
             <Headers version={headerVersion}>
               <ColLeft>
-                <LogoContainer onClick={() => handleNavegation("/")}  width="100%" maxWidth="200px">
+                <LogoContainer
+                  onClick={() => handleNavegation("/")}
+                  width="100%"
+                  maxWidth="200px"
+                >
                   <Logo />
                 </LogoContainer>
               </ColLeft>
@@ -64,7 +68,11 @@ const Header = ({ bg, height, headerVersion,}) => {
           ) : headerVersion === "homeCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop version={headerVersion}>
-                <LogoContainer onClick={() => handleNavegation("/")}  width="100%" maxWidth="150px">
+                <LogoContainer
+                  onClick={() => handleNavegation("/")}
+                  width="100%"
+                  maxWidth="150px"
+                >
                   <Logo />
                 </LogoContainer>
                 <Button
@@ -83,6 +91,7 @@ const Header = ({ bg, height, headerVersion,}) => {
                     inputClass="inputBox"
                     icon={FaSearch}
                     placeholder="Pesquisar Candidato"
+                    onChange={(evt) => handleDual(evt)}
                   />
                 </ColLeft>
 
@@ -103,7 +112,11 @@ const Header = ({ bg, height, headerVersion,}) => {
           headerVersion === "dashboard" ? (
             <Headers version={headerVersion}>
               <ColLeft width="100%">
-                <LogoContainer onClick={() => handleNavegation("/")} width="100%" maxWidth="200px">
+                <LogoContainer
+                  onClick={() => handleNavegation("/")}
+                  width="100%"
+                  maxWidth="200px"
+                >
                   <Logo />
                 </LogoContainer>
               </ColLeft>
@@ -114,8 +127,11 @@ const Header = ({ bg, height, headerVersion,}) => {
                 pTagFontSize="clamp(16px, 3vw, 22px)"
               >
                 {/* aqui será inserido o nome do usuário  */}
-                <p>Bem vindo, {user.name}</p>
-              <Button onClick={logout} backGround="#000000" textColor="#fff">
+
+                <p>{user.name},</p>
+                <Link to="/candidates">Candidatos</Link>
+
+                <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>
               </ColRight>
@@ -123,7 +139,6 @@ const Header = ({ bg, height, headerVersion,}) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
-             
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -135,11 +150,16 @@ const Header = ({ bg, height, headerVersion,}) => {
                   inputClass="inputBox"
                   icon={FaSearch}
                   placeholder="Pesquisar Candidato"
+                  onChange={(evt) => handleDual(evt)}
                 />
               </ColLeft>
 
               <ColRight>
-              <Button onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
+                <Button
+                  onClick={() => handleNavegation("/home")}
+                  backGround="#000000"
+                  textColor="#fff"
+                >
                   VOLTAR
                 </Button>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
@@ -149,13 +169,13 @@ const Header = ({ bg, height, headerVersion,}) => {
             </Headers>
           ) : headerVersion === "cola" ? (
             <Headers>
-              <LogoContainer onClick={() => handleNavegation("/")} >
+              <LogoContainer onClick={() => handleNavegation("/")}>
                 <Logo />
               </LogoContainer>
 
               <ColRight>
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user}</p>
+                <p>{user.name},</p>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>

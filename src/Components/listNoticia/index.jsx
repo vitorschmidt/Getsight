@@ -2,9 +2,13 @@ import { Container } from "./style";
 import { useEffect } from "react";
 import CardNoticia from "../CardNoticias";
 import { useNoticia } from "../../Providers/Noticia";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+ 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { Carousel } from "react-responsive-carousel";
+import { Pagination, Navigation } from "swiper";
 const ListNoticia = () => {
   //caso va utilizar a api fake
   const { noticia, getNoticiaPropria } = useNoticia();
@@ -14,19 +18,50 @@ const ListNoticia = () => {
 
   //api real
 
+
+//   const { noticia, getNoticia } = useNoticia();
+//   console.log(noticia);
+
   // const { noticia, getNoticia } = useNoticia();
+
 
   // useEffect(() => {
   //   getNoticia();
   // }, []);
 
+
   return (
     <Container>
-      <Carousel showThumbs={false} showArrows={true}>
-        {noticia.map((noticia, index) => (
-          <CardNoticia key={index} noticia={noticia} />
-        ))}
-      </Carousel>
+        <Swiper 
+            breakpoints={{800:{ 
+                            slidesPerView: 1,
+                            slidesPerGroup: 1
+                            }
+                        }}
+            slidesPerView={3}
+            spaceBetween={30}
+            slidesPerGroup={3}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            pagination={{
+                clickable: true
+              }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            onSwiper={(swiper) => console.log(swiper)}
+            >
+                {
+                noticia.map((noticia, index) => (
+                    <SwiperSlide key={index}>
+                        <CardNoticia  noticia={noticia} />
+                    </SwiperSlide>
+        
+                ))}
+           
+            
+        </Swiper>
+      
+ 
     </Container>
   );
 };

@@ -79,6 +79,7 @@ const PostCard = ({ post, authenticated }) => {
         userId: user.id,
         userName: user.name,
         like: 0,
+        usersLike: [],
         cidade: user.cidade,
         id: post.comments.length + 1,
         message: data.comment,
@@ -116,6 +117,96 @@ const PostCard = ({ post, authenticated }) => {
       });
   };
 
+  const addLike = () => {
+    const data = {
+      userLikes: [...post.userLikes, user.id],
+      postLikes: post.postLikes + 1,
+    };
+    Api.patch(`/dashboard/${post.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        getPosts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const removeLike = () => {
+    const data = {
+      userLikes: post.userLikes.filter((post) => post !== user.id),
+      postLikes: post.postLikes - 1,
+    };
+    Api.patch(`/dashboard/${post.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        getPosts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const liked = post.userLikes.includes(user.id);
+
+  const addLikeComment = (id) => {
+    const data = {
+      comments: post.comments.map((comment) => {
+        if (comment.id === id) {
+          comment.like = comment.like + 1;
+          comment.userLikes = !comment.userLikes
+            ? [user.id]
+            : [...comment.userLikes, user.id];
+          return comment;
+        }
+        return comment;
+      }),
+    };
+    Api.patch(`/dashboard/${post.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        getPosts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const removeLikeComment = (id) => {
+    const data = {
+      comments: post.comments.map((comment) => {
+        if (comment.id === id) {
+          comment.like = comment.like - 1;
+          comment.userLikes = comment.userLikes.filter(
+            (post) => post !== user.id
+          );
+          return comment;
+        }
+        return comment;
+      }),
+    };
+    Api.patch(`/dashboard/${post.id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        getPosts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       {authenticated ? (
@@ -131,14 +222,14 @@ const PostCard = ({ post, authenticated }) => {
             <h2>{post.title}</h2>
             <h3>{post.post}</h3>
             {post.userId === user.id && (
-              <button onClick={deleteUserPost}>Exculir</button>
+              <button onClick={deleteUserPost}>Excluir</button>
             )}
           </Post>
 
           <Feed>
             <h2>
               {post.postLikes}
-              <HeartIcon />
+              <HeartIcon onClick={liked ? removeLike : addLike} />
             </h2>
             <ChatIcon onClick={handleOpenModal} />
           </Feed>
@@ -183,22 +274,35 @@ const PostCard = ({ post, authenticated }) => {
           )}
 
           {showComments &&
-            comments.map((el) => (
-              <Comments key={el.id}>
-                <div className="user">
-                  <img src={logo} alt="foto-perfil" />
-                  <div>
-                    <h2>{el.userName}</h2>
-                    <p>{el.cidade}</p>
+            comments.map((el) => {
+              const commentLiked = el.userLikes
+                ? el.userLikes.includes(user.id)
+                : false;
+              return (
+                <Comments key={el.id}>
+                  <div className="user">
+                    <img src={logo} alt="foto-perfil" />
+                    <div>
+                      <h2>{el.userName}</h2>
+                      <p>{el.cidade}</p>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3>{el.message}</h3>
+                  <div>
+                    <h3>{el.message}</h3>
 
-                  <h2>{el.like}</h2>
-                </div>
-              </Comments>
-            ))}
+                    <h2
+                      onClick={() =>
+                        commentLiked
+                          ? removeLikeComment(el.id)
+                          : addLikeComment(el.id)
+                      }
+                    >
+                      {el.like}
+                    </h2>
+                  </div>
+                </Comments>
+              );
+            })}
         </Container>
       ) : (
         <Container>
@@ -242,7 +346,10 @@ const PostCard = ({ post, authenticated }) => {
                 <div>
                   <h3>{el.message}</h3>
 
-                  <h2>{el.like}</h2>
+                  <h2>
+                    <HeartIcon />
+                    {el.like}
+                  </h2>
                 </div>
               </Comments>
             ))}

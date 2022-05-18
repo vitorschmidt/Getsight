@@ -10,14 +10,33 @@ export const Container = styled.li`
   min-height: 300px;
   margin-top: 10px;
 
+  .heart-icon{
+      fill: var(--red-2);
+      cursor: pointer;
+    }
+
+    .chat-icon{
+      cursor: pointer;
+      fill: var(--blue-2);
+      margin-right: 10px;
+      cursor: pointer;
+  }
+
+  .btn-comments{
+    cursor: pointer;
+
+  }
   h3 {
     font-weight: 400;
     font-size: 16px;
     margin-left: 10px;
+    max-width:100%;
+    
   }
 
   h2 {
     margin-left: 10px;
+    
   }
 
   h4 {
@@ -25,6 +44,7 @@ export const Container = styled.li`
     color: var(--placeholder-tex);
     margin-top: 5px;
     font-weight: 400;
+    
   }
 `;
 
@@ -33,9 +53,10 @@ export const UserInfo = styled.div`
   flex-direction: row;
 
   margin: 10px;
-  margin-top: 10px;
+  
   margin-right: 100px;
-
+  align-items: center;
+    align-self: start;
   img {
     width: 70px;
     height: 70px;
@@ -80,23 +101,29 @@ export const Feed = styled.div`
   h2 {
     display: flex;
     align-items: center;
-
-    svg {
-      fill: var(--red-2);
-    }
+    
   }
 
-  svg {
-    fill: var(--blue-2);
-    margin-right: 10px;
-  }
+  
 `;
 
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  .icon-close{
+    background-color: gray;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -144,15 +171,21 @@ export const Comments = styled.div`
   background-color: var(--card);
   border-radius: 8px;
   margin: 0 auto;
-  width: 100%;
+  width: 50%;
   height: 100%;
   justify-content: space-between;
   border-radius: 8px;
+
+  .like{
+      display: flex;
+       align-items: center;
+  }
 
   .user {
     display: flex;
     flex-direction: row;
   }
+  
   h2 {
     margin-top: 10px;
     width: 10%;

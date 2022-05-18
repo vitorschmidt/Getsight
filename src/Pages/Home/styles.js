@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   @media (min-width: 1101px) {
-    align-items: center;
+    align-items: start;
   }
 `;
 
@@ -50,7 +50,7 @@ export const Menu = styled.div`
   }
 
   @media (min-width: 1101px) {
-    width: 60%;
+    width: 100%;
   }
 `;
 
