@@ -51,6 +51,7 @@ const Login = () => {
     getUser(user);
 
     history.push("/home");
+    Location.reload();
   };
 
   return (

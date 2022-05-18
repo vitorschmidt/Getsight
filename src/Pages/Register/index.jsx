@@ -58,6 +58,7 @@ const Register = () => {
     const user = { name, cidade, email, password };
     postUser(user);
     history.push("/login");
+    Location.reload();
   };
   return (
     <Container>
