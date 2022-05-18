@@ -22,6 +22,7 @@ import { useHistory } from "react-router-dom";
 
 const Register = () => {
   const history = useHistory();
+  const handleNavegation = (path) => history.push(path);
 
   const formSchema = yup.object().shape({
     name: yup
@@ -121,6 +122,14 @@ const Register = () => {
             >
               Cadastrar
             </Button>
+            <div className="boxLogin">
+              <p>
+                Ja tem uma conta?{" "}
+                <span onClick={() => handleNavegation("/login")}>
+                  fazer Login
+                </span>
+              </p>
+            </div>
           </form>
         </FormContainer>
       </Content>
