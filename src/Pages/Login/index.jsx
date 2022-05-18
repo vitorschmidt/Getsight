@@ -15,8 +15,8 @@ import * as yup from "yup";
 import { Button } from "../../Components/Button";
 
 //Icons imports
-import {FaEye} from "react-icons/fa"
-import {FaEyeSlash} from "react-icons/fa"
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 //Provider imports
 import { useLogin } from "../../Providers/Login";
@@ -27,8 +27,9 @@ import { useHistory } from "react-router-dom";
 //Reacts imports
 import { useState } from "react";
 
-const Login = () => {
+const Login = ({setAuthenticated}) => {
   const history = useHistory();
+  const [showOrHidePass, setShowOrHidePass] = useState(false);
 
   const handleNavegation = () => {
     history.push("/register")
@@ -40,9 +41,10 @@ const Login = () => {
  
 
   // const handleNavegation = (path) => history.push(path);
-  const [showOrHidePass, setShowOrHidePass] = useState(false)
-  const formSchema = yup.object().shape({
+  
+  
 
+  const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
     password: yup
       .string()
@@ -63,23 +65,21 @@ const Login = () => {
 
   const { getUser } = useLogin();
 
-  const onSubmitFunction = ({ email, password }) => {
+  const onSubmitFunction = async ({ email, password }) => {
     const user = { email, password };
 
-    getUser(user);
+    await getUser(user,setAuthenticated);
 
     history.push("/home");
 
   };
-
-  const handleShowPassword = ()=>{
-    if(showOrHidePass){
-        setShowOrHidePass(false)
-    }else{
-        setShowOrHidePass(true)
+  const handleShowPassword = () => {
+    if (showOrHidePass) {
+      setShowOrHidePass(false);
+    } else {
+      setShowOrHidePass(true);
     }
-
-  }
+  };
   return (
     <>
       <Container>
@@ -102,12 +102,12 @@ const Login = () => {
               <Inputs
                 name="password"
                 label="Senha"
-                type={showOrHidePass? "text" : "password"}
+                type={showOrHidePass ? "text" : "password"}
                 placeholder="Digite sua senha"
                 register={register}
                 error={errors.password?.message}
-                handleShowPassword={handleShowPassword} 
-                icon={showOrHidePass? FaEyeSlash : FaEye} 
+                handleShowPassword={handleShowPassword}
+                icon={showOrHidePass ? FaEyeSlash : FaEye}
               />
 
               <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
@@ -118,9 +118,7 @@ const Login = () => {
             <div className="boxCadastro">
               <p>
                 Não tem uma conta?{" "}
-                <span onClick={handleNavegation}>
-                  fazer cadastro
-                </span>
+                <span onClick={handleNavegation}>fazer cadastro</span>
               </p>
             </div>
           </FormContainer>
