@@ -2,7 +2,7 @@
 import { Container } from "./styles";
 
 //Components imports
-// import Header from "../../Components/Header";
+import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
 
 // import { useHistory } from "react-router-dom";
@@ -14,7 +14,7 @@ const Candidates = () => {
   return (
     <>
       {/* coloquei a header aqui da versao não logada pra testar */}
-      {/* <Header handleDual={handleDual} bg="#C2D8DA" height="130px" headerVersion="dashboardCandidates" /> */}
+      <Header bg="#C2D8DA" height="130px" headerVersion="dashboardCandidates" />
       <Container>
         <ListCandidates />
       </Container>
