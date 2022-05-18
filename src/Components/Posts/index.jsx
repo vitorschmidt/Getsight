@@ -40,6 +40,7 @@ const Posts = ({ authenticated }) => {
     data.cidade = user.cidade;
     data.comments = [];
     data.postLikes = 0;
+    data.userLikes = [];
     createNewPost(data);
   };
 
