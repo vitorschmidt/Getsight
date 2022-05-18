@@ -33,9 +33,23 @@ const ListNoticia = () => {
   return (
     <Container>
         <Swiper 
-            slidesPerView={3}
+            
+            slidesPerView={1}
             spaceBetween={30}
-            slidesPerGroup={3}
+            slidesPerGroup={1}
+            breakpoints={{
+                620: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+
+                900: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+
+
+              }}
             loop={true}
             loopFillGroupWithBlank={true}
             pagination={{
