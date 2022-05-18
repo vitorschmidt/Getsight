@@ -27,7 +27,7 @@ import { useHistory } from "react-router-dom";
 //Reacts imports
 import { useState } from "react";
 
-const Login = () => {
+const Login = ({setAuthenticated}) => {
   const history = useHistory();
   const [showOrHidePass, setShowOrHidePass] = useState(false);
 
@@ -59,14 +59,14 @@ const Login = () => {
 
   const { getUser } = useLogin();
 
-  const onSubmitFunction = ({ email, password }) => {
+  const onSubmitFunction = async ({ email, password }) => {
     const user = { email, password };
 
-    getUser(user);
+    await getUser(user,setAuthenticated);
 
     history.push("/home");
-  };
 
+  };
   const handleShowPassword = () => {
     if (showOrHidePass) {
       setShowOrHidePass(false);

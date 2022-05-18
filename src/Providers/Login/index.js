@@ -9,13 +9,14 @@ export const LoginContext = createContext();
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
-  const getUser = (users) => {
-    Api.post("/login", users)
+  const getUser = async (users,setAuthenticated) => {
+    await Api.post("/login", users)
       .then((response) => {
         const { accessToken } = response.data;
 
         localStorage.setItem("@GetSight:token", accessToken);
         localStorage.setItem("@GetSight:userId", response.data.user.id);
+        setAuthenticated(true)
         setUser(response.data.user);
       })
       .catch((err) => console.log(err));
