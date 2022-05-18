@@ -37,9 +37,9 @@ const Login = () => {
     document.location.reload(true)
   }
   
- const formSchema = yup.object().shape({
+ 
 
-  const handleNavegation = (path) => history.push(path);
+  // const handleNavegation = (path) => history.push(path);
   const [showOrHidePass, setShowOrHidePass] = useState(false)
   const formSchema = yup.object().shape({
 
