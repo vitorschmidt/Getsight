@@ -25,16 +25,16 @@ export const Container = styled.div`
     font-size: clamp(12px, 2vw, 16px);
   }
 
-  p{
+  p {
+    font-weight: 700;
     word-break: break-all;
   }
-
 `;
 
 export const LogoContainer = styled.div`
   width: ${(props) => props.width};
   max-width: ${(props) => props.maxWidth};
-  cursor:pointer;
+  cursor: pointer;
 `;
 export const HeaderTop = styled.div`
   display: flex;
@@ -90,7 +90,6 @@ export const ColLeft = styled.div`
   }
   .inputContainer {
     max-width: 350px;
-    
   }
   .inputBox {
     margin: 0;

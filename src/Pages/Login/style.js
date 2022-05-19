@@ -15,6 +15,7 @@ export const Container = styled.div`
     padding: 0;
     .boxImg {
       display: block;
+      box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
 
       img {
         width: 60vw;
@@ -60,6 +61,7 @@ export const FormContainer = styled.div`
   background-color: var(--light-grey);
   padding: 1rem;
   border-radius: 4px;
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
 
   form,
   .boxCadastro {
