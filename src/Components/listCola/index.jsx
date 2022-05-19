@@ -8,11 +8,9 @@ import CardCola from "../CardCola";
 import { useCola } from "../../Providers/Cola";
 
 //Hooks imports
-import { useEffect } from "react";
 
 const ListCola = () => {
   const { cola } = useCola();
-  // console.log(cola);
 
   return (
     <Container>

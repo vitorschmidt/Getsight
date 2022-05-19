@@ -16,7 +16,6 @@ export const HomeProvider = ({ children }) => {
   };
 
   const createNewPost = (data) => {
-    console.log(data);
     Api.post("/dashboard", data, {
       headers: {
         Authorization: `Bearer ${token}`,

@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 //Service imports
-import { Api } from "../../services/Api";
 import { useCandidate } from "../Candidates";
 
 export const ColaContext = createContext();
@@ -70,8 +69,6 @@ export const ColaProvider = ({ children }) => {
   //       console.log(err);
   //     });
   // };
-
-  console.log(candidate);
 
   const handleCola = (numero) => {
     const colaAdd = candidate.find((cadidateVoto) => {

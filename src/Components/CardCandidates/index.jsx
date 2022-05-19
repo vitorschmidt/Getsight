@@ -13,8 +13,6 @@ const CardCandidates = ({ candidate }) => {
   const { cola, handleCola, addCola } = useCola();
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  console.log(cola);
-
   function handleOpenModal() {
     setIsOpen(true);
   }

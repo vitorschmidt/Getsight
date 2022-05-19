@@ -30,12 +30,12 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
 
   const logout = () => {
     history.push("/");
-    document.location.reload(true)
+    document.location.reload(true);
     localStorage.clear();
   };
 
   const handleNavegation = (path) => history.push(path);
-  console.log(user.name)
+
   return (
     <Container bg={bg} maxHeight={maxHeight}>
       <HeaderMediaQueries version={headerVersion}>
@@ -129,7 +129,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 {/* aqui será inserido o nome do usuário  */}
 
                 <p>Bem vindo , {user.name}</p>
-              <Button onClick={logout} backGround="#000000" textColor="#fff">
+                <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>
               </ColRight>
@@ -168,7 +168,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 >
                   VOLTAR
                 </Button>
-                
+
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
