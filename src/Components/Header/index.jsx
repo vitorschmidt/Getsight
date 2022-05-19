@@ -30,8 +30,8 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
 
   const logout = () => {
     history.push("/");
-    document.location.reload(true);
-    localStorage.clear();
+    // document.location.reload(true);
+    // localStorage.clear();
   };
 
   const handleNavegation = (path) => history.push(path);

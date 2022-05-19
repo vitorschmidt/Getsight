@@ -71,8 +71,7 @@ const Register = () => {
     postUser(user);
     history.push("/login");
 
-    document.location.reload(true)
-
+    // document.location.reload(true)
   };
 
   const handleShowPassword = (type) => {

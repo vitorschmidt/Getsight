@@ -13,12 +13,12 @@ import { Link, useHistory } from "react-router-dom";
 const Landing = () => {
   const history = useHistory();
   const handleNavegation = () => {
-    history.push("/home")
-    document.location.reload(true)
-  }
-  const handleRegister =()=>{
-    history.push("/register")
-  }
+    history.push("/home");
+    // document.location.reload(true)
+  };
+  const handleRegister = () => {
+    history.push("/register");
+  };
   return (
     <Container>
       <div className="text">

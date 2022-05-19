@@ -22,6 +22,7 @@ export const HomeProvider = ({ children }) => {
       },
     })
       .then(() => {
+        console.log(token);
         getPosts();
       })
       .catch((err) => {
