@@ -12,7 +12,7 @@ export const Container = styled.ul`
   
   @media (min-width: 1101px) {
     width: 80%;
-    margin:0 auto;
+    margin:30px auto 0 auto;
 
     section{
       display:flex;
@@ -21,6 +21,7 @@ export const Container = styled.ul`
       align-items: center;
       height:250px;
       margin-bottom:20px;
+      
     }
     
   }
@@ -30,9 +31,9 @@ export const Perfil = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:80%;
+  width:100%;
   height: 200px;
-  background-color: var(--light-grey);
+  background-color: var(--background-primary);
   box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
   margin: 20px 0;
   border-radius: 8px;
@@ -44,6 +45,7 @@ export const Perfil = styled.div`
   }
   
   @media (min-width: 1101px) {
+    width:80%;
     max-width: 200px;
     height:80%;
     border-right: 2px solid var(--black);
@@ -111,7 +113,7 @@ export const Post = styled.div`
     img{
       display:none;
     }
-    box-shadow:none;
+    box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
     form{
       width:100%;
       max-width:500px;

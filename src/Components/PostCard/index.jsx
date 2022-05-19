@@ -229,9 +229,9 @@ const PostCard = ({ post, authenticated }) => {
           <Feed>
             <h2>
               {post.postLikes}
-              <HeartIcon onClick={liked ? removeLike : addLike} />
+              <HeartIcon onClick={liked ? removeLike : addLike} className="heart-icon"/>
             </h2>
-            <ChatIcon onClick={handleOpenModal} />
+            <ChatIcon onClick={handleOpenModal} className="chat-icon"/>
           </Feed>
           <Modal
             isOpen={modalIsOpen}
@@ -289,7 +289,7 @@ const PostCard = ({ post, authenticated }) => {
                   </div>
                   <div>
                     <h3>{el.message}</h3>
-
+                    
                     <h2
                       onClick={() =>
                         commentLiked
@@ -297,6 +297,7 @@ const PostCard = ({ post, authenticated }) => {
                           : addLikeComment(el.id)
                       }
                     >
+                      <HeartIcon onClick={liked ? removeLike : addLike} className="heart-icon"/>
                       {el.like}
                     </h2>
                   </div>
@@ -319,8 +320,8 @@ const PostCard = ({ post, authenticated }) => {
           </Post>
           <Feed>
             
-            <h2>  {post.postLikes} <HeartIcon /></h2>
-            <ChatIcon onClick={handleOpenModal} />
+            <h2>  {post.postLikes} <HeartIcon className="heart-icon"/></h2>
+            <ChatIcon onClick={handleOpenModal}  className="chat-icon"/>
           </Feed>
 
           <Modal
@@ -353,7 +354,7 @@ const PostCard = ({ post, authenticated }) => {
 
                   <h2 className="Comments-like">
                     {el.like}
-                    <HeartIcon />
+                    <HeartIcon className="heart-icon"/>
                   </h2>
                 </div>
               </Comments>
