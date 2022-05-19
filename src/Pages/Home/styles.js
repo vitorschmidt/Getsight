@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundGif from "../../Assets/img/background.gif";
+import backgroundGif from "../../Assets/img/registergif.gif";
 export const Container = styled.div`
   background-color: var(--grey-1);
   width: 100%;

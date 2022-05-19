@@ -2,7 +2,7 @@
 import { Container, Content, FormContainer } from "./style";
 
 //Assets
-import banner from "../../Assets/img//register1.jpg";
+import banner from "../../Assets/img//testegif.gif";
 import Logo from "../../Assets/img/logo.png";
 
 //Components imports
