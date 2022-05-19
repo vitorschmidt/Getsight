@@ -5,11 +5,15 @@ import { useState } from "react";
 import "./style.css";
 //Components import
 import { Button } from "../Button/";
+import { useCola } from "../../Providers/Cola";
 
 Modal.setAppElement("#root");
 
 const CardCandidates = ({ candidate }) => {
+  const { cola, handleCola, addCola } = useCola();
   const [modalIsOpen, setIsOpen] = useState(false);
+
+  console.log(cola);
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -42,6 +46,7 @@ const CardCandidates = ({ candidate }) => {
         textColor={"#FFF"}
         backGroundHover={"#908c8c"}
         className="botao"
+        onClick={() => addCola(candidate)}
       >
         Adicionar
       </Button>
@@ -50,7 +55,9 @@ const CardCandidates = ({ candidate }) => {
           Clique para ver mais...
         </a>
       </div>
-      <button className="botaoMobile">+</button>
+      <button className="botaoMobile" onClick={() => addCola(candidate)}>
+        +
+      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClone={handleCloseModal}
