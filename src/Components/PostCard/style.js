@@ -12,6 +12,7 @@ export const Container = styled.li`
   min-height: 300px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
+  
   .heart-icon{
       fill: var(--red-2);
       cursor: pointer;
@@ -42,8 +43,8 @@ export const Container = styled.li`
   }
 
   h4 {
-    font-size: 12px;
-    color: var(--placeholder-tex);
+    font-size: 1rem;
+    color: var(--placeholder-text);
     margin-top: 5px;
     font-weight: 400;
     
@@ -84,9 +85,24 @@ export const Post = styled.div`
   justify-content: center;
   margin: 10px 0;
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
-
+  min-height:150px;
   h2{
     margin-left:10px;
+  }
+
+  button{
+    width:30%;
+    min-width:50px;
+    max-width:100px;
+    height:30px;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    align-self:flex-end;
+    color: var(--light-grey);
+    background-color: var(--black);
+    box-shadow: 2px 2px 2px 2px rgba(89, 89, 89, 0.75);
   }
 `;
 
@@ -104,9 +120,13 @@ export const Feed = styled.div`
   h2 {
     display: flex;
     align-items: center;
-    
+    padding-left:10px;
   }
-
+  svg{
+    margin-right:10px;
+    width:29px;
+    height:29px;
+  }
   
 `;
 
