@@ -51,6 +51,10 @@ export const Perfil = styled.div`
     width: 150px;
 
     text-align: center;
+    text-transform:capitalize;
+  }
+  p{
+    text-transform:capitalize;
   }
 
   @media (min-width: 1101px) {
