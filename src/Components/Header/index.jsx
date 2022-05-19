@@ -35,7 +35,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
   };
 
   const handleNavegation = (path) => history.push(path);
-
+  console.log(user.name)
   return (
     <Container bg={bg} maxHeight={maxHeight}>
       <HeaderMediaQueries version={headerVersion}>
@@ -128,10 +128,8 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
               >
                 {/* aqui será inserido o nome do usuário  */}
 
-                <p>{user.name},</p>
-                <Link to="/candidates">Candidatos</Link>
-
-                <Button onClick={logout} backGround="#000000" textColor="#fff">
+                <p>Bem vindo , {user.name}</p>
+              <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>
               </ColRight>
@@ -170,6 +168,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 >
                   VOLTAR
                 </Button>
+                
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -183,7 +182,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
 
               <ColRight>
                 {/* aqui será inserido o nome do usuário  */}
-                <p>{user.name}</p>
+                <p>Bem vindo , {user.name}</p>
                 <Button
                   className="btn-back"
                   onClick={() => handleNavegation("/home")}

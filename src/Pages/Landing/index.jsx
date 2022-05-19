@@ -16,6 +16,9 @@ const Landing = () => {
     history.push("/home")
     document.location.reload(true)
   }
+  const handleRegister =()=>{
+    history.push("/register")
+  }
   return (
     <Container>
       <div className="text">
@@ -39,7 +42,7 @@ const Landing = () => {
             <Button
               backGround="#f3f3f3"
               textColor="#47777b"
-              onClick={() => handleNavegation("/register")}
+              onClick={handleRegister}
             >
               CADASTRE-SE ✓
             </Button>
