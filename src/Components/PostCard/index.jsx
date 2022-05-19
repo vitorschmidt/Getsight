@@ -318,8 +318,9 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
-            <h2>{post.postLikes}</h2>
-            <p onClick={handleOpenModal}>Comentar</p>
+            
+            <h2>  {post.postLikes} <HeartIcon /></h2>
+            <ChatIcon onClick={handleOpenModal} />
           </Feed>
 
           <Modal
@@ -332,7 +333,11 @@ const PostCard = ({ post, authenticated }) => {
               <p onClick={handleCloseModal}>X</p>
             </ModalContent>
           </Modal>
-          <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+          {showComments === false ? (
+            <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+          ) : (
+            <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
+          )}
           {showComments &&
             comments.map((el) => (
               <Comments key={el.id}>
@@ -346,9 +351,9 @@ const PostCard = ({ post, authenticated }) => {
                 <div>
                   <h3>{el.message}</h3>
 
-                  <h2>
-                    <HeartIcon />
+                  <h2 className="Comments-like">
                     {el.like}
+                    <HeartIcon />
                   </h2>
                 </div>
               </Comments>

@@ -7,9 +7,11 @@ export const Container = styled.li`
   align-items: center;
   background-color: var(--light-grey);
   border-radius: 8px;
+  min-width:320px;
+  width:100%;
   min-height: 300px;
-  margin-top: 10px;
-
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
   .heart-icon{
       fill: var(--red-2);
       cursor: pointer;
@@ -51,22 +53,18 @@ export const Container = styled.li`
 export const UserInfo = styled.div`
   display: flex;
   flex-direction: row;
-
   margin: 10px;
-  
-  margin-right: 100px;
+  padding-left: 10px;
   align-items: center;
-    align-self: start;
+  align-self: start;
   img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
   }
-
   h2 {
     margin: 0;
   }
-
   div {
     display: flex;
     flex-direction: column;
@@ -84,7 +82,12 @@ export const Post = styled.div`
   width: 95%;
   height: 80%;
   justify-content: center;
-  margin-top: 5px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
+
+  h2{
+    margin-left:10px;
+  }
 `;
 
 export const Feed = styled.div`
@@ -168,14 +171,15 @@ export const ModalContent = styled.div`
 export const Comments = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--card);
+  background-color: var(--grey-1);
   border-radius: 8px;
   margin: 0 auto;
-  width: 50%;
+  width: 80%;
   height: 100%;
   justify-content: space-between;
   border-radius: 8px;
-
+  box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
+  
   .like{
       display: flex;
        align-items: center;
@@ -184,15 +188,18 @@ export const Comments = styled.div`
   .user {
     display: flex;
     flex-direction: row;
+    padding-bottom:10px;
   }
-  
+  .Comments-like{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
   h2 {
-    margin-top: 10px;
-    width: 10%;
+    margin-left:0;
   }
   h3 {
     width: 70%;
-    margin-top: 10px;
   }
   margin: 10px;
 
@@ -213,8 +220,25 @@ export const Comments = styled.div`
   div {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: var(--grey-1);
     border-radius: 8px;
+  }
+  @media (min-width: 1101px) {
+    flex-direction:row;
+    
+    .user{
+      border-right: 2px solid var(--black);
+      width:30%;
+      max-width:300px;
+      
+    }
+     div{
+      width:70%;
+      align-items: center;
+    }
+    div h3{
+      max-width:500px;
+    }
   }
 `;

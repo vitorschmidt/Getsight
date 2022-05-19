@@ -6,10 +6,12 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
 
-  padding: 0 25px;
+  padding: 10px 16px;
 
   width: 100%;
-  height: ${(props) => props.height};
+  height: 100%;
+  min-height: 80px;
+  max-height: ${(props) => props.maxHeight};
 
   background-color: ${(props) => props.bg};
 
@@ -22,6 +24,11 @@ export const Container = styled.div`
   a {
     font-size: clamp(12px, 2vw, 16px);
   }
+
+  p{
+    word-break: break-all;
+  }
+
 `;
 
 export const LogoContainer = styled.div`
@@ -83,7 +90,7 @@ export const ColLeft = styled.div`
   }
   .inputContainer {
     max-width: 350px;
-    min-width: 288px;
+    
   }
   .inputBox {
     margin: 0;
