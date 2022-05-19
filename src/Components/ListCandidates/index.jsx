@@ -7,11 +7,11 @@ import CardCandidates from "../CardCandidates";
 import { useCandidate } from "../../Providers/Candidates";
 
 const ListCandidates = () => {
-  const { candidate, filteredCandidates, value } = useCandidate();
+  const { candidate, filteredCandidates, value, search } = useCandidate();
 
   return (
     <Container>
-      {value === false
+      {value === false || search === ""
         ? candidate.map((candidate, index) => (
             <CardCandidates key={index} candidate={candidate} />
           ))
