@@ -60,11 +60,14 @@ export const UserInfo = styled.div`
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 1px solid var(--black);
+    /* border: 2px solid var(--black); */
+    box-shadow: 0px 0px 3px 1.5px rgba(0,4,77,1);
+    
   }
   h2 {
     margin: 0;
     border-bottom: 1px solid var(--grey-1);
+    text-transform:uppercase;
   }
   div {
     display: flex;
