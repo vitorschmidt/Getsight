@@ -48,6 +48,10 @@ const Landing = () => {
             Ficou curioso para ver como funciona ?{" "}
             <Link to="/home">Clique aqui</Link>
           </p>
+          <p>
+            Ja possui uma conta?{" "}
+            <Link to="/login">Login</Link>
+          </p>
         </div>
       </div>
     </Container>

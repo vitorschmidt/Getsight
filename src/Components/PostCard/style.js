@@ -25,9 +25,6 @@ export const Container = styled.li`
     cursor: pointer;
   }
 
-  .btn-comments {
-    cursor: pointer;
-  }
   h3 {
     font-weight: 400;
     font-size: 16px;
@@ -45,6 +42,7 @@ export const Container = styled.li`
     margin-top: 5px;
     font-weight: 400;
     margin-bottom: 10px;
+    cursor: pointer;
   }
 `;
 
@@ -114,6 +112,29 @@ export const Feed = styled.div`
   align-items: center;
   background-color: var(--grey-1);
   border-radius: 8px;
+  width: 100px;
+  height: 40px;
+  box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  h2 {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-right: 1px solid var(--black);
+  }
+  svg {
+    margin-right: 5px;
+    width: 29px;
+    height: 29px;
+  }
+  @media (min-width: 1101px) {
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey-1);
+  border-radius: 8px;
   width: 10%;
   height: 40px;
   box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
@@ -129,6 +150,7 @@ export const Feed = styled.div`
     margin-right: 5px;
     width: 29px;
     height: 29px;
+  }
   }
 `;
 
@@ -213,6 +235,7 @@ export const Comments = styled.div`
   justify-content: space-between;
   border-radius: 8px;
   box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
+  
 
   .like {
     display: flex;
@@ -224,6 +247,8 @@ export const Comments = styled.div`
     display: flex;
     flex-direction: row;
     padding-bottom: 10px;
+    padding-top: 10px;
+      padding-left: 5px;
   }
   .Comments-like {
     display: flex;
@@ -253,7 +278,6 @@ export const Comments = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     margin-left: 10px;
     border-radius: 8px;
   }
@@ -281,6 +305,8 @@ export const Comments = styled.div`
       border-right: 2px solid var(--black);
       width: 30%;
       max-width: 300px;
+      padding-top: 10px;
+      padding-left: 5px;
     }
     div {
       width: 70%;
