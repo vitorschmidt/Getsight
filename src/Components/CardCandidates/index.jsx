@@ -9,7 +9,7 @@ import { useCola } from "../../Providers/Cola";
 
 Modal.setAppElement("#root");
 
-const CardCandidates = ({ candidate }) => {
+const CardCandidates = ({ candidate, authenticated  }) => {
   const { addCola } = useCola();
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -39,23 +39,33 @@ const CardCandidates = ({ candidate }) => {
           ver mais...
         </a>
       </div>
-      <Button
-        backGround={"#051B03"}
-        textColor={"#FFF"}
-        backGroundHover={"#908c8c"}
-        className="botao"
-        onClick={() => addCola(candidate)}
-      >
-        Adicionar
-      </Button>
+      {authenticated ? 
+        (<Button
+            backGround={"#051B03"}
+            textColor={"#FFF"}
+            backGroundHover={"#908c8c"}
+            className="botao"
+            onClick={() => addCola(candidate)}
+        >
+            Adicionar
+        </Button>
+        
+        ):("")
+    }
+     
       <div className="saberMais">
         <a href="#" onClick={handleOpenModal}>
           Clique para ver mais...
         </a>
       </div>
-      <button className="botaoMobile" onClick={() => addCola(candidate)}>
-        +
-      </button>
+      {authenticated ? 
+        (<button className="botaoMobile" onClick={() => addCola(candidate)}>
+           +
+         </button>
+        
+        ):("")
+    }
+     
       <Modal
         isOpen={modalIsOpen}
         onRequestClone={handleCloseModal}
