@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 
 const Posts = ({ authenticated }) => {
   const { posts, getPosts, createNewPost } = useHome();
-  const { user } = useLogin();
+  const { user, token } = useLogin();
 
   const formSchema = yup.object().shape({
     title: yup
@@ -41,7 +41,7 @@ const Posts = ({ authenticated }) => {
     data.comments = [];
     data.postLikes = 0;
     data.userLikes = [];
-    createNewPost(data);
+    createNewPost(data, token);
   };
 
   useEffect(() => {

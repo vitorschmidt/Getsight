@@ -8,16 +8,18 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [token, setToken] = useState("");
 
-  const getUser = async (users,setAuthenticated) => {
+  const getUser = async (users, setAuthenticated) => {
     await Api.post("/login", users)
       .then((response) => {
         const { accessToken } = response.data;
 
         localStorage.setItem("@GetSight:token", accessToken);
         localStorage.setItem("@GetSight:userId", response.data.user.id);
-        setAuthenticated(true)
+        setAuthenticated(true);
         setUser(response.data.user);
+        setToken(accessToken);
       })
       .catch((err) => console.log(err));
   };
@@ -33,7 +35,7 @@ export const LoginProvider = ({ children }) => {
   };
 
   return (
-    <LoginContext.Provider value={{ user, getUser, getUserLogged }}>
+    <LoginContext.Provider value={{ user, getUser, getUserLogged, token }}>
       {children}
     </LoginContext.Provider>
   );

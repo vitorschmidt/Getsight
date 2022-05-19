@@ -23,6 +23,8 @@ export const Container = styled.div`
 
   @media (min-width: 1101px) {
     width: 800px;
+    display:flex;
+    flex-direction:row;
 
     img {
       margin-left: 50px;
@@ -56,5 +58,13 @@ export const Content = styled.div`
     font-size: 20px;
     font-weight: 700;
     color: var(--red-2);
+    &:hover{
+      zoom:1.4;
+    }
   }
+  @media (min-width: 1101px) {
+    display:flex;
+  }
+  
+
 `;
