@@ -3,7 +3,7 @@ import { useHome } from "../../Providers/Home";
 import { Container } from "./style";
 import PostCard from "../PostCard";
 import { Perfil, Post } from "./style";
-import imgPerfil from "../../Assets/img/candidate.png";
+import imgPerfil from "../../Assets/img/perfil.webp";
 import { Button } from "../../Components/Button";
 import { useLogin } from "../../Providers/Login";
 
