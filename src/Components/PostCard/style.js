@@ -36,7 +36,7 @@ export const Container = styled.li`
   }
 
   h2 {
-    margin-left: 10px;
+    margin-left: 0px;
   }
 
   h4 {
@@ -60,9 +60,11 @@ export const UserInfo = styled.div`
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    border: 1px solid var(--black);
   }
   h2 {
     margin: 0;
+    border-bottom: 1px solid var(--grey-1);
   }
   div {
     display: flex;
@@ -119,6 +121,7 @@ export const Feed = styled.div`
     display: flex;
     align-items: center;
     padding-left: 10px;
+    border-right: 1px solid var(--black);
   }
   svg {
     margin-right: 10px;

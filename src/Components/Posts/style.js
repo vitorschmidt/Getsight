@@ -43,6 +43,15 @@ export const Perfil = styled.div`
     border: 2px solid var(--black);
   }
 
+  h2 {
+    border-bottom: 1px solid var(--black);
+    margin-top: 5px;
+
+    width: 150px;
+
+    text-align: center;
+  }
+
   @media (min-width: 1101px) {
     width: 80%;
     max-width: 200px;
