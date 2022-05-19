@@ -162,6 +162,9 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
               </ColLeft>
 
               <ColRight>
+              <Button onClick={() => handleNavegation("/cola")} backGround="#000000" textColor="#fff">
+                  COLA
+                </Button>
                 <Button
                   onClick={() => handleNavegation("/home")}
                   backGround="#000000"
@@ -186,14 +189,14 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 <p>{user.name}</p>
                 <Button
                   className="btn-back"
-                  onClick={() => handleNavegation("/home")}
+                  onClick={() => handleNavegation("/candidates")}
                   backGround="#000000"
                   textColor="#fff"
                 >
                   VOLTAR
                 </Button>
 
-                <Button onClick={logout} backGround="#000000" textColor="#fff">
+                <Button  onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
               </ColRight>
