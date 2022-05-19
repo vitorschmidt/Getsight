@@ -128,13 +128,19 @@ export const Feed = styled.div`
     width: 29px;
     height: 29px;
   }
-`;
+ `;
 
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .icon-close {
+
+  min-width:320px;
+  
+  width:100%;
+  height:100%;
+  justify-content:center;
+  .icon-close{
     background-color: gray;
     width: 24px;
     height: 24px;
@@ -146,15 +152,18 @@ export const ModalContent = styled.div`
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    margin-left:15px;
   }
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
+  
   }
 
   h3 {
     font-size: 14px;
+    margin: 10px 0;
   }
 
   textarea {
@@ -180,10 +189,14 @@ export const ModalContent = styled.div`
 
   .header {
     display: flex;
-
+    width:100%;
+    justify-content:center;
     h2 {
       font-size: 18px;
       margin-bottom: 10px;
+    }
+    p{
+      text-align:end;
     }
   }
 `;

@@ -255,7 +255,7 @@ const PostCard = ({ post, authenticated }) => {
               <form onSubmit={handleSubmit(newComment)}>
                 <div className="header">
                   <h2>Faca um comentario sobre essa postagem</h2>
-                  <p onClick={handleCloseModal}>X</p>
+                  <p onClick={handleCloseModal} className="icon-close">X</p>
                 </div>
 
                 <h3>Cometário</h3>
