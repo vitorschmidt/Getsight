@@ -1,7 +1,5 @@
-//Hooks imports
 import { createContext, useContext, useState } from "react";
 
-//Service imports
 import { Api } from "../../services/Api";
 
 export const RegisterContext = createContext();

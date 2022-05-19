@@ -1,15 +1,11 @@
-//Styled-component imports
 import { Container } from "./style";
 
 import CardCandidates from "../CardCandidates";
 
-//Providers imports
 import { useCandidate } from "../../Providers/Candidates";
 
 const ListCandidates = () => {
   const { candidate, filteredCandidates, value } = useCandidate();
-
-  console.log(value);
 
   return (
     <Container>

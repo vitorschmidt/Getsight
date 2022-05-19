@@ -35,7 +35,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
   };
 
   const handleNavegation = (path) => history.push(path);
-  console.log(user.name)
+  
   return (
     <Container bg={bg} maxHeight={maxHeight}>
       <HeaderMediaQueries version={headerVersion}>

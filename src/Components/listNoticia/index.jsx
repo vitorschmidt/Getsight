@@ -20,7 +20,7 @@ const ListNoticia = () => {
 
 
 //   const { noticia, getNoticia } = useNoticia();
-//   console.log(noticia);
+
 
   // const { noticia, getNoticia } = useNoticia();
 
