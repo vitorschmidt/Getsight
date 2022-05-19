@@ -67,13 +67,15 @@ const PostCard = ({ post, authenticated }) => {
     },
     
     content: {
-      width: "95%",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
       right: "auto",
       bottom: "auto",
-      background: "#c6c6c6c6",
+      background: "var(--grey-1)",
+      borderRadius:"8px",
+      maxWidth:"480px",
+      minWidth:"300px",
     },
   };
 
@@ -261,13 +263,13 @@ const PostCard = ({ post, authenticated }) => {
             <ModalContent>
               <form onSubmit={handleSubmit(newComment)}>
                 <div className="header">
-                  <h2>Faca um comentario sobre essa postagem</h2>
+                  <h2>Faca um comentário sobre essa postagem</h2>
                   <p onClick={handleCloseModal} className="icon-close">
                     X
                   </p>
                 </div>
 
-                <h3>Cometário</h3>
+                <h3>Comentário</h3>
                 <textarea
                   name="comment"
                   id="comentario"
