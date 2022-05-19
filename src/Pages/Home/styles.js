@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import backgroundGif from "../../Assets/img/registergif.gif";
+
+import backgroundGif from "../../Assets/img/background2.gif";
+
 export const Container = styled.div`
   background-color: var(--grey-1);
   width: 100%;
@@ -14,11 +16,12 @@ export const Container = styled.div`
     background-image: url(${backgroundGif});
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 180%;
+    background-size: 100vw;
     opacity: 0.8;
+    background-color:white;
   }
   @media (min-width: 1101px) {
-    width: 100%;
+    width: 100vw;
     height: 100%;
 
     display: flex;
@@ -30,8 +33,7 @@ export const Container = styled.div`
       background-image: url(${backgroundGif});
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 50%;
-      background-size: 100vw;
+      background-size:100vw;
       opacity: 0.8;
     }
   }
