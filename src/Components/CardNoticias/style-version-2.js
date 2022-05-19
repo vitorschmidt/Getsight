@@ -8,11 +8,24 @@ export const Container = styled.li`
     justify-content: space-between;
    
     width: 100%;
+    height:480px;
     padding: 20px;
-    
-
     border-radius: 8px;
     background-color: #ffffff;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    @keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
   
     `
     export const Row = styled.div`
@@ -54,5 +67,10 @@ export const Container = styled.li`
         color: var(--red-2);
         position: absolute;
         top: 100%;
+    }
+
+    @media (min-width:1100px){
+        width: 100%;
+        height:350px;
     }
 `

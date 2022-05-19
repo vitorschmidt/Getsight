@@ -12,6 +12,7 @@ export const Container = styled.ul`
 
   .swiper {
     width: 100%;
+    min-height:380px;
     height: 100%;
   }
 
@@ -24,5 +25,6 @@ export const Container = styled.ul`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
 `;
