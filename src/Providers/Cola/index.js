@@ -51,6 +51,19 @@ export const ColaProvider = ({ children }) => {
     }
   };
 
+  const removeCola = (candidateRemove) => {
+    const newCola = cola.filter((cand) => cand.id !== candidateRemove.id);
+    setCola(newCola);
+    localStorage.setItem("@candidates:cola", JSON.stringify(newCola));
+    toast.success("Candidato removido da cola!", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
+
   const loadStoreCola = () => {
     if (loadCola) {
       setCola(loadCola);
@@ -60,16 +73,6 @@ export const ColaProvider = ({ children }) => {
   useEffect(() => {
     loadStoreCola();
   }, []);
-
-  // const getColas = () => {
-  //   Api.get("/cola")
-  //     .then((response) => {
-  //       setCola(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   console.log(candidate);
 
@@ -85,7 +88,7 @@ export const ColaProvider = ({ children }) => {
   };
 
   return (
-    <ColaContext.Provider value={{ cola, handleCola, addCola }}>
+    <ColaContext.Provider value={{ cola, handleCola, addCola, removeCola }}>
       {children}
     </ColaContext.Provider>
   );
