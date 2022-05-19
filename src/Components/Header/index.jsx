@@ -94,17 +94,6 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                     // onChange={(evt) => handleDual(evt)}
                   />
                 </ColLeft>
-
-                <ColRight maxWidth="500px">
-                  <ElectionType>
-                    <label>Tipo de Eleição</label>
-
-                    <select>
-                      <option>Municipal</option>
-                      <option>Estadual</option>
-                    </select>
-                  </ElectionType>
-                </ColRight>
               </Row>
             </Headers>
           ) : /* versão não logada vai até aqui */
@@ -137,7 +126,6 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
-                
                 <Button
                   className="btn-back"
                   onClick={() => handleNavegation("/home")}
@@ -162,7 +150,11 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
               </ColLeft>
 
               <ColRight>
-              <Button onClick={() => handleNavegation("/cola")} backGround="#000000" textColor="#fff">
+                <Button
+                  onClick={() => handleNavegation("/cola")}
+                  backGround="#000000"
+                  textColor="#fff"
+                >
                   COLA
                 </Button>
                 <Button
@@ -196,7 +188,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                   VOLTAR
                 </Button>
 
-                <Button  onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
+                <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
               </ColRight>

@@ -19,6 +19,7 @@ import { useForm } from "react-hook-form";
 import { useLogin } from "../../Providers/Login";
 import { Api } from "../../services/Api";
 import { useHome } from "../../Providers/Home";
+import { toast } from "react-hot-toast";
 
 const PostCard = ({ post, authenticated }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -44,9 +45,7 @@ const PostCard = ({ post, authenticated }) => {
   });
 
   function handleOpenModal() {
-    
     setIsOpen(true);
-     
   }
 
   function handleCloseModal() {
@@ -62,10 +61,10 @@ const PostCard = ({ post, authenticated }) => {
   };
 
   const customStyles = {
-    overlay:{
-        background: "#363636c5"
+    overlay: {
+      background: "#363636c5",
     },
-    
+
     content: {
       top: "50%",
       left: "50%",
@@ -215,6 +214,16 @@ const PostCard = ({ post, authenticated }) => {
       });
   };
 
+  const buttonError = () => {
+    toast.error("Logar para comentar!", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
+
   return (
     <>
       {authenticated ? (
@@ -258,7 +267,6 @@ const PostCard = ({ post, authenticated }) => {
             isOpen={modalIsOpen}
             onRequestClone={handleCloseModal}
             style={customStyles}
-            
           >
             <ModalContent>
               <form onSubmit={handleSubmit(newComment)}>
@@ -352,19 +360,9 @@ const PostCard = ({ post, authenticated }) => {
             <h2>
               {post.postLikes} <HeartIcon className="heart-icon" />
             </h2>
-            <ChatIcon onClick={handleOpenModal} className="chat-icon" />
-          </Feed>
 
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClone={handleCloseModal}
-            style={customStyles}
-          >
-            <ModalContent>
-              <div>Logar pra comentar</div>
-              <p onClick={handleCloseModal}>X</p>
-            </ModalContent>
-          </Modal>
+            <ChatIcon onClick={buttonError} className="chat-icon" />
+          </Feed>
           {showComments === false ? (
             <h4 onClick={showHiddenComments}>Ver comentários...</h4>
           ) : (

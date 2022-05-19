@@ -28,6 +28,7 @@ export const Container = styled.div`
   p {
     font-weight: 700;
     word-break: break-all;
+    text-transform:capitalize;
   }
 `;
 

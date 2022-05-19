@@ -66,6 +66,9 @@ export const UserInfo = styled.div`
     border-bottom: 1px solid var(--grey-1);
     text-transform: uppercase;
   }
+  p{
+    text-transform:capitalize;
+  }
   div {
     display: flex;
     flex-direction: column;
@@ -267,6 +270,7 @@ export const Comments = styled.div`
 
   h2 {
     margin-left: 0;
+    text-transform:capitalize;
   }
   h3 {
     width: 70%;
