@@ -23,16 +23,16 @@ const Landing = () => {
 
         <div className="indice">
           <h1>
-            Você gostaria de opinar ou tirar duvidas sobre seus candidatos para
-            a eleição ?
+            Você gostaria de opinar ou tirar dúvidas sobre seus candidatos para
+            a eleição?
           </h1>
           <h3>
-            - Saiba quem são os candidatos acompanhe suas trajetorias,
-            pretensões, partido
+            -Saiba quem são os candidatos acompanhe suas trajetorias,
+            pretensões, partido.
           </h3>
           <h3>
-            - Opine sobre seus candidatos, esta com duvidas sobre questões
-            eleitorais
+            -Opine sobre seus candidatos, se está com dúvidas sobre questões
+            eleitorais pergunte aqui!
           </h3>
           <h3>-Use filtros para controlar a sua busca</h3>
           <div className="button">
@@ -45,8 +45,12 @@ const Landing = () => {
             </Button>
           </div>
           <p>
-            Ficou curioso para ver como funciona ?{" "}
-            <Link to="/home">Clique aqui</Link>
+            Ficou curioso para ver como funciona?
+            <Link to="/home"> Clique aqui</Link>
+          </p>
+          <p>
+            Ja possui uma conta?{" "}
+            <Link to="/login">Login</Link>
           </p>
         </div>
       </div>

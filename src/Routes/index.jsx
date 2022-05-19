@@ -21,9 +21,7 @@ const Routes = () => {
   useEffect(() => {
     const token = localStorage.getItem("@GetSight:token");
     const id = localStorage.getItem("@GetSight:userId");
-    // use state(false)
-    // if (token) {
-    //   setAuthenticated(true);
+
     if (id) {
       getUserLogged(id, token);
     }

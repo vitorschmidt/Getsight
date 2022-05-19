@@ -6,7 +6,7 @@ import {
   Post,
   UserInfo,
 } from "./style";
-import logo from "../../Assets/img/candidate.png";
+import logo from "../../Assets/img/perfil.webp";
 import Modal from "react-modal";
 import { BsChatSquareText as ChatIcon } from "react-icons/bs";
 import { AiFillHeart as HeartIcon } from "react-icons/ai";
@@ -65,6 +65,7 @@ const PostCard = ({ post, authenticated }) => {
     overlay:{
         background: "#363636c5"
     },
+    
     content: {
       width: "95%",
       top: "50%",
