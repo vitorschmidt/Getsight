@@ -13,6 +13,11 @@ export const HeaderMediaQueries = styled.div`
     (version === "home" || version === "homeCandidates") &&
     css`
       @media (max-width: 800px) {
+        .btn-back{
+              margin-right: 5px;
+              margin-left: 0;
+             
+          }
         ${ColRight} {
           button {
             max-width: 120px;
@@ -51,7 +56,14 @@ export const HeaderMediaQueries = styled.div`
       @media (max-width: 600px) {
         button {
           height: 28px;
-          margin-left: 15px;
+    
+        }
+
+        ${HeaderTop}{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
         }
         ${Headers} {
           flex-direction: column;
@@ -73,9 +85,12 @@ export const HeaderMediaQueries = styled.div`
         }
 
         ${ColRight} {
-          justify-content: space-between;
+          justify-content: center;
+          align-items: center;
           max-width: 180px;
           margin-top: 10px;
+
+         
         }
       }
     `}
@@ -112,6 +127,7 @@ export const HeaderMediaQueries = styled.div`
             width: 100%;
             height: 28px;
             margin: 0;
+            
           }
         }
       }
@@ -137,6 +153,14 @@ export const HeaderMediaQueries = styled.div`
           .btn-back {
               margin-right: 15px;
           }
+
+          button{
+              margin : 7.5px;
+          }
+
+          .btn-exit{
+              margin-right: 0;
+          }
         }
 
         ${ColLeft} {
@@ -155,6 +179,7 @@ export const HeaderMediaQueries = styled.div`
 
         ${ColRight} {
           display: none;
+          
         }
       }
 
@@ -165,6 +190,10 @@ export const HeaderMediaQueries = styled.div`
           justify-content: center;
           button {
             height: 28px;
+
+            button{
+              margin-right: 15px;
+            }
           }
         }
 
@@ -180,5 +209,33 @@ export const HeaderMediaQueries = styled.div`
           }
         }
       }
+    `}
+
+    ${({ version }) =>
+    version === "cola" &&
+    css`
+        flex-wrap: wrap-reverse;
+        button{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-width: 100px;
+        }
+
+       
+
+        @media (max-width: 420px) {
+            ${ColRight}{
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+
+                button{
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+            }
+           
+        }
+      
     `}
 `;
