@@ -128,19 +128,19 @@ export const Feed = styled.div`
     width: 29px;
     height: 29px;
   }
- `;
+`;
 
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  min-width:320px;
-  
-  width:100%;
-  height:100%;
-  justify-content:center;
-  .icon-close{
+  min-width: 320px;
+
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  .icon-close {
     background-color: gray;
     width: 24px;
     height: 24px;
@@ -152,13 +152,12 @@ export const ModalContent = styled.div`
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    margin-left:15px;
+    margin-left: 15px;
   }
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
   }
 
   h3 {
@@ -189,14 +188,14 @@ export const ModalContent = styled.div`
 
   .header {
     display: flex;
-    width:100%;
-    justify-content:center;
+    width: 100%;
+    justify-content: center;
     h2 {
       font-size: 18px;
       margin-bottom: 10px;
     }
-    p{
-      text-align:end;
+    p {
+      text-align: end;
     }
   }
 `;
@@ -228,12 +227,17 @@ export const Comments = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
+    margin-bottom: 5px;
   }
+
   h2 {
     margin-left: 0;
   }
   h3 {
     width: 70%;
+    padding: 20px;
+    margin-left: 60px;
   }
   margin-bottom: 20px;
 
@@ -255,7 +259,7 @@ export const Comments = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
-    background-color: var(--background-primary);
+    /* background-color: var(--background-primary); */
     border-radius: 8px;
   }
 

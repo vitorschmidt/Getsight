@@ -255,7 +255,9 @@ const PostCard = ({ post, authenticated }) => {
               <form onSubmit={handleSubmit(newComment)}>
                 <div className="header">
                   <h2>Faca um comentario sobre essa postagem</h2>
-                  <p onClick={handleCloseModal} className="icon-close">X</p>
+                  <p onClick={handleCloseModal} className="icon-close">
+                    X
+                  </p>
                 </div>
 
                 <h3>Cometário</h3>
@@ -339,7 +341,6 @@ const PostCard = ({ post, authenticated }) => {
           </Post>
           <Feed>
             <h2>
-              {" "}
               {post.postLikes} <HeartIcon className="heart-icon" />
             </h2>
             <ChatIcon onClick={handleOpenModal} className="chat-icon" />
@@ -370,7 +371,7 @@ const PostCard = ({ post, authenticated }) => {
                     <p>{el.cidade}</p>
                   </div>
                 </div>
-                <div>
+                <div className="comment-content">
                   <h3>{el.message}</h3>
 
                   <h2 className="Comments-like">
