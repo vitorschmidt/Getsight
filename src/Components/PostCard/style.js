@@ -149,7 +149,7 @@ export const Feed = styled.div`
     border-right: 1px solid var(--black);
   }
   svg {
-    margin-right: 5px;
+    margin-right: 15px;
     width: 29px;
     height: 29px;
   }

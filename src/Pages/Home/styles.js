@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import backgroundGif from "../../Assets/img/background.gif";
 export const Container = styled.div`
   background-color: var(--grey-1);
   width: 100%;
@@ -8,8 +8,32 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  .gif{
+    max-width:100vw;
+    height:50vh;
+    background-image:url(${backgroundGif});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:180%;
+    opacity:0.8;
+    }
   @media (min-width: 1101px) {
-    align-items: start;
+    width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .gif{
+    width:100vw;
+    height:54.7vh;
+    background-image:url(${backgroundGif});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:50%;
+    background-size:100vw;
+    opacity:0.8;
+    }
   }
 
  
