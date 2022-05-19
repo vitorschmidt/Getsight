@@ -1,4 +1,6 @@
 import styled from "styled-components";
+ 
+
 
 export const Container = styled.li`
   display: flex;
@@ -134,6 +136,7 @@ export const Feed = styled.div`
 `;
 
 export const ModalContent = styled.div`
+
   display: flex;
   flex-direction: column;
   align-items: center;

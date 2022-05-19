@@ -1,6 +1,6 @@
 //Hooks imports
 import { createContext, useContext, useState } from "react";
-
+import  { toast } from "react-hot-toast";
 //Service imports
 import { Api } from "../../services/Api";
 
@@ -20,8 +20,26 @@ export const LoginProvider = ({ children }) => {
         setAuthenticated(true);
         setUser(response.data.user);
         setToken(accessToken);
+
+        toast.success("Login realizado com sucesso!", {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+        toast.error("Login não realizado!", {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+      
+        });
   };
 
   const getUserLogged = (id, token) => {
