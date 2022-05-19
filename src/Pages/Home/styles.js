@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import backgroundGif from "../../Assets/img/background2.gif";
+
 export const Container = styled.div`
   background-color: var(--grey-1);
   width: 100%;
@@ -60,6 +62,7 @@ export const Menu = styled.div`
   background-color: var(--light-grey);
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
   border-radius: 8px;
+  margin-bottom: 15px;
   button {
     margin: 20px;
   }

@@ -1,6 +1,4 @@
 import styled from "styled-components";
- 
-
 
 export const Container = styled.li`
   display: flex;
@@ -61,13 +59,12 @@ export const UserInfo = styled.div`
     height: 70px;
     border-radius: 50%;
     /* border: 2px solid var(--black); */
-    box-shadow: 0px 0px 3px 1.5px rgba(0,4,77,1);
-    
+    box-shadow: 0px 0px 3px 1.5px rgba(0, 4, 77, 1);
   }
   h2 {
     margin: 0;
     border-bottom: 1px solid var(--grey-1);
-    text-transform:uppercase;
+    text-transform: uppercase;
   }
   p{
     text-transform:capitalize;
@@ -136,32 +133,31 @@ export const Feed = styled.div`
   }
   @media (min-width: 1101px) {
     display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--grey-1);
-  border-radius: 8px;
-  width: 10%;
-  height: 40px;
-  box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
-  margin-top: 5px;
-  margin-bottom: 10px;
-  h2 {
-    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
-    border-right: 1px solid var(--black);
-  }
-  svg {
-    margin-right: 5px;
-    width: 29px;
-    height: 29px;
-  }
+    background-color: var(--grey-1);
+    border-radius: 8px;
+    width: 10%;
+    height: 40px;
+    box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    h2 {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      border-right: 1px solid var(--black);
+    }
+    svg {
+      margin-right: 15px;
+      width: 29px;
+      height: 29px;
+    }
   }
 `;
 
 export const ModalContent = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,6 +181,11 @@ export const ModalContent = styled.div`
     cursor: pointer;
     margin-left: 15px;
   }
+
+  .icon-close:hover{
+    color:var(--red-2);
+    background-color:var(--red-1)
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -194,6 +195,7 @@ export const ModalContent = styled.div`
   h3 {
     font-size: 14px;
     margin: 10px 0;
+    align-self:flex-start;
   }
 
   textarea {
@@ -203,6 +205,11 @@ export const ModalContent = styled.div`
     resize: none;
     width: 100%;
     height: 100px;
+    border: 2px solid transparent;
+  }
+  textarea:hover {
+    border: 2px solid var(--black);
+    box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
   }
 
   input {
@@ -225,9 +232,7 @@ export const ModalContent = styled.div`
       font-size: 18px;
       margin-bottom: 10px;
     }
-    p {
-      text-align: end;
-    }
+    
   }
 `;
 
@@ -242,7 +247,6 @@ export const Comments = styled.div`
   justify-content: space-between;
   border-radius: 8px;
   box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
-  
 
   .like {
     display: flex;
@@ -255,7 +259,7 @@ export const Comments = styled.div`
     flex-direction: row;
     padding-bottom: 10px;
     padding-top: 10px;
-      padding-left: 5px;
+    padding-left: 5px;
   }
   .Comments-like {
     display: flex;
