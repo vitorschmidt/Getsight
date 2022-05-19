@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import teste from "../../Assets/img/post-fundo.jpg";
 
 export const Container = styled.ul`
   list-style: none;
@@ -69,6 +70,7 @@ export const Post = styled.div`
   margin: 20px 0;
   border-radius: 8px;
   height: 220px;
+ 
 
   img {
     width: 40px;
@@ -84,6 +86,7 @@ export const Post = styled.div`
     flex-direction: column;
     padding: 20px;
     box-sizing: content-box;
+    
   }
 
   input {

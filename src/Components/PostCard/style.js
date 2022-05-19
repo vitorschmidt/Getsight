@@ -114,10 +114,9 @@ export const Feed = styled.div`
   align-items: center;
   background-color: var(--grey-1);
   border-radius: 8px;
-  width: 95%;
+  width: 10%;
   height: 40px;
   box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
-
   margin-top: 5px;
   margin-bottom: 10px;
   h2 {
@@ -127,7 +126,7 @@ export const Feed = styled.div`
     border-right: 1px solid var(--black);
   }
   svg {
-    margin-right: 10px;
+    margin-right: 5px;
     width: 29px;
     height: 29px;
   }
