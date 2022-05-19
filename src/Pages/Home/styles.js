@@ -11,6 +11,8 @@ export const Container = styled.div`
   @media (min-width: 1101px) {
     align-items: start;
   }
+
+ 
 `;
 
 export const SubHeader = styled.div`

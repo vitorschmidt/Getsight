@@ -1,4 +1,6 @@
 import styled from "styled-components";
+ 
+
 
 export const Container = styled.li`
   display: flex;
@@ -12,7 +14,10 @@ export const Container = styled.li`
   min-height: 300px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
-
+  .ReactModal__Overlay, .ReactModal__Overlay--after-openl{
+      background-color: black;
+      color: red;
+  }
   .heart-icon {
     fill: var(--red-2);
     cursor: pointer;
@@ -131,6 +136,7 @@ export const Feed = styled.div`
 `;
 
 export const ModalContent = styled.div`
+
   display: flex;
   flex-direction: column;
   align-items: center;

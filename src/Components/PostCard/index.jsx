@@ -44,7 +44,9 @@ const PostCard = ({ post, authenticated }) => {
   });
 
   function handleOpenModal() {
+    
     setIsOpen(true);
+     
   }
 
   function handleCloseModal() {
@@ -60,6 +62,9 @@ const PostCard = ({ post, authenticated }) => {
   };
 
   const customStyles = {
+    overlay:{
+        background: "#363636c5"
+    },
     content: {
       width: "95%",
       top: "50%",
@@ -250,6 +255,7 @@ const PostCard = ({ post, authenticated }) => {
             isOpen={modalIsOpen}
             onRequestClone={handleCloseModal}
             style={customStyles}
+            
           >
             <ModalContent>
               <form onSubmit={handleSubmit(newComment)}>
