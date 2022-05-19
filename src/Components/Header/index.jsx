@@ -137,6 +137,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
+                
                 <Button
                   className="btn-back"
                   onClick={() => handleNavegation("/home")}
@@ -182,7 +183,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
 
               <ColRight>
                 {/* aqui será inserido o nome do usuário  */}
-                <p>Bem vindo , {user.name}</p>
+                <p>{user.name}</p>
                 <Button
                   className="btn-back"
                   onClick={() => handleNavegation("/home")}
