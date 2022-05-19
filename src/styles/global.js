@@ -26,6 +26,7 @@ export default createGlobalStyle`
     body {
         font-size: 1rem;
         font-family: 'Inter', sans-serif;
+        overflow-x:hidden;
     }
     button {
         font-family: 'Inter', sans-serif;
