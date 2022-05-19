@@ -1,34 +1,30 @@
-//Styled-component imports
 import { Container, Content, FormContainer } from "./style";
 
-//Assets
 import banner from "../../Assets/img//banner.jpg";
 import Logo from "../../Assets/img/logo.png";
 
-//Components imports
 import { Button } from "../../Components/Button";
 import Inputs from "../../Components/Input";
 
-//Icons imports
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-//Libs Imports
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-//Provider imports
 import { useRegister } from "../../Providers/Register";
 
-//Router-dom imports
 import { useHistory } from "react-router-dom";
 
-//Reacts imports
 import { useState } from "react";
 
 const Register = () => {
   const history = useHistory();
+  
+  const handleNavegation = () => {
+    history.push("/login");
+  };
 
   const [showOrHidePass, setShowOrHidePass] = useState({
     password: false,
@@ -69,7 +65,7 @@ const Register = () => {
   const onSubmitFunction = ({ name, email, cidade, password }) => {
     const user = { name, cidade, email, password };
     postUser(user);
-    history.push("/login");
+   handleNavegation()
 
     document.location.reload(true)
 
@@ -101,9 +97,6 @@ const Register = () => {
     }
   };
 
-  const handleNavegation = () => {
-    history.push("/login");
-  };
 
   return (
     <Container>

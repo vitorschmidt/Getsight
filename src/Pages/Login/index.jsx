@@ -1,30 +1,22 @@
-//Styled-component imports
 import { Container, Content, FormContainer } from "./style";
 
-//Assets
 import banner from "../../Assets/img//banner.jpg";
 import logo from "../../Assets/img/logo.png";
 
-//Libs Imports
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import Inputs from "../../Components/Input";
 import * as yup from "yup";
 
-//Components imports
 import { Button } from "../../Components/Button";
 
-//Icons imports
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
-//Provider imports
 import { useLogin } from "../../Providers/Login";
 
-//Router-dom imports
 import { useHistory } from "react-router-dom";
 
-//Reacts imports
 import { useState } from "react";
 
 const Login = ({setAuthenticated}) => {
@@ -37,12 +29,6 @@ const Login = ({setAuthenticated}) => {
   const handleLogin =() =>{
     document.location.reload(true)
   }
-  
- 
-
-  // const handleNavegation = (path) => history.push(path);
-  
-  
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
@@ -69,7 +55,7 @@ const Login = ({setAuthenticated}) => {
     const user = { email, password };
 
     await getUser(user,setAuthenticated);
-
+    
     history.push("/home");
 
   };
@@ -86,7 +72,6 @@ const Login = ({setAuthenticated}) => {
         <div className="boxImg">
           <img src={banner} alt="banner" />
         </div>
-        {/* Header apenas para vizualisação */}
         <Content>
           <img src={logo} alt="Logo GetSight" />
           <FormContainer>
@@ -98,7 +83,6 @@ const Login = ({setAuthenticated}) => {
                 register={register}
                 error={errors.email?.message}
               />
-
               <Inputs
                 name="password"
                 label="Senha"
@@ -109,11 +93,9 @@ const Login = ({setAuthenticated}) => {
                 handleShowPassword={handleShowPassword}
                 icon={showOrHidePass ? FaEyeSlash : FaEye}
               />
-
               <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
                 Login
               </Button>
-              {/* <button type="submit">Logar</button> */}
             </form>
             <div className="boxCadastro">
               <p>

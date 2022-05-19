@@ -12,7 +12,6 @@ export const RegisterProvider = ({ children }) => {
   const postUser = (user) => {
     Api.post("/users", user)
       .then((response) => {
-        console.log(response.data);
         setRegister(response.data);
       })
       .catch((err) => console.error(err));
