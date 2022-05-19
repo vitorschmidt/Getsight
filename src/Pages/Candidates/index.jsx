@@ -5,15 +5,38 @@ import { Container } from "./styles";
 import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
 
-const Candidates = () => {
+
+const Candidates = ({ authenticated }) => {
+
   return (
-    <>
-      {/* coloquei a header aqui da versao não logada pra testar */}
-      <Header bg="#C2D8DA" headerVersion="dashboardCandidates" />
-      <Container>
-        <ListCandidates />
-      </Container>
-    </>
+        <>
+        {authenticated 
+            ? (
+                <>
+                    <Header bg="#C2D8DA" headerVersion="dashboardCandidates" />
+                    <Container>
+                    <ListCandidates />
+                    </Container>
+                
+                
+                </>  
+        
+            ):(
+
+                <>
+                    <Header bg="#C2D8DA" headerVersion="homeCandidates" />
+                    <Container>
+                    <ListCandidates />
+                    </Container>
+                    
+            
+                </>  
+        )}
+        </>
+      
+ 
+   
+     
   );
 };
 
