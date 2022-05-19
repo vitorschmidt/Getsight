@@ -69,6 +69,9 @@ export const UserInfo = styled.div`
     border-bottom: 1px solid var(--grey-1);
     text-transform:uppercase;
   }
+  p{
+    text-transform:capitalize;
+  }
   div {
     display: flex;
     flex-direction: column;
@@ -149,7 +152,7 @@ export const Feed = styled.div`
     border-right: 1px solid var(--black);
   }
   svg {
-    margin-right: 15px;
+    margin-right: 5px;
     width: 29px;
     height: 29px;
   }
@@ -263,6 +266,7 @@ export const Comments = styled.div`
 
   h2 {
     margin-left: 0;
+    text-transform:capitalize;
   }
   h3 {
     width: 70%;
