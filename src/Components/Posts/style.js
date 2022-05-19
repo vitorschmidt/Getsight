@@ -21,7 +21,7 @@ export const Container = styled.ul`
       align-items: center;
       height:250px;
       margin-bottom:20px;
-      
+      margin: 20px 0;   
     }
     
   }
@@ -35,7 +35,7 @@ export const Perfil = styled.div`
   height: 200px;
   background-color: var(--background-primary);
   box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
-  margin: 20px 0;
+  margin-top:20px;
   border-radius: 8px;
   img {
     width: 70px;
@@ -47,8 +47,9 @@ export const Perfil = styled.div`
   @media (min-width: 1101px) {
     width:80%;
     max-width: 200px;
-    height:80%;
+    height:100%;
     border-right: 2px solid var(--black);
+    margin-top:0;
   }
 `;
 
@@ -60,6 +61,7 @@ export const Post = styled.div`
   margin: 20px 0;
   border-radius: 8px;
   height: 220px;
+  
   img {
     width: 40px;
     height: 40px;
@@ -72,6 +74,8 @@ export const Post = styled.div`
     margin: 10px;
     display: flex;
     flex-direction: column;
+    padding:20px;
+    box-sizing:content-box;
   }
 
   input {
@@ -109,7 +113,7 @@ export const Post = styled.div`
 
   @media (min-width: 1101px) {
     width:70%;
-    height:80%;
+    height:100%;
     img{
       display:none;
     }
