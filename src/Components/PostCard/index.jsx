@@ -268,9 +268,9 @@ const PostCard = ({ post, authenticated }) => {
             </ModalContent>
           </Modal>
           {showComments === false ? (
-            <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+            <h4 onClick={showHiddenComments} className="btn-comments">Ver comentários...</h4>
           ) : (
-            <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
+            <h4 onClick={showHiddenComments} className="btn-comments">Recolher comentários...</h4>
           )}
 
           {showComments &&
