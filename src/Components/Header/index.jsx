@@ -94,17 +94,6 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                     // onChange={(evt) => handleDual(evt)}
                   />
                 </ColLeft>
-
-                <ColRight maxWidth="500px">
-                  <ElectionType>
-                    <label>Tipo de Eleição</label>
-
-                    <select>
-                      <option>Municipal</option>
-                      <option>Estadual</option>
-                    </select>
-                  </ElectionType>
-                </ColRight>
               </Row>
             </Headers>
           ) : /* versão não logada vai até aqui */
