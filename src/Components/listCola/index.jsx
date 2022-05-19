@@ -1,5 +1,6 @@
 //Styled-component imports
-import { Container } from "./style";
+import { Container, TelaVazio } from "./style";
+import vazio from "../../Assets/img/vazio.png";
 
 //Components imports
 import CardCola from "../CardCola";
@@ -16,7 +17,11 @@ const ListCola = () => {
     <>
       <Container>
         {cola.length === 0 ? (
-          <h1>Volte para a página de candidatos para criar sua colinha.</h1>
+          <TelaVazio>
+            <img src={vazio} alt="vazio" />
+            <h1>Sem candidatos cadastrados.</h1>
+            <h2>Volte para a página de candidatos para criar sua colinha.</h2>
+          </TelaVazio>
         ) : (
           cola.map((cola, index) => <CardCola key={index} cola={cola} />)
         )}
