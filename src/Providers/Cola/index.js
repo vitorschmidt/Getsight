@@ -60,16 +60,6 @@ export const ColaProvider = ({ children }) => {
     loadStoreCola();
   }, []);
 
-  // const getColas = () => {
-  //   Api.get("/cola")
-  //     .then((response) => {
-  //       setCola(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   const handleCola = (numero) => {
     const colaAdd = candidate.find((cadidateVoto) => {
       return cadidateVoto.numero === numero;

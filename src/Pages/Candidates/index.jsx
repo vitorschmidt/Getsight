@@ -5,12 +5,7 @@ import { Container } from "./styles";
 import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
 
-// import { useHistory } from "react-router-dom";
-
 const Candidates = () => {
-  // const history = useHistory();
-  // const handleNavegation = (path) => history.push(path);
-
   return (
     <>
       {/* coloquei a header aqui da versao não logada pra testar */}

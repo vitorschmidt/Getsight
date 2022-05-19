@@ -70,8 +70,6 @@ const Register = () => {
     const user = { name, cidade, email, password };
     postUser(user);
     history.push("/login");
-
-    // document.location.reload(true)
   };
 
   const handleShowPassword = (type) => {
