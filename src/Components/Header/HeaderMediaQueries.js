@@ -127,6 +127,7 @@ export const HeaderMediaQueries = styled.div`
             width: 100%;
             height: 28px;
             margin: 0;
+            
           }
         }
       }
@@ -152,6 +153,14 @@ export const HeaderMediaQueries = styled.div`
           .btn-back {
               margin-right: 15px;
           }
+
+          button{
+              margin : 7.5px;
+          }
+
+          .btn-exit{
+              margin-right: 0;
+          }
         }
 
         ${ColLeft} {
@@ -170,6 +179,7 @@ export const HeaderMediaQueries = styled.div`
 
         ${ColRight} {
           display: none;
+          
         }
       }
 
@@ -180,6 +190,10 @@ export const HeaderMediaQueries = styled.div`
           justify-content: center;
           button {
             height: 28px;
+
+            button{
+              margin-right: 15px;
+            }
           }
         }
 
@@ -195,5 +209,33 @@ export const HeaderMediaQueries = styled.div`
           }
         }
       }
+    `}
+
+    ${({ version }) =>
+    version === "cola" &&
+    css`
+        flex-wrap: wrap-reverse;
+        button{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-width: 100px;
+        }
+
+       
+
+        @media (max-width: 420px) {
+            ${ColRight}{
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+
+                button{
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+            }
+           
+        }
+      
     `}
 `;

@@ -141,14 +141,22 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
             <Headers version={headerVersion}>
               <HeaderTop>
                 <Button
-                  className="btn-back"
+                  onClick={() => handleNavegation("/cola")}
+                  backGround="#000000"
+                  textColor="#fff"
+                 
+                >
+                  COLA
+                </Button>
+                <Button
+                   
                   onClick={() => handleNavegation("/home")}
                   backGround="#000000"
                   textColor="#fff"
                 >
                   VOLTAR
                 </Button>
-                <Button onClick={logout} backGround="#000000" textColor="#fff">
+                <Button onClick={logout} backGround="#000000" textColor="#fff" className="btn-exit">
                   SAIR
                 </Button>
               </HeaderTop>
@@ -168,6 +176,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                   onClick={() => handleNavegation("/cola")}
                   backGround="#000000"
                   textColor="#fff"
+                  className="btn"
                 >
                   COLA
                 </Button>
@@ -175,6 +184,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                   onClick={() => handleNavegation("/home")}
                   backGround="#000000"
                   textColor="#fff"
+                  className="btn"
                 >
                   VOLTAR
                 </Button>
