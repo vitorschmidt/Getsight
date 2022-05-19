@@ -43,13 +43,19 @@ export const CandidatesProvider = ({ children }) => {
     );
     setFilteredCandidates(filtered);
     setValue(true);
-
-     
   };
 
   return (
     <CandidateContext.Provider
-      value={{ candidate, getCandidates, value, filteredCandidates,filter, setSearch }}
+      value={{
+        candidate,
+        getCandidates,
+        value,
+        search,
+        filteredCandidates,
+        filter,
+        setSearch,
+      }}
     >
       {children}
     </CandidateContext.Provider>
