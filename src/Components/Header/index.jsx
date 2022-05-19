@@ -75,13 +75,27 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 >
                   <Logo />
                 </LogoContainer>
-                <Button
-                  onClick={() => history.push("/login")}
-                  backGround="#000000"
-                  textColor="#fff"
-                >
-                  LOGIN
-                </Button>
+                <ColRight>
+                    <Button
+                    className="btn-back"
+                    onClick={() => handleNavegation("/home")}
+                    backGround="#000000"
+                    textColor="#fff"
+                    >
+                    VOLTAR
+                    </Button>
+
+                    <Button
+                    onClick={() => history.push("/login")}
+                    backGround="#000000"
+                    textColor="#fff"
+                    >
+                    LOGIN
+                    </Button>
+                
+                
+                </ColRight>
+               
               </HeaderTop>
 
               <Row>

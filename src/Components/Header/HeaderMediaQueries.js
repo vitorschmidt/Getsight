@@ -13,6 +13,11 @@ export const HeaderMediaQueries = styled.div`
     (version === "home" || version === "homeCandidates") &&
     css`
       @media (max-width: 800px) {
+        .btn-back{
+              margin-right: 5px;
+              margin-left: 0;
+             
+          }
         ${ColRight} {
           button {
             max-width: 120px;
@@ -51,7 +56,14 @@ export const HeaderMediaQueries = styled.div`
       @media (max-width: 600px) {
         button {
           height: 28px;
-          margin-left: 15px;
+    
+        }
+
+        ${HeaderTop}{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
         }
         ${Headers} {
           flex-direction: column;
@@ -73,9 +85,12 @@ export const HeaderMediaQueries = styled.div`
         }
 
         ${ColRight} {
-          justify-content: space-between;
+          justify-content: center;
+          align-items: center;
           max-width: 180px;
           margin-top: 10px;
+
+         
         }
       }
     `}
