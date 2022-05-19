@@ -15,7 +15,7 @@ const Candidates = ({ authenticated }) => {
                 <>
                     <Header bg="#C2D8DA" headerVersion="dashboardCandidates" />
                     <Container>
-                    <ListCandidates />
+                    <ListCandidates authenticated={authenticated }/>
                     </Container>
                 
                 
@@ -26,7 +26,7 @@ const Candidates = ({ authenticated }) => {
                 <>
                     <Header bg="#C2D8DA" headerVersion="homeCandidates" />
                     <Container>
-                    <ListCandidates />
+                    <ListCandidates authenticated={authenticated }/>
                     </Container>
                     
             
