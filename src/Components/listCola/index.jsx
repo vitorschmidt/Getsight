@@ -11,11 +11,8 @@ import { useCola } from "../../Providers/Cola";
 import { useEffect } from "react";
 
 const ListCola = () => {
-  const { cola, getColas } = useCola();
-
-  useEffect(() => {
-    getColas();
-  }, [getColas]);
+  const { cola } = useCola();
+  // console.log(cola);
 
   return (
     <Container>
