@@ -92,6 +92,7 @@ export const Post = styled.div`
   margin: 10px 0;
   box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
   min-height: 150px;
+  
   h2 {
     margin-left: 10px;
   }
