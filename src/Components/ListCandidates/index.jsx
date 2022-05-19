@@ -11,7 +11,7 @@ const ListCandidates = ({authenticated }) => {
 
   return (
     <Container>
-      {value === false || search === ""
+      {value === false
         ? candidate.map((candidate, index) => (
             <CardCandidates authenticated={authenticated } key={index} candidate={candidate} />
           ))
