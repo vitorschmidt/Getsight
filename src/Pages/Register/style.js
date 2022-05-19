@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   .boxImg {
     display: none;
+    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
   }
 
   @media (min-width: 1101px) {
@@ -69,6 +70,7 @@ export const FormContainer = styled.div`
   padding: 1rem;
   border-radius: 4px;
   overflow-y: scroll;
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
   form,
   .boxLogin {
     display: flex;

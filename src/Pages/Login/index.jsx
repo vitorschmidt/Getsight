@@ -2,7 +2,7 @@
 import { Container, Content, FormContainer } from "./style";
 
 //Assets
-import banner from "../../Assets/img//banner.jpg";
+import banner from "../../Assets/img//register.jpg";
 import logo from "../../Assets/img/logo.png";
 
 //Libs Imports
@@ -27,22 +27,13 @@ import { useHistory } from "react-router-dom";
 //Reacts imports
 import { useState } from "react";
 
-const Login = ({setAuthenticated}) => {
+const Login = ({ setAuthenticated }) => {
   const history = useHistory();
   const [showOrHidePass, setShowOrHidePass] = useState(false);
 
   const handleNavegation = () => {
-    history.push("/register")
-  }
-  const handleLogin =() =>{
-    document.location.reload(true)
-  }
-  
- 
-
-  // const handleNavegation = (path) => history.push(path);
-  
-  
+    history.push("/register");
+  };
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),
@@ -68,10 +59,9 @@ const Login = ({setAuthenticated}) => {
   const onSubmitFunction = async ({ email, password }) => {
     const user = { email, password };
 
-    await getUser(user,setAuthenticated);
+    await getUser(user, setAuthenticated);
 
     history.push("/home");
-
   };
   const handleShowPassword = () => {
     if (showOrHidePass) {

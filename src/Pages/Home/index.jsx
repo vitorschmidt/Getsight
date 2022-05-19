@@ -126,6 +126,9 @@ const Home = ({ authenticated }) => {
           </Menu>
           {showPosts && <Posts authenticated={authenticated} />}
           {showNews && <ListNoticia />}
+          <div className="gif">
+
+          </div>
         </Container>
       )}
     </>

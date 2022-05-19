@@ -1,6 +1,6 @@
 //Hooks imports
 import { createContext, useContext, useState } from "react";
-
+import  { toast } from "react-hot-toast";
 //Service imports
 import { Api } from "../../services/Api";
 
@@ -8,18 +8,38 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [token, setToken] = useState("");
 
-  const getUser = async (users,setAuthenticated) => {
+  const getUser = async (users, setAuthenticated) => {
     await Api.post("/login", users)
       .then((response) => {
         const { accessToken } = response.data;
 
         localStorage.setItem("@GetSight:token", accessToken);
         localStorage.setItem("@GetSight:userId", response.data.user.id);
-        setAuthenticated(true)
+        setAuthenticated(true);
         setUser(response.data.user);
+        setToken(accessToken);
+
+        toast.success("Login realizado com sucesso!", {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+        toast.error("Login não realizado!", {
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          });
+      
+        });
   };
 
   const getUserLogged = (id, token) => {
@@ -33,7 +53,7 @@ export const LoginProvider = ({ children }) => {
   };
 
   return (
-    <LoginContext.Provider value={{ user, getUser, getUserLogged }}>
+    <LoginContext.Provider value={{ user, getUser, getUserLogged, token }}>
       {children}
     </LoginContext.Provider>
   );

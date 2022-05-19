@@ -9,8 +9,6 @@ import { useCandidate } from "../../Providers/Candidates";
 const ListCandidates = () => {
   const { candidate, filteredCandidates, value } = useCandidate();
 
-  console.log(value);
-
   return (
     <Container>
       {value === false

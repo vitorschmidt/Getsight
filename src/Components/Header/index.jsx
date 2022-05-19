@@ -30,7 +30,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
 
   const logout = () => {
     history.push("/");
-    document.location.reload(true)
+    document.location.reload(true);
     localStorage.clear();
   };
 
@@ -128,9 +128,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
               >
                 {/* aqui será inserido o nome do usuário  */}
 
-                <p>{user.name},</p>
-                <Link to="/candidates">Candidatos</Link>
-
+                <p>Bem vindo, {user.name}</p>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>
@@ -139,6 +137,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
           ) : headerVersion === "dashboardCandidates" ? (
             <Headers version={headerVersion}>
               <HeaderTop>
+                
                 <Button
                   className="btn-back"
                   onClick={() => handleNavegation("/home")}
@@ -163,6 +162,9 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
               </ColLeft>
 
               <ColRight>
+              <Button onClick={() => handleNavegation("/cola")} backGround="#000000" textColor="#fff">
+                  COLA
+                </Button>
                 <Button
                   onClick={() => handleNavegation("/home")}
                   backGround="#000000"
@@ -170,6 +172,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 >
                   VOLTAR
                 </Button>
+
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
@@ -186,14 +189,14 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
                 <p>{user.name}</p>
                 <Button
                   className="btn-back"
-                  onClick={() => handleNavegation("/home")}
+                  onClick={() => handleNavegation("/candidates")}
                   backGround="#000000"
                   textColor="#fff"
                 >
                   VOLTAR
                 </Button>
 
-                <Button onClick={logout} backGround="#000000" textColor="#fff">
+                <Button  onClick={() => handleNavegation("/home")} backGround="#000000" textColor="#fff">
                   SAIR
                 </Button>
               </ColRight>

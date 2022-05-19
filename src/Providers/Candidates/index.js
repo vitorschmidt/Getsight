@@ -43,6 +43,8 @@ export const CandidatesProvider = ({ children }) => {
     );
     setFilteredCandidates(filtered);
     setValue(true);
+
+     
   };
 
   return (

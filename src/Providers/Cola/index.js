@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 //Service imports
-import { Api } from "../../services/Api";
 import { useCandidate } from "../Candidates";
 
 export const ColaContext = createContext();
@@ -52,7 +51,9 @@ export const ColaProvider = ({ children }) => {
   };
 
   const removeCola = (candidateRemove) => {
-    const newCola = cola.filter((cand) => cand.id !== candidateRemove.id);
+    const newCola = cola.filter(
+      (cand) => cand.numero !== candidateRemove.numero
+    );
     setCola(newCola);
     localStorage.setItem("@candidates:cola", JSON.stringify(newCola));
     toast.success("Candidato removido da cola!", {

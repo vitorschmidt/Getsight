@@ -2,7 +2,7 @@
 import { Container, Content, FormContainer } from "./style";
 
 //Assets
-import banner from "../../Assets/img//banner.jpg";
+import banner from "../../Assets/img//register1.jpg";
 import Logo from "../../Assets/img/logo.png";
 
 //Components imports
@@ -70,9 +70,6 @@ const Register = () => {
     const user = { name, cidade, email, password };
     postUser(user);
     history.push("/login");
-
-    document.location.reload(true)
-
   };
 
   const handleShowPassword = (type) => {

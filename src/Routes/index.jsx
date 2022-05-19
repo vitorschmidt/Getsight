@@ -14,20 +14,19 @@ import { useLogin } from "../Providers/Login";
 
 const Routes = () => {
   const { getUserLogged } = useLogin();
-  const [authenticated, setAuthenticated] = useState(localStorage.getItem("@GetSight:token")?true:false);
+  const [authenticated, setAuthenticated] = useState(
+    localStorage.getItem("@GetSight:token") ? true : false
+  );
 
   useEffect(() => {
     const token = localStorage.getItem("@GetSight:token");
     const id = localStorage.getItem("@GetSight:userId");
-    // use state(false)
-    // if (token) {
-    //   setAuthenticated(true);
-      if (id) {
+
+    if (id) {
       getUserLogged(id, token);
-      }
-    
+    }
   }, [authenticated]);
-  
+
   return (
     <Switch>
       <Route exact path="/">
@@ -37,7 +36,7 @@ const Routes = () => {
         <Home authenticated={authenticated} />
       </Route>
       <Route exact path="/login">
-        <Login  setAuthenticated={setAuthenticated}/>
+        <Login setAuthenticated={setAuthenticated} />
       </Route>
       <Route exact path="/register">
         <Register type="user" />

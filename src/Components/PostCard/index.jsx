@@ -6,7 +6,7 @@ import {
   Post,
   UserInfo,
 } from "./style";
-import logo from "../../Assets/img/candidate.png";
+import logo from "../../Assets/img/perfil.webp";
 import Modal from "react-modal";
 import { BsChatSquareText as ChatIcon } from "react-icons/bs";
 import { AiFillHeart as HeartIcon } from "react-icons/ai";
@@ -44,7 +44,9 @@ const PostCard = ({ post, authenticated }) => {
   });
 
   function handleOpenModal() {
+    
     setIsOpen(true);
+     
   }
 
   function handleCloseModal() {
@@ -60,6 +62,10 @@ const PostCard = ({ post, authenticated }) => {
   };
 
   const customStyles = {
+    overlay:{
+        background: "#363636c5"
+    },
+    
     content: {
       width: "95%",
       top: "50%",
@@ -222,27 +228,43 @@ const PostCard = ({ post, authenticated }) => {
             <h2>{post.title}</h2>
             <h3>{post.post}</h3>
             {post.userId === user.id && (
-              <button onClick={deleteUserPost}>Excluir</button>
+              <Button
+                onClick={deleteUserPost}
+                width="100%"
+                maxWidth="200px"
+                height="40px"
+                backGround="#752020"
+                textColor="#fff"
+                borderRadius="8px"
+              >
+                Excluir
+              </Button>
             )}
           </Post>
 
           <Feed>
             <h2>
               {post.postLikes}
-              <HeartIcon onClick={liked ? removeLike : addLike} />
+              <HeartIcon
+                onClick={liked ? removeLike : addLike}
+                className="heart-icon"
+              />
             </h2>
-            <ChatIcon onClick={handleOpenModal} />
+            <ChatIcon onClick={handleOpenModal} className="chat-icon" />
           </Feed>
           <Modal
             isOpen={modalIsOpen}
             onRequestClone={handleCloseModal}
             style={customStyles}
+            
           >
             <ModalContent>
               <form onSubmit={handleSubmit(newComment)}>
                 <div className="header">
                   <h2>Faca um comentario sobre essa postagem</h2>
-                  <p onClick={handleCloseModal}>X</p>
+                  <p onClick={handleCloseModal} className="icon-close">
+                    X
+                  </p>
                 </div>
 
                 <h3>Cometário</h3>
@@ -268,11 +290,14 @@ const PostCard = ({ post, authenticated }) => {
             </ModalContent>
           </Modal>
           {showComments === false ? (
-            <h4 onClick={showHiddenComments}>Ver comentários...</h4>
+            <h4 onClick={showHiddenComments} className="btn-comments">
+              Ver comentários...
+            </h4>
           ) : (
-            <h4 onClick={showHiddenComments}>Recolher comentários...</h4>
+            <h4 onClick={showHiddenComments} className="btn-comments">
+              Recolher comentários...
+            </h4>
           )}
-
           {showComments &&
             comments.map((el) => {
               const commentLiked = el.userLikes
@@ -287,7 +312,7 @@ const PostCard = ({ post, authenticated }) => {
                       <p>{el.cidade}</p>
                     </div>
                   </div>
-                  <div>
+                  <div className="message">
                     <h3>{el.message}</h3>
 
                     <h2
@@ -297,6 +322,10 @@ const PostCard = ({ post, authenticated }) => {
                           : addLikeComment(el.id)
                       }
                     >
+                      <HeartIcon
+                        onClick={liked ? removeLike : addLike}
+                        className="heart-icon"
+                      />
                       {el.like}
                     </h2>
                   </div>
@@ -318,9 +347,10 @@ const PostCard = ({ post, authenticated }) => {
             <h3>{post.post}</h3>
           </Post>
           <Feed>
-            
-            <h2>  {post.postLikes} <HeartIcon /></h2>
-            <ChatIcon onClick={handleOpenModal} />
+            <h2>
+              {post.postLikes} <HeartIcon className="heart-icon" />
+            </h2>
+            <ChatIcon onClick={handleOpenModal} className="chat-icon" />
           </Feed>
 
           <Modal
@@ -348,12 +378,12 @@ const PostCard = ({ post, authenticated }) => {
                     <p>{el.cidade}</p>
                   </div>
                 </div>
-                <div>
+                <div className="comment-content">
                   <h3>{el.message}</h3>
 
                   <h2 className="Comments-like">
                     {el.like}
-                    <HeartIcon />
+                    <HeartIcon className="heart-icon" />
                   </h2>
                 </div>
               </Comments>
