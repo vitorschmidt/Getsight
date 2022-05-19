@@ -5,20 +5,36 @@ import { Container } from "./styles";
 import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
 
-// import { useHistory } from "react-router-dom";
-
-const Candidates = () => {
-  // const history = useHistory();
-  // const handleNavegation = (path) => history.push(path);
-
+const Candidates = ({ authenticated }) => {
   return (
-    <>
-      {/* coloquei a header aqui da versao não logada pra testar */}
-      <Header bg="#C2D8DA" headerVersion="dashboardCandidates" />
-      <Container>
-        <ListCandidates />
-      </Container>
-    </>
+        <>
+        {authenticated 
+            ? (
+                <>
+                    <Header bg="#C2D8DA" headerVersion="dashboardCandidates" />
+                    <Container>
+                    <ListCandidates />
+                    </Container>
+                
+                
+                </>  
+        
+            ):(
+
+                <>
+                    <Header bg="#C2D8DA" headerVersion="homeCandidates" />
+                    <Container>
+                    <ListCandidates />
+                    </Container>
+                    
+            
+                </>  
+        )}
+        </>
+      
+ 
+   
+     
   );
 };
 
