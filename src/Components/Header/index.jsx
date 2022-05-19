@@ -30,8 +30,8 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
 
   const logout = () => {
     history.push("/");
-    // document.location.reload(true);
-    // localStorage.clear();
+    document.location.reload(true);
+    localStorage.clear();
   };
 
   const handleNavegation = (path) => history.push(path);
@@ -128,7 +128,7 @@ const Header = ({ bg, maxHeight, headerVersion }) => {
               >
                 {/* aqui será inserido o nome do usuário  */}
 
-                <p>Bem vindo , {user.name}</p>
+                <p>Bem vindo, {user.name}</p>
                 <Button onClick={logout} backGround="#000000" textColor="#fff">
                   Sair
                 </Button>

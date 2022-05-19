@@ -34,6 +34,11 @@ export default createGlobalStyle`
         font-size: 16px;
         font-weight: 500;
     }
+
+    button:hover {
+        background-color: var(--dark-blue)
+    }
+
     span{
 
     color: var(--red-1);
