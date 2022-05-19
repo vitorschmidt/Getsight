@@ -34,9 +34,6 @@ const Login = ({ setAuthenticated }) => {
   const handleNavegation = () => {
     history.push("/register");
   };
-  const handleLogin = () => {
-    document.location.reload(true);
-  };
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Email obrigatorio").email("Email inválido"),

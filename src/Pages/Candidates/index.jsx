@@ -5,7 +5,9 @@ import { Container } from "./styles";
 import Header from "../../Components/Header";
 import ListCandidates from "../../Components/ListCandidates";
 
+
 const Candidates = ({ authenticated }) => {
+
   return (
         <>
         {authenticated 

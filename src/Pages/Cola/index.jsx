@@ -4,7 +4,6 @@ import { Container } from "./styles";
 //Components imports
 import Header from "../../Components/Header";
 import ListCola from "../../Components/listCola";
-import { Button } from "../../Components/Button";
 
 const Cola = () => {
   return (
