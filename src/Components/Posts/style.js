@@ -6,24 +6,23 @@ export const Container = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
-  height:100%;
+  align-items: center;
+  height: 100%;
   min-height: 500px;
-  
+
   @media (min-width: 1101px) {
     width: 80%;
-    margin:30px auto 0 auto;
+    margin: 30px auto 0 auto;
 
-    section{
-      display:flex;
-      width:80%;
+    section {
+      display: flex;
+      width: 80%;
       justify-content: center;
       align-items: center;
-      height:250px;
-      margin-bottom:20px;
-      margin: 20px 0;   
+      height: 250px;
+      margin-bottom: 20px;
+      margin: 20px 0;
     }
-    
   }
 `;
 export const Perfil = styled.div`
@@ -31,11 +30,11 @@ export const Perfil = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
+  width: 100%;
   height: 200px;
   background-color: var(--background-primary);
-  box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
-  margin-top:20px;
+  box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
+  margin-top: 20px;
   border-radius: 8px;
   img {
     width: 70px;
@@ -43,13 +42,13 @@ export const Perfil = styled.div`
     border-radius: 50%;
     border: 2px solid var(--black);
   }
-  
+
   @media (min-width: 1101px) {
-    width:80%;
+    width: 80%;
     max-width: 200px;
-    height:100%;
+    height: 100%;
     border-right: 2px solid var(--black);
-    margin-top:0;
+    margin-top: 0;
   }
 `;
 
@@ -57,11 +56,11 @@ export const Post = styled.div`
   display: flex;
   align-items: center;
   background-color: var(--light-grey);
-  box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
+  box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
   margin: 20px 0;
   border-radius: 8px;
   height: 220px;
-  
+
   img {
     width: 40px;
     height: 40px;
@@ -74,8 +73,8 @@ export const Post = styled.div`
     margin: 10px;
     display: flex;
     flex-direction: column;
-    padding:20px;
-    box-sizing:content-box;
+    padding: 20px;
+    box-sizing: content-box;
   }
 
   input {
@@ -84,9 +83,15 @@ export const Post = styled.div`
     border-radius: 20px;
     border: none;
     background-color: var(--card);
+    border: 1px solid transparent;
     &::placeholder {
       color: var(--light-grey);
     }
+  }
+
+  input:hover,
+  textarea:hover {
+    box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
   }
 
   textarea {
@@ -97,6 +102,7 @@ export const Post = styled.div`
     resize: none;
     background-color: var(--card);
     height: 100px;
+    border: 1px solid transparent;
     &::placeholder {
       color: var(--grey-1);
     }
@@ -109,20 +115,20 @@ export const Post = styled.div`
 
   button {
     align-self: flex-end;
+    box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.88);
   }
 
   @media (min-width: 1101px) {
-    width:70%;
-    height:100%;
-    img{
-      display:none;
+    width: 70%;
+    height: 100%;
+    img {
+      display: none;
     }
     box-shadow: 0px 2px 19px 0px rgba(166, 165, 165, 0.75);
-    form{
-      width:100%;
-      max-width:500px;
+    form {
+      width: 100%;
+      max-width: 500px;
       margin: 0 auto;
     }
   }
-  
 `;
