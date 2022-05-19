@@ -50,6 +50,21 @@ export const ColaProvider = ({ children }) => {
     }
   };
 
+  const removeCola = (candidateRemove) => {
+    const newCola = cola.filter(
+      (cand) => cand.numero !== candidateRemove.numero
+    );
+    setCola(newCola);
+    localStorage.setItem("@candidates:cola", JSON.stringify(newCola));
+    toast.success("Candidato removido da cola!", {
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
+
   const loadStoreCola = () => {
     if (loadCola) {
       setCola(loadCola);
@@ -59,6 +74,8 @@ export const ColaProvider = ({ children }) => {
   useEffect(() => {
     loadStoreCola();
   }, []);
+
+  console.log(candidate);
 
   const handleCola = (numero) => {
     const colaAdd = candidate.find((cadidateVoto) => {
@@ -72,7 +89,7 @@ export const ColaProvider = ({ children }) => {
   };
 
   return (
-    <ColaContext.Provider value={{ cola, handleCola, addCola }}>
+    <ColaContext.Provider value={{ cola, handleCola, addCola, removeCola }}>
       {children}
     </ColaContext.Provider>
   );
