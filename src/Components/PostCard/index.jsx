@@ -65,6 +65,7 @@ const PostCard = ({ post, authenticated }) => {
     overlay:{
         background: "#363636c5"
     },
+    
     content: {
       width: "95%",
       top: "50%",
