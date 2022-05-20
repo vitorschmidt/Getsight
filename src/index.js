@@ -1,14 +1,23 @@
+//React imports
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+
+//Components imports
 import App from "./App";
+
+//Router-dom imports
 import { BrowserRouter } from "react-router-dom";
+
+//Provider imports
+import Providers from "./Providers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <Providers>
+        <App />
+      </Providers>
+    </React.StrictMode>
+  </BrowserRouter>
 );
