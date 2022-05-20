@@ -15,7 +15,7 @@ import { useLogin } from "../Providers/Login";
 const Routes = () => {
   const { getUserLogged } = useLogin();
   const [authenticated, setAuthenticated] = useState(
-    localStorage.getItem("@GetSight:token") ? true : false
+    localStorage.getItem("@GetSight:token")
   );
 
   useEffect(() => {
@@ -36,10 +36,13 @@ const Routes = () => {
         <Home authenticated={authenticated} />
       </Route>
       <Route exact path="/login">
-        <Login setAuthenticated={setAuthenticated} />
+        <Login
+          setAuthenticated={setAuthenticated}
+          authenticated={authenticated}
+        />
       </Route>
       <Route exact path="/register">
-        <Register type="user" />
+        <Register type="user" authenticated={authenticated} />
       </Route>
       <Route exact path="/cola">
         <Cola authenticated={authenticated} />

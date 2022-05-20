@@ -5,7 +5,6 @@ import { Button } from "../Button";
 
 const CardCola = ({ cola }) => {
   const { removeCola } = useCola();
-  console.log(cola);
 
   return (
     <Container>

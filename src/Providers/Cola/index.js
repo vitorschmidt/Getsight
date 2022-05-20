@@ -75,8 +75,6 @@ export const ColaProvider = ({ children }) => {
     loadStoreCola();
   }, []);
 
-  console.log(candidate);
-
   const handleCola = (numero) => {
     const colaAdd = candidate.find((cadidateVoto) => {
       return cadidateVoto.numero === numero;

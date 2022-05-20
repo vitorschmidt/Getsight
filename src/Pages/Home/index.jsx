@@ -14,7 +14,6 @@ import ListNoticia from "../../Components/listNoticia";
 import Posts from "../../Components/Posts";
 
 const Home = ({ authenticated }) => {
-  
   const history = useHistory();
 
   const [showPosts, setShowPosts] = useState(false);
@@ -35,7 +34,7 @@ const Home = ({ authenticated }) => {
       {authenticated ? (
         <Container>
           {/* coloquei a header aqui da versao não logada pra testar */}
-          <Header bg="#C2D8DA"  maxHeight="160px" headerVersion="dashboard" />
+          <Header bg="#C2D8DA" maxHeight="160px" headerVersion="dashboard" />
           <SubHeader>
             <h2>Esta com alguma dúvida sobre seu candidato?</h2>
             <p>
@@ -47,8 +46,8 @@ const Home = ({ authenticated }) => {
               width="100%"
               maxWidth="200px"
               height="40px"
-              backGround="#000000"
-              textColor="#fff"
+              backGround="#fff"
+              textColor="#000"
               borderRadius="20px"
             >
               Candidatos
@@ -58,7 +57,7 @@ const Home = ({ authenticated }) => {
             <DashDiv>
               <Button
                 onClick={showHiddenPosts}
-                backGround="#000000"
+                backGround="#0c274e"
                 textColor="#fff"
                 borderRadius="8px"
               >
@@ -68,7 +67,7 @@ const Home = ({ authenticated }) => {
             <div>
               <Button
                 onClick={showHiddenNews}
-                backGround="#000000"
+                backGround="#0c274e"
                 textColor="#fff"
                 borderRadius="8px"
               >
@@ -94,8 +93,8 @@ const Home = ({ authenticated }) => {
               width="100%"
               maxWidth="200px"
               height="40px"
-              backGround="#000000"
-              textColor="#fff"
+              backGround="#fff"
+              textColor="#000"
               borderRadius="20px"
             >
               Candidatos
@@ -106,7 +105,7 @@ const Home = ({ authenticated }) => {
             <DashDiv>
               <Button
                 onClick={showHiddenPosts}
-                backGround="#000000"
+                backGround="#0c274e"
                 textColor="#fff"
                 borderRadius="8px"
               >
@@ -116,7 +115,7 @@ const Home = ({ authenticated }) => {
             <div>
               <Button
                 onClick={showHiddenNews}
-                backGround="#000000"
+                backGround="#0c274e"
                 textColor="#fff"
                 borderRadius="8px"
               >
@@ -126,9 +125,7 @@ const Home = ({ authenticated }) => {
           </Menu>
           {showPosts && <Posts authenticated={authenticated} />}
           {showNews && <ListNoticia />}
-          <div className="gif">
-
-          </div>
+          <div className="gif"></div>
         </Container>
       )}
     </>

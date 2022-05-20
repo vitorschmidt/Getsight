@@ -27,8 +27,12 @@ import { useHistory } from "react-router-dom";
 //Reacts imports
 import { useState } from "react";
 
-const Register = () => {
+const Register = ({ authenticated }) => {
   const history = useHistory();
+
+  if (authenticated) {
+    history.push("/home");
+  }
 
   const [showOrHidePass, setShowOrHidePass] = useState({
     password: false,

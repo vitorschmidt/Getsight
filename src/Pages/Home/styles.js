@@ -16,7 +16,7 @@ export const Container = styled.div`
     background-position: center;
     background-size: 100vw;
     opacity: 0.8;
-    background-color:white;
+    background-color: white;
   }
   @media (min-width: 1101px) {
     width: 100vw;
@@ -31,7 +31,7 @@ export const Container = styled.div`
       background-image: url(${backgroundGif});
       background-repeat: no-repeat;
       background-position: center;
-      background-size:100vw;
+      background-size: 100vw;
       opacity: 0.8;
     }
   }
@@ -50,6 +50,9 @@ export const SubHeader = styled.div`
   button {
     margin-left: 10px;
   }
+  button:hover {
+    color: var(--light-grey);
+  }
 `;
 
 export const Menu = styled.div`
@@ -60,17 +63,16 @@ export const Menu = styled.div`
   background-color: var(--light-grey);
   box-shadow: 0px 0px 11px 0px rgba(89, 89, 89, 0.75);
   border-radius: 8px 8px 0px 0px;
-  
+  margin-bottom: 10px;
   button {
     margin: 20px;
   }
 
   @media (min-width: 1101px) {
     width: 100%;
-   
   }
 `;
 
 export const DashDiv = styled.div`
-  border-right: 1px solid var(--black);
+  border-right: 1px solid #dfd8d8;
 `;

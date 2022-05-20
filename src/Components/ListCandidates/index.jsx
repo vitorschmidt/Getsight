@@ -6,17 +6,25 @@ import CardCandidates from "../CardCandidates";
 //Providers imports
 import { useCandidate } from "../../Providers/Candidates";
 
-const ListCandidates = ({authenticated }) => {
-  const { candidate, filteredCandidates, value } = useCandidate();
+const ListCandidates = ({ authenticated }) => {
+  const { candidate, filteredCandidates, value, search } = useCandidate();
 
   return (
     <Container>
       {value === false || search === ""
         ? candidate.map((candidate, index) => (
-            <CardCandidates authenticated={authenticated } key={index} candidate={candidate} />
+            <CardCandidates
+              authenticated={authenticated}
+              key={index}
+              candidate={candidate}
+            />
           ))
         : filteredCandidates.map((candidate, index) => (
-            <CardCandidates authenticated={authenticated} key={index} candidate={candidate} />
+            <CardCandidates
+              authenticated={authenticated}
+              key={index}
+              candidate={candidate}
+            />
           ))}
     </Container>
   );

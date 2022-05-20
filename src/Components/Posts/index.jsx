@@ -9,7 +9,7 @@ import { useLogin } from "../../Providers/Login";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { useForm, reset } from "react-hook-form";
 
 const Posts = ({ authenticated }) => {
   const { posts, getPosts, createNewPost } = useHome();
@@ -28,6 +28,7 @@ const Posts = ({ authenticated }) => {
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -42,6 +43,7 @@ const Posts = ({ authenticated }) => {
     data.postLikes = 0;
     data.userLikes = [];
     createNewPost(data, token);
+    reset();
   };
 
   useEffect(() => {

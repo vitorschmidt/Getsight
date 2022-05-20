@@ -72,9 +72,9 @@ const PostCard = ({ post, authenticated }) => {
       right: "auto",
       bottom: "auto",
       background: "var(--grey-1)",
-      borderRadius:"8px",
-      maxWidth:"480px",
-      minWidth:"300px",
+      borderRadius: "8px",
+      maxWidth: "480px",
+      minWidth: "300px",
     },
   };
 
@@ -325,18 +325,16 @@ const PostCard = ({ post, authenticated }) => {
                   <div className="message">
                     <h3>{el.message}</h3>
 
-                    <h2
-                      onClick={() =>
-                        commentLiked
-                          ? removeLikeComment(el.id)
-                          : addLikeComment(el.id)
-                      }
-                    >
+                    <h2>
                       <HeartIcon
-                        onClick={liked ? removeLike : addLike}
+                        onClick={() =>
+                          commentLiked
+                            ? removeLikeComment(el.id)
+                            : addLikeComment(el.id)
+                        }
                         className="heart-icon"
                       />
-                      {el.like}
+                      {el.userLikes?.length}
                     </h2>
                   </div>
                 </Comments>

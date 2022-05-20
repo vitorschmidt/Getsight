@@ -27,8 +27,13 @@ import { useHistory } from "react-router-dom";
 //Reacts imports
 import { useState } from "react";
 
-const Login = ({ setAuthenticated }) => {
+const Login = ({ setAuthenticated, authenticated }) => {
   const history = useHistory();
+
+  if (authenticated) {
+    history.push("/home");
+  }
+
   const [showOrHidePass, setShowOrHidePass] = useState(false);
 
   const handleNavegation = () => {
@@ -56,12 +61,10 @@ const Login = ({ setAuthenticated }) => {
 
   const { getUser } = useLogin();
 
-  const onSubmitFunction = async ({ email, password }) => {
+  const onSubmitFunction = ({ email, password }) => {
     const user = { email, password };
 
-    await getUser(user, setAuthenticated);
-
-    history.push("/home");
+    getUser(user, setAuthenticated);
   };
   const handleShowPassword = () => {
     if (showOrHidePass) {
@@ -103,7 +106,6 @@ const Login = ({ setAuthenticated }) => {
               <Button backGround="#47777b" textColor="#f3f3f3" type="submit">
                 Login
               </Button>
-              {/* <button type="submit">Logar</button> */}
             </form>
             <div className="boxCadastro">
               <p>
