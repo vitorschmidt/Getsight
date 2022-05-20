@@ -1,6 +1,7 @@
 //Styled-component imports
 import { Container, TelaVazio } from "./style";
-import vazio from "../../Assets/img/vazio.png";
+ 
+import {ReactComponent as Vazio } from "../../Assets/img/vazio.svg";
 
 //Components imports
 import CardCola from "../CardCola";
@@ -18,7 +19,7 @@ const ListCola = () => {
       <Container>
         {cola.length === 0 ? (
           <TelaVazio>
-            <img src={vazio} alt="vazio" />
+             <Vazio/>
             <h1>Sem candidatos cadastrados.</h1>
             <h2>Volte para a página de candidatos para criar sua colinha.</h2>
           </TelaVazio>
